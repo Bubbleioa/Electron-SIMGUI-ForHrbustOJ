@@ -12,9 +12,11 @@
 
 <body>
   <el-container id="app">
+  
     <el-header>
       <div id="stepBar" style="margin-top: 30px;" v-if="isShow">
         <el-steps :active="active" finish-status="success" align-center>
+          <el-step title="选择源文件" description="选择包含选手代码的csv文件"></el-step>
           <el-step title="选择文件夹路径" description="选择包含待查重文件的文件夹(纯英文路径)"></el-step>
           <el-step title="选择查重参数" description="选择查重语言、查重阈值等"></el-step>
           <el-step title="查重结果" description="查重结果展示"></el-step>
@@ -23,6 +25,12 @@
     </el-header>
 
     <el-main>
+      <div id="chooseSourceFile" style="margin-left: 30px; margin-right: 30px; margin-top: 15px;" v-if="isShow">
+        <el-input placeholder="请选择源文件(纯英文路径)" v-model="filePath" :disabled="true">
+          <el-button slot="append" @click="choosefile" :disabled="disabled"> 选择源文件 </el-button>
+        </el-input>
+      </div>
+      
       <div id="chooseFilePath" style="margin-left: 30px; margin-right: 30px; margin-top: 15px;" v-if="isShow">
         <el-input placeholder="请选择文件夹(纯英文路径)" v-model="filePath" :disabled="true">
           <el-button slot="append" @click="choose" :disabled="disabled"> 选择文件夹 </el-button>
