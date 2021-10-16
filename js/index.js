@@ -446,15 +446,8 @@ var doneStep1Vue = new Vue({
         //console.log(simArgs);
 
         //开发调试时调用SIM的命令
-        let commandStr =
-          '"' +
-          path.join(
-            __dirname,
-            "/src/SIM/sim_" + chooseCodeData.value + ".exe"
-          ) +
-          '" ' +
-          simArgs;
-
+        let commandStr = '"' + path.join(__dirname, '/src/SIM/sim_' + chooseCodeData.value + '.exe') + '" ' + simArgs
+                        
         //打包应用时调用SIM的命令
         //let commandStr = '"' + path.join(__dirname, '../SIM/sim_' + chooseCodeData.value + '.exe') + '" ' + simArgs
 
