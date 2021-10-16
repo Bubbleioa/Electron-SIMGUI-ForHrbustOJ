@@ -1,0 +1,9136 @@
+﻿"学号","姓名","备注","题目ID","是否AC","提交时间","代码"
+"1607040116","计算机21-3 盛东方","打星 - 计算机21-3 盛东方","E","No","2021-10-16 12:20:20","#include <iostream>
+#include <algorithm>   // sort(), unique()
+#include <functional>  // less<int>()
+
+using namespace std;
+
+int main()
+{int d=0;
+    int i,n;
+    cin>>n;
+    int a[n+1];
+    for(int j=0; j<n; j++)
+    {
+        cin>>a[j];
+    }
+
+    sort( a, a + n );
+
+    int b = unique(a, a + n) - a;
+
+    for ( i = 0; i < b; i++)
+    {
+        cout << a[i] ;
+        d++;
+        if(d==b){}else cout<<"" "";
+
+
+    }
+
+}
+"
+"1901050130","朱元慧","计算机21-1 - 朱元慧","B","Yes","2021-10-16 12:11:38","#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+	
+	int t;
+	int n,m,k;
+	char a[100][100];
+	cin >> t;
+	while(t--)
+	{
+		cin>>n>>m>>k;
+		for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+		    cin >> a[i][j];
+		}}
+		
+		
+		for(int i=0;i<n;i++){
+			for(int o=1;o<=k;o++){
+				for(int j=0;j<m;j++){
+					for(int p=1;p<=k;p++){
+						printf(""%c"",a[i][j]);
+					
+                        if(j==m-1&&p==k)
+                            printf(""\n"");
+                       
+					} 
+				}
+			}
+			
+		}
+		
+	}
+	
+	return 0;
+} "
+"1901050130","朱元慧","计算机21-1 - 朱元慧","D","No","2021-10-16 13:53:17","#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+struct zuoye
+{
+    string name;
+    ll jiazhi;
+    ll cishu;
+    bool operator < (const zuoye & a)const
+    {
+        if(a.jiazhi==jiazhi)
+        {
+            a.cishu < cishu;
+        }
+        return a.jiazhi > jiazhi;
+    }
+};
+int main()
+{
+    int t;
+    cin >> t;
+    priority_queue<zuoye> myj;
+    ll p=0;
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        while(n--){
+        int y;
+        cin>> y;
+        if(y==1){
+            zuoye ti;
+            cin>>ti.name>>ti.jiazhi;
+            ti.cishu=p;
+            p++;
+            myj.push(ti);
+            
+            
+        }
+        else if(y==2)
+        {
+            printf(""%s\n"",myj.top().name.c_str());
+            myj.pop();
+            
+        }
+        }
+        if(!myj.empty()){
+         myj.pop();
+  }
+    }
+    
+    
+    
+    
+    
+ return 0;
+} "
+"1901050130","朱元慧","计算机21-1 - 朱元慧","E","No","2021-10-16 11:11:59","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	
+	int n;
+	cin >> n;
+	int a[n];
+	int cnt;
+	for(int i=0;i<n;i++)
+	{
+		scanf(""%d"",&a[i]);
+	}
+	sort(a,a+n);
+	cnt=unique(a,a+n)-a;
+	for(int j=0;j<cnt;j++)
+	{
+		printf(""%d "",a[j]);
+	}
+	
+	
+	
+	return 0;
+} "
+"2104010103","付瑞航","计算机21-1 - 付瑞航","B","Yes","2021-10-16 11:40:20","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int x;
+	cin>>x;
+	while(x--){
+		int y;
+		cin>>y;
+		int a,b;
+		cin>>a>>b;
+		char str[y][a+5];
+		for(int m=y-1;m>=0;m--)cin>>str[m];
+	    while(y--){
+	    	for(int n=0;n<b;n++){
+			for(int i=0;i<a;i++){
+				for(int j=0;j<b;j++)
+				cout<<str[y][i];
+			}
+			cout<<endl;
+	    	}
+		}
+		
+	}
+return 0;
+}"
+"2104010103","付瑞航","计算机21-1 - 付瑞航","E","No","2021-10-16 13:08:24","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n,x,m=0;
+	cin>>n;
+	long int b[10005];
+	for(long int i=1;i<=10005;i++) b[i]=0;
+    for(long int i=1;i<=n;i++){
+			cin>>x;
+			b[x]=1;
+		}
+	for(long int i=1;i<=10005;i++){
+			if(b[i]==1){
+				if(m==0){
+				m++;	
+				printf(""%d"",i);
+				}
+				else
+				printf("" %d"",i);
+			}
+		}		
+return 0;
+}"
+"2104010104","高鑫宇","计算机21-1 - 高鑫宇","A","No","2021-10-16 12:58:18","#include <bits/stdc++.h>
+using namespace std;
+#define PI 3.1415926
+int main()
+{
+    int T,k,b;
+    double c,s;
+    scanf(""%d"",&T);
+    while(T--)
+    {
+        scanf(""%d%d"",&k,&b);
+        if(k==1)     
+            s=b*b/4;      	
+        else        
+           c=PI*b*b/8;
+            s=b*b/2-c;
+        
+       printf(""%.4f"",s);
+        puts("""");
+    }
+    return 0;
+}
+"
+"2104010106","韩百川","计算机21-1 - 韩百川","B","Yes","2021-10-16 12:12:54","#include<bits/stdc++.h>
+using namespace std;
+char a[100][100];
+int main()
+{
+	
+	int N;
+	scanf(""%d"",&N);
+	while(N--)
+	{
+		int n,m,k;
+		scanf(""%d %d %d"",&n,&m,&k);
+		int kk=k;
+		int kkk=k;
+		getchar(); 
+		for(int i=1;i<=n;i++)
+		{
+			scanf(""%s"",a[i]+1);
+		}
+		for(int i=1;i<=n;i++)
+		{
+			while(k--){ 
+			
+			for(int j=1;j<=m;j++)
+			{
+			while(kk--) 
+			{printf(""%c"",a[i][j]);}
+			kk=kkk;
+			}
+			puts("""");
+			}
+			k=kkk;
+		}
+		
+	}
+ 
+	
+}"
+"2104010106","韩百川","计算机21-1 - 韩百川","E","No","2021-10-16 11:13:33","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,a;
+	set<int> s;
+	scanf(""%d"",&n);
+	while(n--)
+	{
+		scanf(""%d"",&a);
+		s.insert(a);
+	} 
+	for(auto it=s.begin();it!=s.end();it++)
+	{
+		if(it==s.begin()) printf(""%d"",*it);
+		else printf("" %d"",*it);
+	}
+	s.clear();
+}"
+"2104010108","金泰洋","计算机21-1 - 金泰洋","A","Yes","2021-10-16 13:03:33","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    unsigned T;
+    scanf(""%d"",&T);
+    while(T--)
+    {
+        int k,b;
+        scanf(""%d%d"",&k,&b);
+        if(k==1)
+        {
+            printf(""%.4lf\n"",b*b/4.0);
+        }
+        else
+        {
+            //jifen
+            int kd=k+1;
+            double jd=(-1.0+sqrt(1.0+4.0*b))/2.0;
+            if(jd<0) jd=(-1.0-sqrt(1.0+4.0*b))/2.0;
+            //(jd^k+1)/k+1
+            double s1=jd*jd*jd/3,s2=(b-jd)*jd*jd/2;
+            printf(""%.4lf\n"",s1+s2);
+        }
+    }
+    return 0;
+}
+"
+"2104010108","金泰洋","计算机21-1 - 金泰洋","B","Yes","2021-10-16 12:07:24","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    unsigned T;
+    scanf(""%d"",&T);
+    while(T--)
+    {
+        string s;
+        int n,m,k;
+        scanf(""%d%d%d"",&n,&m,&k);
+        for(int i=1;i<=n;++i)
+        {
+            getchar();
+            for(int j=1;j<=m;++j)
+            {
+                char a;
+                scanf(""%c"",&a);
+                if(a>=33&&a<=126)for(int x=1;x<=k;++x) s+=a;
+            }
+            for(int y=1;y<=k;++y) printf(""%s\n"",s.c_str());
+            s.clear();
+        }
+    }
+    return 0;
+}"
+"2104010108","金泰洋","计算机21-1 - 金泰洋","D","No","2021-10-16 13:59:33","#include<bits/stdc++.h>
+using namespace std;
+struct qus
+{
+    int id;
+    char tit[25];
+    int pri;
+    bool operator <(const qus &that) const
+    {
+        if(pri==that.pri)return id<that.id;
+        return pri>that.pri;
+    }
+}qusa[100001];
+//struct cmp
+//{
+//    bool operator() (const qus &a, const qus &b)
+//    {
+//        if(a.pri==b.pri)return a.id>b.id;
+//        return a.pri<b.pri;
+//    }
+//};
+int main()
+{
+    int T;
+    cin >> T;
+    while (T--)
+    {
+        int n;
+        scanf(""%d"", &n);
+        int cnt=0;
+        int out=1;
+        memset(qusa,0,sizeof(qusa));
+        for (int i = 1; i <= n; ++i)
+        {
+            qus qus1;
+            int opt;
+            scanf(""%d"", &opt);
+            if (opt == 1)
+            {
+                scanf(""%s"",qus1.tit);
+                scanf(""%d"",&qus1.pri);
+                cnt++;
+                qus1.id=cnt;
+                qusa[cnt]=qus1;
+            }
+            if(opt==2)
+            {
+                sort(qusa+1,qusa+cnt+1);
+                printf(""%s\n"",qusa[out].tit);
+                ++out;
+            }
+        }
+    }
+    return 0;
+}"
+"2104010108","金泰洋","计算机21-1 - 金泰洋","E","No","2021-10-16 12:25:36","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<int,bool>mp;
+    unsigned n;
+    scanf(""%d"",&n);
+    for(int i=0;i<n;++i)
+    {
+        int tmp;
+        scanf(""%d"",&tmp);
+        mp[tmp]=true;
+    }
+//    sort(a,a+n);
+//    int m=unique(a,a+n)-a;
+    bool first=true;
+    for(int i=1;i<=1000000;++i)
+    {
+        if(mp[i])
+        {
+            if(first) printf(""%d"",i),first=false;
+            else printf("" %d"",i);
+        }
+    }
+    return 0;
+    
+}"
+"2104010112","李祥瑞","计算机21-1 - 李祥瑞","A","Yes","2021-10-16 12:06:54","#include <stdio.h>
+#include <math.h>
+using namespace std;
+int main()
+{
+	double k,b;
+	double m,l;
+	double ans;
+	int T;
+	scanf(""%d"",&T);
+	while(T--)
+	{   
+		scanf(""%lf%lf"",&k,&b);
+		if(k==1)
+		{
+			ans=b*b/4;
+		}
+		if(k==2)
+		{   
+			m=(sqrt(1+4*b)-1)/2;
+			ans=(b-m)*m*m/2+m*m*m/3;
+			
+		}
+		printf(""%.4f\n"",ans);
+	}
+} "
+"2104010112","李祥瑞","计算机21-1 - 李祥瑞","B","Yes","2021-10-16 13:28:50","#include <stdio.h>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+int main()
+{
+	int T;
+	int n,m,k,i;
+	scanf(""%d"",&T);
+	while(T--)
+	{   scanf(""%d%d%d"",&n,&m,&k);
+	while(n--)
+	{
+		char a[m];
+		scanf(""%s"",&a);
+		int o=0;
+		for(int i=1;i<=k;i++)
+		{  int o=0;
+		for(int i=1;i<=m;i++)
+		{
+			for(int i=1;i<=k;i++)
+			{
+				printf(""%c"",a[o]);
+			}
+			o++;
+		}
+		printf(""\n"");
+		}		
+	}	
+	}
+	
+}"
+"2104010113","刘松语","计算机21-1 - 刘松语","A","Yes","2021-10-16 12:14:38","#include<cstdio>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        double k,d;
+        double ans,x1,x2;
+        scanf(""%lf%lf"",&k,&d);
+        if(k==1)
+        {
+            ans=d*d/4;
+        }
+        else if(k==2)
+        {
+            x1=(sqrt(1+4*d)-1)/2;
+            ans=x1*x1*x1/3+(d-x1)*x1*x1/2;
+        }
+        printf(""%.4f\n"",ans);
+    }
+    return 0;
+}
+"
+"2104010113","刘松语","计算机21-1 - 刘松语","B","Yes","2021-10-16 11:46:16","#include <iostream>
+#include<cstdio>
+#include<string>
+#include<cstring>
+using namespace std;
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    int n,m,k;
+    string s;
+    while(t--)
+    {
+        scanf(""%d%d%d"",&n,&m,&k);
+        for(int i=1;i<=n;i++)
+        {
+            cin>>s;
+            for(int j=1;j<=k;j++)
+            {
+               for(int h=0;h<m;h++)
+               {
+                   for(int u=1;u<=k;u++)
+                   {
+                       printf(""%c"",s[h]);
+                   }
+               }
+               printf(""\n"");
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010113","刘松语","计算机21-1 - 刘松语","C","No","2021-10-16 13:47:26","#include <bits/stdc++.h>
+using namespace std;
+struct Point
+{
+    int x, y;
+};
+int nx[4] = {0, 1, 0, -1};
+int ny[4] = {1, 0, -1, 0};
+int n, m, ans=0;
+int sx, sy, fx, fy;
+char mp[505][505];
+char vis[505][505];
+void dfs(Point p)
+{
+    if (p.x == fx && p.y == fy)
+    {
+        ans++;
+    }
+    for (int i = 0; i < 4; i++)
+    {
+        int tx = p.x + nx[i];
+        int ty = p.y + ny[i];
+        if (mp[tx][ty]=='1')    continue;
+        if (vis[tx][ty]=='1')   continue;
+        if (tx < 1 || tx > n || ty < 1 || ty > m)   continue;
+        vis[tx][ty] = '1';
+        if(ans!=0) return;
+        dfs(Point{tx, ty});
+        if(ans!=0) return;
+        vis[tx][ty] ='0';
+        if(ans!=0) return;
+    }
+    return;
+}
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        ans=0;
+        scanf(""%d%d"", &n, &m);
+        for(int i=0;i<=n+1;i++)
+        for(int j=0;j<=m+1;j++)
+        {
+            mp[i][j]='0';
+            vis[i][j]='0';
+        }
+         for(int i=1;i<=n;i++)
+         {
+                scanf(""%s"",mp[i]+1);
+         }
+        scanf(""%d%d%d%d"", &sx, &sy, &fx, &fy);
+        vis[sx][sy] = '1';
+        dfs(Point{sx, sy});
+        if(ans!=0) printf(""YE5\n"");
+        else printf(""NO\n"");
+    }
+    return 0;
+}
+"
+"2104010113","刘松语","计算机21-1 - 刘松语","E","No","2021-10-16 12:29:59","#include<cstdio>
+#include<iostream>
+#include<string.h>
+#include<algorithm>
+#include<set>
+#include<iterator>
+using namespace std;
+int main()
+{
+    int n,a;
+    set<int>SZ;
+    set<int>::iterator it;
+    scanf(""%d"",&n);
+    while(n--)
+    {
+        scanf(""%d"",&a);
+        SZ.insert(a);
+    }
+    cout<<*SZ.begin();
+    for(it=++SZ.begin();it!=SZ.end();it++)
+    {
+       printf("" %d"",*it);
+    }
+    return 0;
+}
+"
+"2104010114","彭杰","计算机21-1 - 彭杰","A","Yes","2021-10-16 12:13:06","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    double k=0,b=0,m=0,s=0,q=0;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+       scanf(""%lf %lf"",&k,&b) ;
+       if(k==1)
+    {
+      printf(""%.4f\n"",0.5*0.5*b*b) ;
+    }
+
+  if(k==2)
+  {double m=(-1+sqrt(1+4*b))/2;
+  double s=0.5*(b-m)*m*m;
+  double q=m*m*m/3;
+  printf(""%.4f\n"",q+s);
+  }
+    }
+
+    return 0;
+}
+"
+"2104010114","彭杰","计算机21-1 - 彭杰","B","Yes","2021-10-16 13:57:44","#include<bits/stdc++.h>
+using namespace std;
+char a[500];
+int main()
+{
+    int t,n,m,k;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        scanf(""%d %d %d"",&n,&m,&k);
+        while(n--)
+        {
+           char a[m];
+           scanf(""%s"",a);
+           for(int t=0;t<k;t++)
+           {
+
+  for(int j=0;j<m;j++)
+           {
+               for(int i=0;i<k;i++)
+         {
+               printf(""%c"",a[j]);
+          }
+          }printf(""\n"");
+        }
+    }
+    }
+    return 0;
+}
+
+
+"
+"2104010114","彭杰","计算机21-1 - 彭杰","E","No","2021-10-16 12:11:49","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    double k=0,b=0,m=0,s=0,q=0;
+    scanf(""%d"",&t);
+    for(int i=0;i<t;i++)
+    {
+       scanf(""%lf %lf"",&k,&b) ;
+       if(k==1)
+    {
+      printf(""%.4f\n"",0.5*0.5*b*b) ;
+    }
+
+  if(k==2)
+  {double m=(-1+sqrt(1+4*b))/2;
+  double s=0.5*(b-m)*m*m;
+  double q=m*m*m/3;
+  printf(""%.4f\n"",q+s);
+  }
+    }
+
+    return 0;
+}
+"
+"2104010115","乔迦勒","计算机21-1 - 乔迦勒","A","Yes","2021-10-16 12:39:30","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	while(T--){
+		double b,k,x,h,ans1,ans2,ans3;
+		cin>>k>>b;
+		if(k==2){
+			x=sqrt(4*b+1);
+					x=x-1;
+					x=x/2;
+					h=b-x;
+					ans1=h*h/2;
+					ans2=x*x*x/3;
+					ans3=ans1+ans2;
+					printf(""%.4f\n"",ans3);
+		}else{
+			ans3=b/2;
+			ans3=ans3*ans3;
+			printf(""%.4f\n"",ans3);
+		}
+	}
+	return 0;
+}"
+"2104010115","乔迦勒","计算机21-1 - 乔迦勒","B","No","2021-10-16 13:44:22","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int T;
+	cin>>T;
+	while(T--){
+		int m,n,k;
+		cin>>m>>n>>k;
+		char a;
+		char b[n*k+1][m*k+1];
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=m;j++){
+				cin>>a;
+				for(int t=i*k;t>i*k-k;t--){
+					for(int k=j*k;k>j*k-k;k--){
+						b[t][k]=a;
+					}
+				}
+			}
+		}
+		for(int i=1;i<=n*k;i++){
+			for(int j=1;j<=0;j++){
+				cout<<b[i][j];
+			}
+			cout<<endl;
+		}
+	}
+	return 0;
+}"
+"2104010115","乔迦勒","计算机21-1 - 乔迦勒","E","No","2021-10-16 13:21:03","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	for(int i=1; i<=n-1; i++)           
+	{
+		for(int j=1;j<=n-i;j++)
+		{
+			if(a[j-1]>a[j])
+			{
+				int b=a[j-1];
+			    a[j-1]=a[j];
+			    a[j]=b;
+			}
+		} 
+	}
+	for(int i=1; i<=n-1; i++)           
+	{
+		for(int j=1;j<=n-i;j++)
+		{
+			if(a[j-1]==a[j])
+			{
+				a[j-1]=0;
+			}
+		} 
+	}   
+	for(int i=1; i<=n-1; i++)           
+	{
+		for(int j=1;j<=n-i;j++)
+		{
+			if(a[j-1]>a[j])
+			{
+				int b=a[j-1];
+			    a[j-1]=a[j];
+			    a[j]=b;
+			}
+		} 
+	}	
+	for(int i=0;i<n;i++){
+		if(a[i]==0){
+			continue;
+		}else{
+			printf(""%d "",a[i]);
+		}
+	}
+	return 0;
+}"
+"2104010119","孙富臣","计算机21-1 - 孙富臣","A","No","2021-10-16 13:50:20","# include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T;
+	int k;
+	double b;
+	double x;
+	double y;
+	double m;
+	double n;
+	double a;
+	scanf(""%d"",&T);
+	while(T>=1)
+  {
+	T--;
+	while(~scanf(""%d%lf"",&k,&b))
+	if(k==1)
+	{
+		a=b*b/4;
+		break;
+	}
+	if(k==2)
+	{
+		m=sqrt(1+4*b);
+		x=(-1+m)/2;
+		n=pow(b-x,2)/2;
+		y=1/3*pow(x,3);
+		a=n+y;
+	}
+  
+	printf(""%.4f"",a);}
+	return 0;
+}"
+"2104010122","王子硕","计算机21-1 - 王子硕","A","Yes","2021-10-16 13:06:26","#include<stdio.h>
+#include<math.h>
+int main() 
+{
+	double k,b,s;
+	int t;
+	t<=100;
+	scanf(""%d"",&t);
+	for(int i=1;i<=t;i++){
+		scanf(""%lf%lf"",&k,&b);
+		if(k==1&&b>=0){
+			s=b*b/4;
+			printf(""%.4f\n"",s);
+		}
+		else if(k==2&&(b>sqrt(5)-2)){
+			s=((-1+sqrt(1+4*b))/2)*((-1+sqrt(1+4*b))/2)*((-1+sqrt(1+4*b))/2)/3+(b-((-1+sqrt(1+4*b))/2))*((-1+sqrt(1+4*b))/2)*((-1+sqrt(1+4*b))/2)/2;
+			printf(""%.4f\n"",s);
+			
+		}
+	}
+		return 0;
+}"
+"2104010123","韦松芮","计算机21-1 - 韦松芮","A","Yes","2021-10-16 13:08:21","#include<iostream>
+#include<math.h>
+using namespace std;
+int n,k,b;
+double a,T,x1,x2;
+int main(){
+	scanf(""%d"",&n);
+	for(int i=1;i<=n;i++){
+		scanf(""%d%d"",&k,&b);
+		if(k==1){
+			T=b*b*0.25;
+			printf(""%.4lf\n"",T);	
+		}else if(k==2){
+			if(1+4*b>=0){
+				x1=(-1+sqrt(1+4*b))/2;
+				x2=	(-1-sqrt(1+4*b))/2;
+				//printf(""%lf\n%lf\n"",x1,x2);调试用语句 
+				if(x1>0)
+					a=x1;
+				else
+					a=x2;
+			}
+			//printf(""%lf"",a);调试用语句 
+			double t=(1.0/3.0)*a*a*a;		
+			T=((b-a)*(b-a)*0.5)+t;
+			printf(""%.4lf\n"",T);
+		}
+		
+	}
+	return 0;
+} "
+"2104010204","黄传实","计算机21-2 - 黄传实","B","Yes","2021-10-16 11:43:49","#include <bits/stdc++.h>
+using namespace std;
+char a[100][100];
+int main()
+{
+    int t, n, m, k;
+
+    cin >> t;
+
+    int p;
+
+    while (t--)
+    {
+
+        cin >> n >> m >> k;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                cin >> a[i][j];
+            }
+        }
+        p = k-1;
+        for (int i = 0; i < n;)
+        {
+           
+
+            for (int j = 0; j < m;j++)
+
+            {
+                for (int o = 0; o < k; o++)
+                {
+                    cout << a[i][j];
+                }
+                
+            }
+            puts("""");
+                if (p > 0)
+                    p--;      
+               else if(p == 0)
+                {
+                i++;
+                p  = k-1;
+                }
+            
+        }
+    }
+    return 0;
+}"
+"2104010204","黄传实","计算机21-2 - 黄传实","C","No","2021-10-16 13:10:41","#include <bits/stdc++.h>
+using namespace std;
+char Map[500][500];
+int flag[500][500];
+int sx, sy, ex, ey;
+int a, b;
+
+int ans;
+
+int nx[4] = {1, 0, -1, 0}, ny[4] = {0, 1, 0, -1};
+
+void move()
+{
+    if(ans > 0)
+    return;
+    if (Map[sx][sy] == '3')
+    {
+        ans++;
+        return ;
+    }
+for(int i = 0 ; i < 4 ;i++)
+{
+    int tx = sx + nx[i];
+    int ty = sy + ny[i];
+if(Map[tx][ty] == '1' )
+{
+continue;
+}
+if(1>tx||tx>a||ty<1||ty>b)
+{
+    continue;
+}
+if(flag[tx][ty] == 1)
+continue;
+
+sx +=nx[i];
+sy +=ny[i];
+flag[sx][sy] = 1;
+move();
+flag[sx][sy] = 0;
+
+}
+
+    return;
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        
+        cin >> a >> b;
+        for(int i = 1; i <=a ;i++)
+        {
+            for(int j = 1 ; j <=b ;j++ )
+              flag[i][j] = 0;
+        }
+        ans = 0;
+        for (int i = 1; i <= a; i++)
+        {
+            for (int j = 1; j <= b; j++)
+            {
+                cin >> Map[i][j];
+            }
+        }
+        cin >> sx >> sy >> ex >> ey;
+
+        Map[ex][ey] = '3';
+
+    move();
+
+    if(ans>0) cout<<""YE5""<<endl;
+    else cout<<""N0""<<endl;
+    }
+
+    return 0;
+}
+"
+"2104010204","黄传实","计算机21-2 - 黄传实","E","No","2021-10-16 11:58:34","#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n, b;
+    cin >> n;
+    vector<int> a;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> b;
+        a.push_back(b);
+    }
+
+    sort(a.begin(), a.end());
+    auto m = unique(a.begin(), a.end());
+    
+    for(auto i = a.begin() ;  i != m ;i++ )
+    {
+       cout<<*i;
+       if(i != m)
+       {
+           cout<<"" "";
+       }
+    }
+    puts("""");
+
+
+    return 0;
+}"
+"2104010205","季春羊","计算机21-2 - 季春羊","A","No","2021-10-16 12:45:51","#include<stdio.h>
+#include<math.h>
+	int arr[100][100];
+int main()
+{
+	 int a,b,max,k,j,i,l,m,r,c,t;
+	scanf(""%d"",&t);
+	while(t--){
+		scanf(""%d%d"",&a,&b);
+		max=arr[0][0];
+		
+			for(k=1;k<=a;k++)
+			for(i=1;i<=b;i++)
+			{scanf(""%d"",&arr[i][k]); 
+			
+				if(arr[i][k]>max)
+				{
+				max=arr[i][k];
+				j=k;
+				l=i;}
+			}
+				printf(""%d %d\n"",j,l);	
+	}
+	return 0;
+	}
+"
+"2104010208","李佳璐","计算机21-2 - 李佳璐","B","No","2021-10-16 13:43:21","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,m,n,k;
+	char a[105][105];
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		scanf(""%d %d %d"",&n,&m,&k);
+		getchar();
+		for(int i=0;i<n;i++){
+
+			for(int j=0;j<m;j++){
+                scanf(""%c"",&a[i][j]);
+                }getchar();
+		}
+		for(int i=0;i<n;i++){
+
+			for(int j=0;j<m;j++){
+				for(int ans=0;ans<k;ans++)
+                if(a[i][j]>=36&&a[i][j]<=126)
+				printf(""%c"",a[i][j]);
+			}
+			printf(""\n"");
+	}
+	}return 0;
+}
+"
+"2104010209","李晶洋","计算机21-2 - 李晶洋","B","No","2021-10-16 13:58:46","#include<cstdio>
+using namespace std;
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        int n=0,m=0,k=0;
+        scanf(""%d""""%d""""%d"",&n,&m,&k);
+        getchar();
+        int i=1,j=0,_k=k,_ki=k;
+        char a[100][100];
+        for(;i<=n;i++)
+        {
+           scanf(""%s"",&a[i]);
+        }
+        i=1;
+        for(int _i=i;_i<=n;_i++)
+        {
+            while(_ki--)
+                {
+                    for(int _j=j;_j<m;_j++)
+                    {
+                        while(_k--)
+                        printf(""%c"",a[_i][_j]);
+                        _k=k;
+                    }
+                puts("""");
+                }
+            _ki=k;
+
+        }
+
+    }
+    return 0;
+}
+"
+"2104010212","蔺泽阳","计算机21-2 - 蔺泽阳","B","Yes","2021-10-16 12:15:20","#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int t,n,m,k;
+	char a[101][101];
+	scanf(""%d"",&t);
+	while(t--){
+		scanf(""%d %d %d"",&n,&m,&k);
+		for(int i=0;i<n;i++){
+				scanf(""%s"",a[i]);
+		}
+		for(int i=0;i<n;i++){
+			for(int b=0;b<k;b++){
+			for(int j=0;j<m;j++){
+				for(int x=0;x<k;x++){
+			printf(""%c"",a[i][j]);
+				}	
+				
+				}
+				printf(""\n"");
+				
+			}
+		}
+			
+		}
+return 0;
+}
+
+	"
+"2104010212","蔺泽阳","计算机21-2 - 蔺泽阳","E","No","2021-10-16 13:59:11","#include <cstdio>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    int n;
+    	int flag=0;
+        scanf(""%d"",&n);
+        short * a;
+        a = (short * ) malloc (n * sizeof(short));
+        for (int i = 0;i < n;++i)
+        {
+            scanf(""%d"",&a[i]);
+        }
+        sort(a,a+n);
+		int length;
+
+        length= unique(a,a+n)-a;
+        for (int i = 0;i < length;++i)
+        {	if(flag!=0)
+        	printf("" "");
+            printf(""%d"",a[i]);
+            flag++;
+        }
+        return 0;
+    }
+"
+"2104010216","卢昭佳","计算机21-2 - 卢昭佳","B","Yes","2021-10-16 11:59:00","#include <bits/stdc++.h>
+using namespace std;
+char a[110][110];
+int main()
+{
+    int t, n, m, k,x;
+    scanf(""%d"",&t);
+    while (t--)
+    {
+
+         cin >> n >> m >> k;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                cin>>a[i][j];
+            }
+        }
+        x = k-1;
+        for (int i = 0; i < n;)
+        {
+            for (int j = 0; j < m;j++)
+            {
+                for (int o = 0; o < k; o++)
+                {
+                    cout << a[i][j];
+                }
+            }
+            printf(""\n"");
+                if (x > 0) x--;
+               else if(x == 0)
+                {
+                i++;
+                x  = k-1;
+                }
+        }
+    }
+    return 0;
+}"
+"2104010216","卢昭佳","计算机21-2 - 卢昭佳","D","No","2021-10-16 13:56:37","#include<bits/stdc++.h>
+using namespace std;
+struct PP
+{
+    string x;
+    int y;
+    bool operator <(PP const& it)const{
+    return y<it.y;
+    }
+}pp;
+int m;
+set<PP>s;
+int main()
+{
+    int t,a;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        cin>>m;
+        while(m--)
+        {
+            scanf(""%d"",&a);
+            int cnt=0;
+            if(a==1)
+            {
+               cin>>pp.x>>pp.y;
+               s.insert(pp);
+               cnt++;
+            }
+            if(a==2)
+            {
+                if(!s.empty())
+                {
+                set<PP>::iterator iter = s.end();
+                iter--;
+                cout<<iter->x<<endl;
+                s.erase(iter);
+                }
+            }
+        }
+    }
+}
+"
+"2104010216","卢昭佳","计算机21-2 - 卢昭佳","E","No","2021-10-16 12:38:09","#include<bits/stdc++.h>
+using namespace std;
+#define LL  long long
+const int M=(int)1e6+5;
+LL n,i;
+LL a[M];
+vector<int>v;
+int main(){
+	cin >> n;
+	for(int i = 0;i < n;i++)
+    {cin >> a[i];
+    v.push_back(a[i]);
+    }
+
+	sort(v.begin(),v.end());
+	auto new_end = unique(v.begin(), v.end());
+	for(auto it = v.begin();it != new_end;it++)
+		{
+		    if(it!=v.begin()) printf("" "");
+		    cout<<*it;
+		}
+		printf(""\n"");
+	return 0;
+}"
+"2104010217","马雪峰","计算机21-2 - 马雪峰","B","Yes","2021-10-16 11:23:32","#include <stdio.h>
+char string[108][108];
+
+int main()
+{
+	int n,m,k,T;
+	scanf(""%d"",&T);
+	while(T--)
+	{
+		scanf(""%d%d%d"",&n,&m,&k);
+		getchar();
+		for(int x=1;x<=n;x++)
+		{
+			for(int y=1;y<=m;y++)
+			scanf(""%c"",string[x]+y);
+			getchar();
+		}
+		for(int x=1;x<=n;x++)
+		for(int y=1;y<=k;y++)
+		{
+			for(int z=1;z<=m;z++)
+			for(int w=1;w<=k;w++)
+			{
+				printf(""%c"",string[x][z]);
+			}
+			putchar('\n');
+		}
+	}
+}"
+"2104010217","马雪峰","计算机21-2 - 马雪峰","C","No","2021-10-16 13:57:54","#include <stdio.h>
+#define outrange(m,a,b) (m)<a||(m)>b
+#define situation(a,b) map[a][b]
+#define walked(a,b) vis[a][b]
+int map[512][512];
+int tx[4]={-1,0,1,0};
+int ty[4]={0,1,0,-1};
+int vis[512][512];
+
+struct place
+{
+	int x;
+	int y;
+}start,end;
+
+int walk(struct place object,int a,int b)
+{
+	if(object.x==end.x&&object.x==end.y)
+	return 1;
+	int point=0;
+	judge:
+	if(outrange(object.x+tx[point],1,a))
+	{
+		if(point==3)
+		return 0;
+		else
+		point++;
+		goto judge;
+	}
+	else if(outrange(object.y+ty[point],1,b))
+	{
+		if(point==3) 
+		return 0;
+		else
+		point++;
+		goto judge;
+	}
+	else if(situation(object.x+tx[point],object.y+ty[point])==1)
+	{
+		if(point==3)
+		return 0;
+		else
+		point++;
+		goto judge;
+	}
+	else if(walked(object.x+tx[point],object.y+ty[point]))
+	{
+		if(point==3)
+		return 0;
+		else
+		point++;
+		goto judge;
+	}
+	else
+	{
+		vis[object.x][object.y]=1;
+		object.x+=tx[point];
+		object.y+=ty[point];
+		if(walk(object,a,b)==1)
+		return 1;
+		else
+		{
+			object.x-=tx[point];
+			object.x-=tx[point];
+			vis[object.x][object.y]=0;
+			if(point==3)
+			return 0;
+			else
+			{
+				point++;
+				goto judge;
+			}
+		}
+	}
+}
+
+int main()
+{
+	int T;
+	scanf(""%d"",&T);
+	for(int time=1;time<=T;time++)
+	{
+		int n,m;
+		scanf(""%d%d"",&n,&m);
+		for(int i=1;i<=n;i++)
+		for(int j=1;j<=m;j++)
+		scanf(""%1d"",map[i]+j);
+		scanf(""%d%d"",&start.x,&start.y);
+		scanf(""%d%d"",&end.x,&end.y);
+		if(walk(start,n,m))
+		printf(""YE5\n"");
+		else
+		printf(""N0\n"");
+	}
+}"
+"2104010219","任政旭","计算机21-2 - 任政旭","B","No","2021-10-16 13:21:52","#include<stdio.h>
+int main(){
+	int n,m,k,T;
+	char bad[114][514];
+	scanf(""%d"",&T);
+	getchar();
+	while(T--){scanf(""%d%d%d"",&n,&m,&k);
+			getchar();
+		for(int i=1;i<=n;i++){
+			for(int a=1;a<=m;a++)
+			scanf(""%c"",&bad[i][a]);
+			getchar();
+		}
+		for(int i=0;i<=n;i++)
+			for(int b=0;b<=k;b++){
+				for(int a=1;a<=m;a++)
+				for(int c=1;c<=k;c++){
+					printf(""%c"",bad[i][a]);
+				}printf(""\n"");
+			}
+	}
+}"
+"2104010222","苏洪宾","计算机21-2 - 苏洪宾","A","Yes","2021-10-16 12:18:42","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T;
+	int k,b;
+	double s,x;
+	scanf(""%d"",&T);
+	for(int i=0;i<T;i++)
+	{
+		scanf(""%d %d"",&k,&b);	
+    if(k==1)
+	{
+		s=(b*b)/4.0;
+	}
+	if(k==2)
+	{
+	    x=(sqrt(1+4.0*b)-1.0)/2.0;
+		s=(1/3.0)*x*x*x+(b-x)*0.5*x*x;
+	}
+	printf(""%.4f\n"",s);
+	s=0;
+	}
+	return 0;
+}"
+"2104010222","苏洪宾","计算机21-2 - 苏洪宾","E","No","2021-10-16 11:30:51","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	int i=0;
+	scanf(""%d"",&n);
+	int a [1000000];
+	for(i;i<n;i++)
+	{
+		scanf(""%d"",&a[i]);
+	}
+	sort(a,a+n);
+    printf(""%d"",a[i]);
+	for(int i=1;i<n;i++)
+	{
+		if(a[i]!=a[i-1])
+		printf("" %d"",a[i]);	
+	}
+	return 0;
+}"
+"2104010225","吴昊天","计算机21-2 - 吴昊天","A","Yes","2021-10-16 12:24:53","#include<cstdio>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int T,k,b;
+    double s,x,y;
+    scanf(""%d"",&T);
+    for(T;T>0;T--)
+    {
+        scanf(""%d %d"",&k,&b);
+        if(k==1)
+        {
+            s=b*b/4.0;
+        }
+        else if(k==2)
+        {
+            x=(-1.0+sqrt(1.0+4.0*b))/2.0;
+            y=-x+b;
+            s=(1.0/3.0)*x*x*x+y*(b-x)/2.0;
+        }
+        printf(""%0.4f\n"",s);
+    }
+    return 0;
+}"
+"2104010227","杨阳","计算机21-2 - 杨阳","A","Yes","2021-10-16 11:52:54","#include<bits/stdc++.h>
+using namespace std;	
+int main(){
+     double y,s,x;
+	 int t,k,b;
+	 scanf(""%d"",&t);
+	 while(t--){
+		 scanf(""%d %d"",&k,&b);
+		 if(k==1){
+			s=0.5*(b/2.0)*(b/2.0)+(b/2.0)*0.5*(b/2.0);
+		 }
+		 if(k==2){
+			 x=(sqrt(1+4.0*b)-1.0)/2.0;
+			s=(1/3.0)*x*x*x+(b-x)*0.5*x*x; 
+		 }
+		 printf(""%.4f\n"",s);
+	 }
+	return 0;
+}
+"
+"2104010227","杨阳","计算机21-2 - 杨阳","B","Yes","2021-10-16 12:04:34","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,n,m,l;
+	char a[100][100]={};
+	cin>>t;
+	while(t--){
+		scanf(""%d %d %d"",&n,&m,&l);
+        for(int i=0;i<n;i++)scanf(""%s"",a[i]);
+		for(int i=0;i<n*l;i++){
+			for(int j=0;j<m*l;j++){
+				printf(""%c"",a[i/l][j/l]);
+			}
+			printf(""\n"");
+		}
+	}
+	return 0;
+}
+"
+"2104010227","杨阳","计算机21-2 - 杨阳","C","No","2021-10-16 13:10:08","#include<bits/stdc++.h>
+using namespace std;	
+
+struct homework
+{
+	string name;
+	int a,time;
+};
+
+bool cmp(homework a,homework b){
+	if(a.a==b.a){
+		return a.time<b.time;
+	}
+    return a.a>b.a;
+}
+int main(){
+	 homework h[100010];
+     int t,n,o,i=0;
+	 char s[20];
+	 scanf(""%d"",&t);
+	 while(t--){
+	 scanf(""%d"",&n);
+		while(n--)
+		{   scanf(""%d"",&o);
+			if(o==1){
+			scanf("" %s %d"",s,&h[i].a);
+			h[i].time=i;
+			h[i].name=s;
+			i++;
+			sort(h,h+i,cmp);
+		}
+		else{
+           printf(""%s\n"",h[0].name.c_str());
+		   h[0].a=0;h[0].time=0;
+		   sort(h,h+i,cmp);
+		   i--;
+		}}
+		i=0;
+        memset(h,0,sizeof(h));//清空结构体
+	 }
+	return 0;
+}
+"
+"2104010227","杨阳","计算机21-2 - 杨阳","D","No","2021-10-16 13:23:10","#include<bits/stdc++.h>
+using namespace std;	
+
+struct homework
+{
+	string name;
+	int a,time;
+};
+
+bool cmp(homework a,homework b){
+	if(a.a==b.a){
+		return a.time<b.time;
+	}
+    return a.a>b.a;
+}
+int main(){
+	 vector<homework> h;
+	 homework H;
+     int t,n,o,i=0;
+	 char s[20];
+	 scanf(""%d"",&t);
+	 while(t--){
+	 scanf(""%d"",&n);
+		while(n--)
+		{   scanf(""%d"",&o);
+			if(o==1){
+			scanf("" %s %d"",s,&H.a);
+			H.time=i;
+			H.name=s;
+			i++;
+			h.push_back(H);
+		}
+		else{
+			sort(h.begin(),h.end(),cmp);
+           printf(""%s\n"",h[0].name.c_str());
+		   h.erase(h.begin());
+		}}
+		i=0;
+        h.clear();
+	 }
+	return 0;
+}
+"
+"2104010227","杨阳","计算机21-2 - 杨阳","E","Yes","2021-10-16 11:25:46","#include<bits/stdc++.h>
+using namespace std;
+	
+int main(){
+     int n,x,o=0;
+     bitset<1000010>s;
+	 scanf(""%d"",&n);
+	 for(int i=0;i<n;i++){
+        scanf(""%d"",&x);
+		s[x]=true;
+	 }
+	 for(size_t i=0;i<s.size();++i){
+		 if(s.test(i)==true)
+		 {if(o>=1)printf("" "");
+		 o++;
+		 printf(""%d"",i);}
+	 }
+	return 0;
+}
+"
+"2104010304","丁宁宇","计算机21-3 - 丁宁宇","A","No","2021-10-16 11:28:40","#include<stdio.h>
+#include<cmath>
+int main()
+{
+   int T,k,b;
+   double s,a;
+   scanf(""%d"",&T);
+   for(int i=0;i<T;i++)
+   {
+      scanf(""%d%d"",&k,&b);
+   }
+   printf(""%.4f\n"",s);
+   return 0;
+}
+"
+"2104010304","丁宁宇","计算机21-3 - 丁宁宇","B","No","2021-10-16 11:35:38","#include<stdio.h>
+int main()
+{
+   int T,n,m,k;
+   char a[126],b[126];
+   scanf(""%d"",&T);
+   for(int i=0;i<T;i++)
+   {
+       scanf(""%d%d%d"",&n,&m,&k);
+       scanf(""%s"",&a);
+   }
+   return 0;
+}
+"
+"2104010313","刘跃","计算机21-3 - 刘跃","E","No","2021-10-16 11:31:17","#include <iostream>
+#include <map>
+
+
+using namespace std;
+
+void show(map<int, char> m) {
+    map<int, char>::iterator it;
+    for (it = m.begin(); it != m.end(); ++it) {
+        cout << it->first << "" "";
+    }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    map<int, char> m;
+    while (n--) {
+        int temp;
+        cin >> temp;
+        m[temp] = '6';
+    }
+
+    show(m);
+
+
+    return 0;
+}"
+"2104010315","钱子俊","计算机21-3 - 钱子俊","E","No","2021-10-16 13:06:22","#include<iostream>  
+#include<algorithm>
+using namespace std;  
+int a[1000000]={0};  
+int main()  
+{  
+    int n,i;  
+    cin>>n;  
+    for(int i=0;i<n;i++) 
+	{
+		cin>>a[i];
+	 } 
+        
+    for(i=0;i<n-1;i++)
+        for(i=0;i<n-1;i++)
+        {
+        	if(a[i]>a[i+1])
+        	swap(a[i],a[i+1]);
+		}
+	n=unique(a,a+n)-a;
+    for(i=0;i<n;++i)
+		{
+			if(i==0)
+			{
+				cout<<a[i];
+			}
+			else
+			{
+				cout<<"" ""<<a[i];
+			}
+		}
+		return 0;     
+}      
+"
+"2104010316","邱宇","计算机21-3 - 邱宇","E","No","2021-10-16 12:34:11","#include<stdio.h>
+int main()
+{int a[10];
+int n,i,j,h;
+    scanf(""%d"",&n);
+    for(i=0;i<n;i++)
+        {scanf(""%d"",&a[i]);}
+        for(i=0;i<n;i++)
+        for(j=0;j<n-i;j++)
+        {
+            if(a[j]>a[j+1]){
+                h=a[j+1];
+                a[j+1]=a[j];
+                a[j]=h;
+            }
+        }
+         for(i=0;i<n;i++)
+            {
+        printf(""%d "",a[i]);
+        }return 0;
+}"
+"2104010321","王雪扬","计算机21-3 - 王雪扬","A","Yes","2021-10-16 11:51:40","#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int T,k,i;
+    double s,c,d,s1,s2,b;
+    while(scanf(""%d"",&T)!=EOF)
+    {for(i=0;i<T;i++)
+    {   s=0;
+        scanf(""%d%lf"",&k,&b);
+        if(k==1)
+        {
+            s=b*b/4;
+            printf(""%.4f\n"",s);
+        }
+        if(k==2)
+        {
+            c=sqrt(1+4*b);
+            d=(c-1)/2;
+            s1=d*d*d/3;
+            s2=(b-d)*d*d/2;
+            s=s1+s2;
+            printf(""%.4f\n"",s);
+        }
+    }}
+    return 0;
+}
+"
+"2104010325","易金标","计算机21-3 - 易金标","B","Yes","2021-10-16 12:27:24","#include <bits/stdc++.h>
+int main(void)
+{
+    int T;
+    scanf(""%d"", &T);
+    while (T--)
+    {
+        int n, m, k;
+        scanf(""%d%d%d"", &n, &m, &k);
+        char num[n][m+1];
+        for (int i = 0; i < n; i++)
+        {
+            scanf(""%s"", num[i]);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            int a = k;
+            while (a--)
+            {
+                for (int j = 0; j < m ; j++)
+                {
+                    int b = k;
+                    while (b--)
+                    {
+                        printf(""%c"", num[i][j]);
+                    }
+                }
+                printf(""\n"");
+            }
+        }
+    }
+    return 0;
+}"
+"2104010325","易金标","计算机21-3 - 易金标","E","No","2021-10-16 13:05:07","#include <stdio.h>
+#include <set>
+using namespace std;
+int main()
+{
+    set<int>s;
+    int n;
+    scanf(""%d"", &n);
+    while (n--)
+    {
+        int ch;
+        scanf(""%d"",&ch);
+        s.insert(ch);
+    }
+    for (auto it = s.begin(); it != s.end(); it++)
+    {
+        if (it == s.begin())
+        {
+            printf(""%d"", *it);
+        }
+        else
+        printf("" %d"", *it);
+    }
+    return 0;
+}"
+"2104010327","张文瀚","计算机21-3 - 张文瀚","B","No","2021-10-16 13:58:48","#include<iostream>
+using namespace std;
+main()
+{
+	int T,n,m,k,i,j,f=0,i1=0,j1=0,f2=0;
+	char a[100][100],b[100][100];
+	cin>>T;
+	while(T--)
+	{
+		cin>>n>>m>>k;
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				cin>>a[i][j];
+			}
+		}
+		n*=k;
+		m*=k;
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				if(f>=k)
+				{
+					j1++;
+					f=0;
+				}
+				b[i][j]=a[i1][j1];
+				f++;	
+			}
+			if(f2>=k)
+			{
+				i1++;
+				f2=0;
+			}
+			j1=0;
+			f2++;
+		}
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+				cout<<b[i][j];
+			}
+			cout<<endl;
+		}
+	}
+} "
+"2104010328","张新萌","计算机21-3 - 张新萌","B","Yes","2021-10-16 12:19:42","#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    int T, n, m, k,h;
+    char need;
+    
+    scanf(""%d"", &T);
+    for (int i = 0; i < T; i++)
+    {
+        scanf(""%d %d %d"", &n, &m, &k);
+        char a[n][m];
+        for (int hang = 0; hang < n; hang++)
+        {
+            for (int lie = 0; lie < m; lie++)
+            {
+                scanf(""%c"", &a[hang][lie]);
+                h=a[hang][lie];
+                if(h>=33&&h<=126)
+                ;
+                else
+                lie--;
+            }
+        }
+                                      
+        for (int Hang = 0; Hang < n; Hang++)
+        {
+            int y = 0;
+            while (y < k)
+            {
+                for (int Lie = 0; Lie < m; Lie++)
+                {
+                    int x = 0;
+                    while (x < k)
+                    {
+                        printf(""%c"", a[Hang][Lie]);
+                        x++;
+                    }
+
+                }
+                printf(""\n"");
+                y++;
+            }
+        }
+    }
+}"
+"2104010401","常灏","计算机21-4 - 常灏","C","No","2021-10-16 13:26:34","#include<cstdio>
+using namespace std;
+char a[505][505];
+int dx[4]= {-1,0,1,0},dy[4]= {0,1,0,-1},f=0;
+int main()
+{
+    int  T,m,n,ex,ey,sx,sy;
+    scanf(""%d\n"",&T);
+    while(T--)
+    {
+        scanf(""%d%d\n"",n,m);
+
+        for (int i=1; i<505; i++)
+        {
+            scanf(""%d%d%d%d\n"",&sx,&sy,&ex,&ey);
+
+            f=(f+1)%4;
+
+            if(a[sx][sy]==0)
+            {
+                sx=sx+dx[f];
+                sy=sy+dy[f];
+            }
+        }
+        if(a[x][y]==a[ex][ey])
+        {
+            printf(""YES\n"");
+        }
+        else
+        {
+            printf(""NO\n"");
+        }
+    }
+    return 0;
+}"
+"2104010407","董松昆","计算机21-4 - 董松昆","E","No","2021-10-16 13:05:02","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;int a[999999];
+    scanf(""%d"",&t);
+    for(int i=0;i<t;i++)
+    {
+        scanf(""%d"",&a[i]);
+
+    }
+    sort(a,a+t+1);
+    unique(a,a+t+1);
+
+    int tem=0;
+    for (int y=1;y<t;y++)
+    {
+        if(tem!=0)
+        {
+               printf("" "");
+        }
+        printf(""%d"",a[y]);
+        tem++;
+    }
+    printf(""\n"");
+
+    return 0;
+}
+"
+"2104010410","归玉庆","计算机21-4 - 归玉庆","E","No","2021-10-16 12:03:41","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,i;
+    static int a[1000000];
+    scanf(""%d"",&n);
+    for(i=0;i<n;i++)
+    {
+		scanf(""%d"",&a[i]);
+	}
+	for(i=0;i<n-1;i++)
+	{
+		if(a[i]>=a[i+1]) {swap(a[i],a[i+1]);}
+		else {a[i]=a[i];a[i+1]=a[i+1];}
+	}
+	for(i=0;i<n;i++)
+	{
+		if(i==0) {printf(""%d"",a[i]);}
+		if(i!=0&&a[i]!=a[i-1]) {printf("" %d"",a[i]);}
+	}
+	return 0;
+}"
+"2104010413","何栋","计算机21-4 - 何栋","B","Yes","2021-10-16 12:19:07","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t --)
+    {
+        int n,m,k;
+        char s[200][200];
+        scanf(""%d%d%d"",&n,&m,&k);
+        for(int i = 0; i < n; i ++)
+        {
+            scanf(""%s"",&s[i]);
+        }
+        for(int i = 0; i < n; i ++)
+        {
+            for(int x = 0; x < k; x ++)
+            {
+                for(int j = 0; j < m; j ++)
+                {
+                    for(int c = 0; c < k; c ++)
+                    {
+                        printf(""%c"",s[i][j]);
+                    }
+                }
+                printf(""\n"");
+            }
+        }
+    }
+    return 0;
+}"
+"2104010415","黄彬洋","计算机21-4 - 黄彬洋","B","No","2021-10-16 12:15:37","#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+//
+//int main()
+//{
+//    int n,a[1000005];
+//    cin>>n;
+//        for(int i=0;i<n;i++)
+//        {
+//            cin>>a[i];
+//        }
+//        sort(a,a+n);
+//        int m=unique(a,a+n)-a;
+//        for(int i=0;i<m;i++)
+//        {
+//            if(i<m-1)
+//                printf(""%d "",a[i]);
+//            else
+//                printf(""%d"",a[i]);
+//        }
+//    return 0;
+//}
+//
+int main()
+{
+    int t,n,m,k;
+    char a[305][305];
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m>>k;
+        for(int i=0;i<n;n++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                cin>>a[n][m];
+            }
+        }
+        for(int j=0;j<n;j++)
+        {
+            for(int x=0;x<m;x++)
+            {
+                for(int y=0;y<k;y++)
+                {
+                    printf(""%c"",a[j][x]);
+                }
+            }
+            printf(""\n"");
+        }
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+"2104010415","黄彬洋","计算机21-4 - 黄彬洋","E","No","2021-10-16 11:32:38","#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,a[1000005];
+    cin>>n;
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        sort(a,a+n);
+        int m=unique(a,a+n)-a;
+        for(int i=0;i<m;i++)
+        {
+            if(i<m-1)
+                printf(""%d "",a[i]);
+            else
+                printf(""%d"",a[i]);
+        }
+    return 0;
+}
+
+"
+"2104010417","寇振海","计算机21-4 - 寇振海","B","Yes","2021-10-16 13:16:40","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T;
+	scanf(""%d"",&T);
+	getchar();
+	while(T--)
+	{
+		
+		int n,m,k;
+		scanf(""%d %d %d"",&n,&m,&k);
+		char a[n][m];
+		a[n][m] = {0};
+		getchar();
+		for(int i = 0; i < n; i++)
+		{
+			for(int j = 0; j < m; j++)
+			{
+				scanf(""%c"",&a[i][j]);
+			}
+			getchar();
+		}
+		for(int i = 0; i < n; i++)
+		{
+			for(int y = 0; y < k; y++)
+			{
+				for(int j = 0; j < m; j++)
+				{
+					for(int x = 0; x < k; x++)
+					{
+						printf(""%c"",a[i][j]);
+					}
+				}
+				printf(""\n"");
+			}
+
+		}
+	}
+	return 0;
+}"
+"2104010417","寇振海","计算机21-4 - 寇振海","E","No","2021-10-16 11:49:07","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	vector<int> a;
+	int x,b;
+	scanf(""%d"",&x);
+	
+	for(int i = 0; i < x; i++)
+	{
+		scanf(""%d"",&b);
+		a.push_back(b);
+	}
+	sort(a.begin(),a.end());
+	a.erase(unique(a.begin(),a.end()),a.end());
+	{
+		vector<int> c = a;
+		a.swap(c);
+	}
+	vector<int>::iterator it;
+	for(it = a.begin(); it != a.end(); it++)
+	{
+		if(it == a.begin())
+		printf(""%d"",*it);
+		else
+		printf("" %d"",*it);
+	}
+	return 0;
+ } "
+"2104010419","李烨煊","计算机21-4 - 李烨煊","A","Yes","2021-10-16 13:58:10","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T;
+    double k,b,s;
+    scanf(""%d"",&T);
+    while(T--)
+    {
+    scanf(""%lf%lf"",&k,&b);
+        if(k==1)
+        {
+            s=(b*b)/4.0;
+        }
+        else
+        {
+            double x,y;
+            x=(sqrt(1+4*b)-1)/2.0;
+            y=(1-sqrt(1+4*b))/2.0+b;
+            s=(b*y)/2.0+(pow(x,3))/3.0-(x*y)/2.0;
+        }
+        printf(""%.4f\n"",s);
+    }
+    return 0;
+}
+"
+"2104010421","凌晟博","计算机21-4 - 凌晟博","E","No","2021-10-16 13:54:18","#include<iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+ set<int>s;
+int main()
+{ 
+    int n,m;
+    cin>>n;
+    while(n--)
+    {
+		cin>>m;
+		s.insert(m);
+	} 
+   for (auto it = s.begin(); it != s.end();it++)
+       {
+           cout << *it;
+           it++;
+           if(it!=s.end())
+           cout<<"" "";
+		   
+		   }
+       
+        
+        
+    return 0;
+}"
+"2104010431","宗昊森","计算机21-4 - 宗昊森","B","Yes","2021-10-16 12:19:45","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{			 
+	char a[110][110];
+	int t,n,m,k;
+	while(~scanf(""%d"",&t))
+	{
+		for(int i=1;i<=t;i++)
+		{
+			scanf(""%d%d%d"",&n,&m,&k);
+			
+		 for(int i=1;i<=n;i++)
+		 {
+		 	scanf(""%s"",a[i]+1);
+		 }							
+		
+			
+			for(int j=1;j<=n;j++)
+			{
+				for(int i=1;i<=k;i++)
+				{
+					for(int l=1;l<=m;l++)
+					{
+						for(int p=1;p<=k;p++)
+						{
+							printf(""%c"",a[j][l]);	
+						}
+					}
+					printf(""\n"");
+				}
+			}	
+		}
+	}
+}
+
+"
+"2104010431","宗昊森","计算机21-4 - 宗昊森","E","No","2021-10-16 13:48:44","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	char n,a;
+	set<int> s;
+	scanf(""%d"",&n);
+	for(int i=1;i<=n;i++)
+	{
+		
+		scanf(""%d"",&a);
+		s.insert(a);
+	}
+	a=0;
+	for (auto it=s.begin();it!=s.end();it++)
+	    {
+	    	a++;
+	    	if(a==1){
+				printf(""%d"",*it);
+			}else{
+				printf("" %d"",*it);
+			} 
+	    }	
+}"
+"2104010502","陈宇杰","计算机21-5 - 陈宇杰","B","No","2021-10-16 11:54:01","#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int t,n,m,k;
+    while(scanf(""%d"",&t)!=EOF)
+    {
+        scanf(""%d%d%d"",&n,&m,&k);
+        char A[100][100];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                scanf(""%c"",&A[i][j]);
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                for(int a=1;a<=k;a++)
+                {
+                    printf(""%c"",A[i][j]);
+                }
+
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010503","范明宇","计算机21-5 - 范明宇","B","No","2021-10-16 13:41:41","#include <bits/stdc++.h>
+using namespace std;char a[100][100];
+int main()
+{
+   int t;
+   scanf(""%d"",&t);
+   while(t--)
+   {
+       int n,m,k,f;
+       scanf(""%d%d%d"",&n,&m,&k);getchar();
+       for(int v=1;v<=n;v++)
+       {
+          for(int z=1;z<=m;z++)
+         {
+          scanf(""%c"",&a[v][z]);
+         }getchar();
+       }
+      for(int i=1;i<=(n*k);i++)
+       {  int b=1,d=1,c=1;
+           if(i>f*k)
+              {
+                c+=f;
+                if(i==(f+1)*k) f+=1;
+              }
+           for(int s=1;s<=(m*k);s++)
+           {
+
+              if(s<=b*k)
+              {
+                  printf(""%c"",a[c][d]);
+              }else {b+=1;d+=1;
+                  printf(""%c"",a[c][d]);}
+           }
+           printf(""\n"");
+       }
+   }
+    return 0;
+}"
+"2104010503","范明宇","计算机21-5 - 范明宇","E","No","2021-10-16 11:18:53","#include<bits/stdc++.h>
+using namespace std;int a[1000005];
+int main()
+{
+    int n;
+    bool x=0;
+    scanf(""%d"",&n);
+    for(int i=1;i<=n;i++)
+    {
+        scanf(""%d"",&a[i]);
+    }
+    for(int s=1;s<=n;s++)
+    {
+        sort(a+1,a+n+1);
+    }
+    for(int b=1;b<=n;b++)
+    {
+
+        if(a[b]==a[b+1])
+            continue;
+            if(x==1)
+            printf("" "");
+        printf(""%d"",a[b]);
+        x=1;
+
+    }
+    return 0;
+}
+"
+"2104010504","冯源","计算机21-5 - 冯源","B","Yes","2021-10-16 13:45:03","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	scanf(""%d"",&t);
+	for(int i=1;i<=t;i++)
+	{
+		int n,m,k;
+		char a[1000][1000]={0};
+		scanf(""%d %d %d"",&n,&m,&k);
+		for(int j=1;j<=n;j++)
+		{
+			scanf(""%s"",a[j]+1);
+		}
+		for(int j=1;j<=n;j++)
+		{
+			for(int h=1;h<=k;h++)
+			{
+				for(int l=1;l<=m;l++)
+				{
+					for(int g=1;g<=k;g++)
+					{
+						printf(""%c"",a[j][l]);
+					}				
+				}printf(""\n"");
+			}
+			
+		}
+	}
+	return 0;
+}"
+"2104010505","高合权","计算机21-5 - 高合权","A","Yes","2021-10-16 12:55:07","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	int k,b;
+	scanf(""%d"",&t);
+	while(t--){
+		scanf(""%d%d"",&k,&b);
+		if(k==1){
+			double x,y;
+			x=b/2.0;
+			y=b/2.0;
+			printf(""%.4f\n"",x*y);
+		}
+		else if(k==2){
+			double sum=sqrt(1+4*b);
+			double ans=(sum-1)/2.0;
+		//double p=((ans*ans)/2.0)-((ans*ans*ans)/3.0);
+		//	double pr=ans*ans-p;
+		//	printf(""%.4f\n"",pr);
+		
+		double ky=0.5*(1-sqrt(4*b+1))+b;
+		double pr=((b*ky)*0.5)-((ky*ans)*0.5)+((ans*ans*ans)/3.0);
+		printf(""%.4f\n"",pr); 
+		}
+	}
+}
+"
+"2104010505","高合权","计算机21-5 - 高合权","B","Yes","2021-10-16 11:54:19","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	char a[1005][1005];
+	char b[1005][1005];
+	int t;
+	int n,m,k;
+	scanf(""%d"",&t);
+	while(t--){
+		scanf(""%d%d%d"",&n,&m,&k);
+		for(int i=1;i<=n;i++){
+			scanf(""%s"",a[i]+1);
+		}
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=m;j++){
+				b[i][j]=a[i][j];
+			}
+		}
+		for(int i=1;i<=n;i++){
+			for(int p=1;p<=k;p++){
+				
+			
+			for(int j=1;j<=m;j++){
+				for(int l=1;l<=k;l++){
+					
+						printf(""%c"",b[i][j]);
+					
+					
+				}
+				
+			}
+			printf(""\n"");
+			}
+	
+		}
+	}
+}"
+"2104010505","高合权","计算机21-5 - 高合权","C","No","2021-10-16 13:19:49","#include<bits/stdc++.h>
+using namespace std;
+int dx[4]={-1,0,1,0};
+int dy[4]={0,1,0,-1};
+int main(){
+	int t;
+	int n,m;
+	char a[505][505];
+	scanf(""%d"",&t);
+	int sx,sy,ex,ey;
+	while(t--){
+		scanf(""%d%d"",&n,&m);	
+		int x=0,y=0;
+		for(int i=1;i<=n;i++){
+			
+			
+				scanf(""%s"",&a[i]+1);
+		
+			
+		}
+		scanf(""%d%d%d%d"",&sx,&sy,&ex,&ey);
+		int temp=0;
+	
+		int tx=sx,ty=sy;
+		int sum=0;
+		
+		for(int i=1;i<=n*m*4;i++){
+			
+			tx=tx+dx[temp];
+			ty=ty+dy[temp];
+			if(a[tx][ty]!='1'&&tx>0&&tx<=n&&ty>0&&ty<=m){
+				x=tx;
+				y=ty;
+			}else{
+				temp=(temp+1)%4;
+			}
+		//	printf(""tx=%d "",tx);
+		//	printf(""ty=%d\n"",ty);
+			
+		//	printf(""x=%d "",x);
+		//	printf(""y=%d"",y);
+		//	printf(""\n"");
+			
+			if(x==ex&&y==ey){
+				printf(""YES\n"");
+				break;
+			}
+		}
+		if(x!=ex||y!=ey){
+			printf(""NO\n"");
+			
+		}
+	}
+}"
+"2104010506","阚月","计算机21-5 - 阚月","E","No","2021-10-16 12:57:00","#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	set <int> s;
+	int n,a,e=1;
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++){
+		scanf(""%d"",&a);
+		s.insert(a);
+	}
+
+	for(auto it=s.begin();it!=s.end();it++){
+		if(e==1){
+			printf(""%d"",*it);
+			e++;
+		}else{
+			printf("" %d"",*it);
+		}
+	}
+	return 0;
+}"
+"2104010507","雷中召","计算机21-5 - 雷中召","A","Yes","2021-10-16 12:44:32","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T;
+	scanf(""%d"",&T);
+	while(T--)
+	{
+		double k,b,s;
+		scanf(""%lf%lf"",&k,&b);
+		if(k==1)
+		{
+			s=0.25*b*b;
+		}
+		else if(k==2)
+		{
+			double m,n;
+			m=0.5*(1-sqrt(4*b+1))+b;
+			n=0.5*(sqrt(1+(4*b))-1);
+			s=(0.5*b*m)-(0.5*m*n)+(1/3.0*(pow(n,3)));
+		}
+		if(T==0)
+		{
+			printf(""%.4f\n"",s);
+		}
+		if(T!=0)
+		{
+			printf(""%.4f\n"",s);
+		}
+	}
+} "
+"2104010507","雷中召","计算机21-5 - 雷中召","B","Yes","2021-10-16 12:07:42","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	char a[1005][1005];
+	char b[1005][1005];
+	int t;
+	int n,m,k;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		scanf(""%d%d%d"",&n,&m,&k);
+		for(int i=1;i<=n;i++)
+		{
+			scanf(""%s"",a[i]+1);
+		}
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=m;j++)
+			{
+				b[i][j]=a[i][j];
+			}
+		}
+		for(int i=1;i<=n;i++)
+		{
+			for(int p=1;p<=k;p++)
+			{
+				for(int j=1;j<=m;j++)
+				{
+					for(int l=1;l<=k;l++)
+					{
+						printf(""%c"",b[i][j]);	
+					}
+				}
+				printf(""\n"");
+			}
+		}
+	}
+}
+"
+"2104010508","李佳鸿","计算机21-5 - 李佳鸿","B","No","2021-10-16 12:59:01","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,n,m,k;
+	scanf(""%d"",&t);
+	char a[50001];
+	while(t--)
+	{
+		scanf(""%d %d %d"",&n,&m,&k);
+		int i=1,p=1;
+		while(n--)
+		{
+			for(;i<=m*p;i++)
+			{
+				if(i==m*p)
+				{
+					scanf(""%c\n"",&a[m*p]);
+				}
+				else
+				scanf(""%c"",&a[i]);
+				
+			}
+			i=i+m;
+			p=p+1;
+		}
+		//for(int i=1;i<=n*m;i++)
+		//{
+		//	scanf(""%c"",&a[i]);
+		//}
+		for(int l=1;l<=n*m;l++)
+		{
+			for(int j=1;j<=k;j++)
+			{
+			printf(""%c"",a[l]);
+			}
+			if(l==m)
+			puts("""");
+		}
+	}
+	return 0;
+} "
+"2104010510","李明喆","计算机21-5 - 李明喆","B","Yes","2021-10-16 11:38:01","#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int t;
+	scanf(""%d"", &t);
+	while(t--)
+    {
+
+
+	int n, m, k;
+	scanf(""%d%d%d"", &n, &m, &k);
+	char ch1[101][101];
+	for(int i = 0; i < n; i++)
+	{
+		scanf(""%s"", &ch1[i][0]);
+	}
+	for(int i = 0; i < n; i++)
+	{
+	    for(int l = 0; l < k; l++)
+        {
+            for(int j = 0; j < m; j++)
+            {
+                for(int l = 0; l < k; l++)
+                {
+                printf(""%c"", ch1[i][j]);
+                }
+            }
+            puts("""");
+        }
+	}
+    }
+	return 0;
+}
+"
+"2104010510","李明喆","计算机21-5 - 李明喆","D","No","2021-10-16 12:57:34","#include<cstdio>
+#include<queue>
+#include<string>
+using namespace std;
+struct object
+{
+    string name;
+    int level;
+    bool operator < (const object &that) const
+    {
+        return level < that.level;
+    }
+};
+object ob;
+
+int main()
+{
+    int t;
+    char tmpz[21];
+    string tp;
+    priority_queue<object> OB;
+    scanf(""%d"", &t);
+    while(t--)
+    {
+        int n;
+        scanf(""%d"", &n);
+        for(int i = 0; i < n; i++)
+        {
+            int op;
+            scanf(""%d"", &op);
+            switch(op)
+            {
+                case 1:
+                    scanf(""%s"", tmpz);
+                    ob.name = tmpz;
+                    scanf(""%d"", &ob.level);
+                    OB.push(ob);
+                    break;
+                case 2:
+                    tp = OB.top().name;
+                    printf(""%s\n"", tp.c_str());
+                    OB.pop();
+                    break;
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010510","李明喆","计算机21-5 - 李明喆","E","No","2021-10-16 13:10:27","#include<cstdio>
+#include<set>
+using namespace std;
+
+int main()
+{
+    int n, tp;
+    set<int> num;
+    scanf(""%d"", &n);
+    for(int i = 0; i < n; i++)
+    {
+        scanf(""%d"", &tp);
+        num.insert(tp);
+    }
+    for(auto it = num.begin(); it != num.end(); it++)
+    {
+        if(it != num.begin())
+        {
+            printf("" %d"", (int)*it);
+        }
+        else
+        {
+            printf(""%d"", (int)*it);
+        }
+    }
+    return 0;
+}
+"
+"2104010511","李中航","计算机21-5 - 李中航","A","No","2021-10-16 12:59:02","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    double x,i,a=0,h=0;
+    int t,k,b;
+    scanf(""%d%d%d"",&t,&k,&b);
+    while(t--)
+    {
+        if(h==pow(i,k) && h==-x+b)
+        {
+            a=(b*h)/2;
+        }
+        printf(""%.4f"",a);
+    }
+    return 0;
+}
+"
+"2104010512","刘博","计算机21-5 - 刘博","A","No","2021-10-16 12:59:14","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,k,b,j;
+	double x,y,s;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		x=x;
+		y=y;
+		scanf(""%d%d"",&k,&b);
+	    j=pow(x,k);
+		if(y==j&&y==-x+b)
+		{
+			s=(b*y)/2;
+		}
+		printf(""%.4f"",s);	
+	}
+	return 0;
+} "
+"2104010512","刘博","计算机21-5 - 刘博","B","No","2021-10-16 12:59:26","#include<bits/stdc++.h>
+using namespace std;
+char a[10000];
+int main() 
+{
+	int t, n, m, k,i;
+	int j;
+	scanf(""%d"", &t);
+	while (t--) 
+	{
+		scanf(""%d %d %d"", &n, &m, &k);
+		for (i = 0; i < n*m; i++)
+	    {
+			for (j = 0; j < m; j++) 
+			{
+				scanf(""%s"", &a[j]);
+			}		
+		}
+		for(i=0;i<(n*k)*(m*k);i++)
+		{
+			for(j = 0; j < m*k; j++)
+			{
+				for(i = 0; i < k; i++)
+				{
+					printf(""%c"",a[j]);
+				}
+			}
+			printf(""\n"");
+		}
+	}	
+	return 0;
+}"
+"2104010516","牛梓旭","计算机21-5 - 牛梓旭","B","Yes","2021-10-16 11:32:37","#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int t,n,m,k;char a[1005][1005];
+	scanf(""%d"",&t);
+	while (t--) {
+		scanf(""%d%d%d"",&n,&m,&k);
+		for (int i=0;i<n;i++) {
+			scanf(""%s"",a+i);
+		}
+		
+		for (int i=0;i<n;i++) {
+			for (int q=1;q<=k;q++) {
+			
+			for (int j=0;j<m;j++) {
+				for (int r=1;r<=k;r++) {
+					printf(""%c"",a[i][j]);
+				}
+			}
+			puts("""");
+		}
+		}
+	}
+	return 0;
+}
+"
+"2104010516","牛梓旭","计算机21-5 - 牛梓旭","C","No","2021-10-16 12:03:13","#include<bits/stdc++.h>
+using namespace std;
+int nx[4] = {0, 1, 0, -1};
+int ny[4] = {1, 0, -1, 0};
+int t,n,m,sx,sy,ex,ey;
+int vis[505][505];;
+int a[505][505];
+int pd;
+void dfs(int x,int y)
+{
+	if (pd==1) return;
+	if (x==ex&&y==ey)
+	{
+		pd=1;
+		return;
+	}
+	
+	for (int i=0;i<4;i++) 
+	{
+		int tx=x+nx[i];
+		int ty=y+ny[i];
+		if (a[tx][ty]==1||vis[tx][ty]==1)
+			continue;
+		if (tx<1||tx>n||ty<1||ty>m)
+			continue;
+		vis[tx][ty]=1;
+		dfs(tx,ty);
+		vis[tx][ty]=0;
+	}
+	return;
+}
+char buff[505];
+int main(){
+	scanf(""%d"",&t);
+	while (t--) {
+		pd=0;
+		scanf(""%d%d"",&n,&m);
+		for (int i=1;i<=n;i++) {
+			scanf(""%s"",buff);
+			string x(buff); 
+			for (int j=0;j<=m;j++) {
+				a[i][j+1]=(int)x[j]-48;
+			
+			}
+				
+		}
+ 		scanf(""%d%d%d%d"",&sx,&sy,&ex,&ey);
+		dfs(sx,sy);
+		if (pd==1) printf(""YE5\n"");
+		else printf(""N0\n"");
+	} 
+	return 0;
+}
+"
+"2104010516","牛梓旭","计算机21-5 - 牛梓旭","D","No","2021-10-16 13:11:02","#include<bits/stdc++.h>
+using namespace std;
+char buff[20];
+struct Work{
+	string name;
+	int yxj;
+	int shunxu;
+	bool operator <(const Work &that)const {//排序 
+		if (yxj==that.yxj) {
+			return shunxu<that.shunxu;
+		}
+		return yxj>that.yxj;
+	}
+};
+int main(){
+	int t;
+	scanf(""%d"",&t);
+	vector<string>res;
+	while (t--) {
+		int n;
+		int cnt=0;
+		int ans=0;
+		scanf(""%d"",&n);
+		priority_queue<Work>works;
+		for (int i=1;i<=n;i++){
+			int pd;
+			scanf(""%d"",&pd);
+			if (pd==1) {
+				Work work;
+				int pa;
+				scanf(""%s"",buff);
+				scanf(""%d"",&pa);
+				work.name=buff;
+				work.yxj=pa;
+				work.shunxu=++cnt;
+				works.push(work);
+			}
+			else ans++;
+			
+			
+		}
+		while (ans--) {
+				while (!(int)works.empty()) {
+				res.push_back(works.top().name);
+				works.pop();
+			} 
+				
+				auto it=res.end();
+				it--;
+				printf(""%s\n"",it->c_str());
+				res.erase(it);
+			}
+		
+		
+		
+		
+	}
+	return 0;
+}
+"
+"2104010516","牛梓旭","计算机21-5 - 牛梓旭","E","No","2021-10-16 11:35:32","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n;
+	scanf(""%d"",&n);
+	multiset<int>a;
+	for (int i=1;i<=n;i++){
+		int x;
+		scanf(""%d"",&x);
+		auto it=a.find(x);
+		if (it==a.end()) 
+		a.insert(x);
+	}
+
+	for (auto it = a.begin(); it != a.end();it++)
+    {
+    	if (it!=a.begin()) printf("" %d"",*it);
+    	else printf(""%d"",*it);
+    }
+    puts("""");
+	return 0;
+}
+"
+"2104010519","王令开","计算机21-5 - 王令开","A","Yes","2021-10-16 11:56:00","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int k,b;
+	double x1,x2,x;
+	int T;
+	scanf(""%d"",&T);
+	while(T--){
+		scanf(""%d%d"",&k,&b);
+		x1=0,x2=b;
+		while(x2-x1>0.000001){
+		x=(x1+x2)/2;
+		if(pow(x,k)-b+x<0){
+			x1=x;
+		}
+		else x2=x;
+		}
+		double sum=pow(x,k+1)/(k+1)+(b-x)*(b-x)/2;
+		printf(""%.4lf\n"",sum);
+	}
+return 0;
+}
+"
+"2104010519","王令开","计算机21-5 - 王令开","B","Yes","2021-10-16 11:06:50","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int T;
+	char ch[105][105];
+	scanf(""%d"",&T);
+	while(T--){
+		int n,m,k;
+		scanf(""%d%d%d"",&n,&m,&k);
+		getchar();
+		for(int j=0;j<n;j++){
+			for(int i=0;i<m;i++){
+				ch[i][j]=getchar();
+			}
+			getchar();
+		}
+		for(int j=0;j<n;j++){
+			for(int t=0;t<k;t++){
+				for(int i=0;i<m;i++){
+					for(int f=0;f<k;f++){
+						printf(""%c"",ch[i][j]);
+					}
+				}
+				puts("""");
+			}
+		}
+	}
+return 0;
+}
+"
+"2104010519","王令开","计算机21-5 - 王令开","C","Yes","2021-10-16 11:39:48","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	char chr[505][505];
+	vector<int>flag;
+	int T;
+	cin>>T;
+	while(T--){
+		int n,m;
+		scanf(""%d%d"",&n,&m);
+		for(int j=0;j<504;j++){
+			for(int i=0;i<504;i++){
+				chr[i][j]={'1'};
+			}
+		}
+		getchar();
+		for(int j=1;j<=n;j++){
+			for(int i=1;i<=m;i++){
+				chr[i][j]=getchar();
+			}
+			getchar();
+		}
+		int i1,i2,j1,j2,p,q;
+		scanf(""%d%d%d%d"",&j1,&i1,&j2,&i2);
+		flag.push_back(i1*1000+j1);
+		while(!flag.empty()){
+			p=flag[0]/1000;
+			q=flag[0]%1000;
+			flag.erase(flag.begin()+0);
+			if(chr[p][q+1]=='0') {
+				flag.push_back(p*1000+q+1);
+				chr[p][q+1]='n';
+			}
+			if(chr[p][q-1]=='0') {
+				flag.push_back(p*1000+q-1);
+				chr[p][q-1]='n';
+			}
+			if(chr[p+1][q]=='0') {
+				flag.push_back((p+1)*1000+q);
+				chr[p+1][q]='n';
+			}
+			if(chr[p-1][q]=='0') {
+				flag.push_back((p-1)*1000+q);
+				chr[p-1][q]='n';
+			}
+		}
+		if(chr[i2][j2]=='n') printf(""YE5\n"");
+		else printf(""N0\n"");
+	}
+return 0;
+}
+"
+"2104010519","王令开","计算机21-5 - 王令开","D","Yes","2021-10-16 12:28:44","#include<bits/stdc++.h>
+using namespace std;
+struct lst{
+	string name;
+	int sx1;
+	int sx2;
+	bool operator < (const lst &that) const{
+	if(sx1==that.sx1){
+		return sx2<that.sx2;
+	}
+	return sx1>that.sx1;
+	}
+};
+set <lst> LST;
+char ch[25];
+int main(){
+	int T;
+	scanf(""%d"",&T);
+	while(T--){
+		LST.clear();
+		int i=0;
+		int n;
+		scanf(""%d"",&n);
+		while(n--){
+			int P,Q;
+			scanf(""%d"",&P);
+			if(P==1){
+				lst p;
+				scanf(""%s"",ch);
+				scanf(""%d"",&Q);
+				p.name=ch;
+				p.sx1=Q;
+				p.sx2=i;
+				i++;
+				LST.insert(p);
+			}
+			if(P==2){
+				auto it=LST.begin();
+				auto it2=LST.begin();
+				printf(""%s\n"",(*it).name.c_str());
+				LST.erase(it2);
+			}
+		}
+	}
+return 0;
+}
+"
+"2104010519","王令开","计算机21-5 - 王令开","E","Yes","2021-10-16 13:15:16","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int o=0;
+	short int k[62500]={0};
+	int T,m,x,y;
+	scanf(""%d"",&T);
+	while(T--){
+		scanf(""%d"",&m);
+		y=m%16;
+		if(y==0) y=16;
+		y--;
+		x=(m-1)/16;
+		if((k[x]>>y)%2) continue;
+		else k[x]+=1<<y;
+	}
+	for(int i=0;i<62500;i++){
+		for(int j=0;j<16;j++){
+			if((k[i]>>j)%2){
+			if(o==0){
+			printf(""%d"",i*16+j+1);
+			o=1;
+			}
+			else printf("" %d"",i*16+j+1);
+		}
+		}
+	}
+return 0;
+}
+"
+"2104010520","王雪松","计算机21-5 - 王雪松","B","Yes","2021-10-16 12:28:40","#include<bits/stdc++.h>
+using namespace std;
+char a[105][105];
+int main(){
+int t,n,m,k;
+scanf(""%d"",&t);
+while(t--)
+{
+	scanf(""%d%d%d"",&n,&m,&k); 
+	for(int i=0;i<n;i++)
+	scanf(""%s"",a[i]);
+	for(int i=0;i<n;i++){
+		for(int e=0;e<k;e++)
+		{
+	for(int g=0;g<m;g++){
+	for(int h=0;h<k;h++)
+	printf(""%c"",a[i][g]);
+	}
+	puts("""");
+		}
+	}
+}
+return 0;
+}"
+"2104010520","王雪松","计算机21-5 - 王雪松","E","No","2021-10-16 11:54:38","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n,m;
+	scanf(""%d"",&n);
+int a[n];
+int i=n;
+while(i--)
+scanf(""%d"",&a[i]);
+sort(a,a+n);
+m=unique(a,a+n)-a;
+i=m;
+while(i--){
+printf(""%d"",a[m-i-1]);
+if(i!=0)printf("" "");
+}
+return 0;
+}"
+"2104010521","文杰","计算机21-5 - 文杰","C","No","2021-10-16 13:39:54","#include<iostream>
+
+using namespace std;
+int d;
+const int dx[4]={-1,0,1,0},dy[4]={0,1,0,-1};
+char arr[505][505];
+int main()
+{
+	int t;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		d=0;
+		int e,f;
+		scanf(""%d%d"",&e,&f);
+		for(int i=1;i<=e;i++)
+		{
+		
+			scanf(""%s"",arr[i]+1);
+		}
+		int x,y,a,b;
+		scanf(""%d%d%d%d"",&x,&y,&a,&b);
+		for(int i=1;;i++)
+		{
+			int ix,iy;
+			ix=x+dx[d];iy=y+dy[d];
+			if(arr[ix][iy]=='0'&&ix>=1&&ix<=e&&iy>=1&&iy<=f)
+			{
+				 arr[x][y]='1'; 
+				 x=ix;y=iy;
+				 
+			}
+			else
+			{
+				d=(d+1)%4;
+			}
+
+			if(x==a&&y==b)
+			{
+				printf(""YE5\n"");
+				break;
+			}
+			if(i==505*505)
+			{
+				printf(""N0\n"");
+				break;
+			}
+		}	
+	}
+	return 0;
+}
+"
+"2104010521","文杰","计算机21-5 - 文杰","E","No","2021-10-16 11:36:43","#include<bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+	set<int>arr;
+	int n;
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++)
+	{
+		int a;
+		scanf(""%d"",&a);
+		arr.insert(a);
+	} 
+	for(auto it=arr.begin();it!=arr.end();it++)
+	{
+		if(it!=arr.begin())printf("" "");
+		printf(""%d"",*it);
+	}
+	puts("""");
+	arr.clear();
+	return 0;
+}
+"
+"2104010523","熊春艺","计算机21-5 - 熊春艺","A","No","2021-10-16 13:24:21","#include<stdio.h>
+#include<math.h>
+using namespace std;
+int main()
+{
+	int k,t,b;
+	double m;
+	scanf(""%d"",&t);
+	for(int i=0;i<t;i++)
+	{
+		scanf(""%d%d"",&k,&b);
+		double s;
+		/*switch(k)
+		{
+		case 1:
+			s=(b*b)/4;
+			break;
+		case 2:
+			m=0.5*sqrt(1+4*b)-0.5;
+			s=1/3*m*m*m+0.5*(b-m)*(b-m);
+			break;
+		}*/
+		if(k==1)
+		{
+			m=b*b;
+			s=m/4;
+		}
+		else if(k==2)
+		{
+			m=0.5*sqrt(1+4*b)-0.5;
+			s=1/3*m*m*m+0.5*(b-m)*(b-m);
+		}
+		printf(""%0.4lf\n"",s);
+	}
+	return 0;
+}"
+"2104010523","熊春艺","计算机21-5 - 熊春艺","B","No","2021-10-16 11:56:10","#include<bits/stdc++.h>
+using namespace std;
+char arr[305][305];
+char brr[305][305];
+int main()
+{
+	int t;
+	int m,n,k;
+	scanf(""%d"",&t);
+	for(int o=0;o<t;o++)
+	{
+		scanf(""%d%d%d"",&n,&m,&k);
+		int l,i;
+		for(int i=0;i<n;i++)
+		{
+			for(int l=0;l<m;l++)
+			{
+				scanf(""%c"",&arr[l][i]);
+			}
+		}
+		int x,y,a=1,b=1;
+		bb:for(int x=0,a=1;x<a*k;x++)
+		{
+			
+			aa:for(int y=0;y<b*k;y++)
+			{
+				brr[y][x]=arr[a-1][b-1];
+			}
+			if(b<m)
+			{
+				b++;
+				goto aa;
+				
+			}
+		}
+		if(a<n)
+		{
+			a++;
+			goto bb;
+		}
+		for(int g=0;g<a*k;g++)
+		{
+			for(int h=0;h<b*k;h++)
+			{
+				printf(""%c"",brr[h][g]);
+			}
+		}
+	}
+	
+	return 0;
+}"
+"2104010524","闫国鑫","计算机21-5 - 闫国鑫","B","Yes","2021-10-16 12:30:09","#include <bits/stdc++.h>
+
+using namespace std;
+ char s[105][105];
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        int n,m,k;
+        scanf(""%d%d%d"",&n,&m,&k);
+        for(int i=0;i<n;i++)
+        {
+            scanf(""%s"",s[i]);
+        }
+        for(int i=0;i<n;i++)
+        {
+
+        for(int q=1;q<=k;q++)
+        {
+              for(int j=0;j<m;j++)
+          {
+              for(int q=1;q<=k;q++)
+                 printf(""%c"",s[i][j]);
+          }
+           puts("""");
+        }
+
+
+
+        }
+    }
+    return 0;
+}
+"
+"2104010524","闫国鑫","计算机21-5 - 闫国鑫","D","No","2021-10-16 13:43:24","#include <bits/stdc++.h>
+#include <map>
+using namespace std;
+int main()
+{
+    map<int,string>m;
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        int n;
+        scanf(""%d"",&n);
+        while(n--)
+        {
+            int a;
+            scanf(""%d"",&a);
+            if(a==1)
+            {
+                int b;
+               string s;
+                scanf(""%d"",&b);
+               cin>>s;
+               m.insert(make_pair(b,s));
+            }
+            else
+            {
+                auto it=m.end();
+                cout<<it->first;
+                puts("""");
+            }
+        }
+
+    }
+    return 0;
+}
+"
+"2104010524","闫国鑫","计算机21-5 - 闫国鑫","E","No","2021-10-16 12:22:00","#include <bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+    int n;
+    scanf(""%d"",&n);
+    char s[n];
+    for(int i=0;i<n;i++)
+    {
+        scanf(""%d"",&s[i]);
+    }
+    sort(s,s+n);
+    printf(""%d"",s[0]);
+    for(int i=1;i<n;i++)
+    {
+        if(s[i]==s[i-1]) continue;
+        else printf("" %d"",s[i]);
+    }
+    puts("""");
+    return 0;
+}
+"
+"2104010526","于宽","计算机21-5 - 于宽","A","Yes","2021-10-16 12:53:18","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+int T;
+double mj;
+int k,b;
+
+while(~scanf(""%d"",&T))
+{
+
+
+    while(T--)
+    {
+        scanf(""%d%d"",&k,&b);
+        if(k==1)
+        {
+            mj=b*b/4.0000;
+            printf(""%.4f\n"",mj);
+
+        }
+        else if(k==2)
+            {
+            double x0;
+            x0=(sqrt(1+4.0000*b)-1)/2.0000;
+            mj=(x0)*(x0)*(x0)/3.0000+(b-x0)*(b-x0)/2.0000;
+        printf(""%.4f\n"",mj);
+        }
+    }
+
+}
+}"
+"2104010526","于宽","计算机21-5 - 于宽","E","No","2021-10-16 12:31:31","#include<bits/stdc++.h>
+using namespace std;
+set<int> a;
+int main()
+{
+  int n;
+  while(~scanf(""%d"",&n))
+  {
+    while(n--)
+    {int m;
+        scanf(""%d"",&m);
+            a.insert(m);
+        }
+        auto it=a.begin();
+        printf(""%d"",it);
+        for(it=a.begin()+1,it!=end(),it++)
+        {
+
+            printf("" %d"",*it);
+        }
+        puts("""");
+    }
+}"
+"2104010604","龚元涛","计算机21-6 - 龚元涛","A","No","2021-10-16 13:11:11","#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{int x,a,b,t;
+float s;
+while(scanf(""%d"",&x)!=EOF)
+{scanf(""%d%d"",&a,&b);
+t=a*b;
+s=0.25*t;
+printf(""%.4f\n"",s);
+}
+    return 0;
+}
+"
+"2104010610","李博恩","计算机21-6 - 李博恩","B","Yes","2021-10-16 11:35:39","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int test;
+    char photo[100][100];
+    scanf(""%d"",&test);
+    while(test--)
+    {
+        int m,n,k;
+        scanf(""%d%d%d"",&m,&n,&k);
+        for(int i=0;i<m;i++)
+        {
+            scanf(""%s"",photo[i]);
+        }
+        for(int i=0;i<m;i++)
+        {
+            for(int ti=0;ti<k;ti++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                    for(int tj=0;tj<k;tj++)
+                        printf(""%c"",photo[i][j]);
+                }
+                printf(""\n"");
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010610","李博恩","计算机21-6 - 李博恩","D","No","2021-10-16 12:28:13","#include <bits/stdc++.h>
+
+using namespace std;
+struct work
+{
+    string name;
+    int you;
+    int time;
+};
+
+bool cmp(work x,work y);
+
+int main()
+{
+    int test;
+    work a[100000];
+    scanf(""%d"",&test);
+    while(test--)
+    {
+        int n,ji=0;
+        scanf(""%d"",&n);
+        while(n--)
+        {
+            int DO;
+            scanf(""%d"",&DO);
+            if(DO==1)
+            {
+                ji++;
+                cin>>a[ji].name;
+                scanf(""%d"",&a[ji].you);
+                a[ji].time=ji;
+            }
+            if(DO==2)
+            {
+                sort(a+1,a+ji+1,cmp);
+                cout<<a[ji].name<<endl;
+                a[ji].time=100000;
+                a[ji].you=0;
+            }
+        }
+    }
+    return 0;
+}
+bool cmp(work x,work y)
+{
+    if(x.you==y.you)
+    {
+        return x.time>y.time;
+    }
+    return x.you<y.you;
+}
+"
+"2104010623","徐佳怿","计算机21-6 - 徐佳怿","E","No","2021-10-16 13:34:14","#include<bits/stdc++.h>
+using namespace std;
+ int main()
+ {
+ 	long s[100010] ;
+ 	int a,b,c,n;
+ 	while(scanf(""%d"",&n)!=EOF)
+ 	{
+ 		for(a=1;a<=n;a++)
+ 		{
+ 			scanf(""%d"",&s[a]);
+		 }
+		 sort(s,s+n+1);
+		 b=unique(s,s+n+1)-s;
+		 for(a=1;a<b;a++)
+		 {
+		 	if(a!=b)printf(""%d "",s[a]);
+		 	if(a==b)printf(""%d"",s[a]);
+		 }
+	 }
+	 return 0;
+  }"
+"2104010630","赵儒儒","计算机21-6 - 赵儒儒","E","No","2021-10-16 13:27:20","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    scanf(""%d"",&n);
+    vector <int> a;
+    int m;
+    for(int i=0;i<n;i++)
+    {
+        scanf(""%d"",&m);
+        a.push_back(m);
+    }
+    set <int> s;
+    for(int h=0;h<n;h++)
+    {
+        s.insert(a[h]);
+    }
+    int c=0;
+    for(auto it=s.begin();it!=s.end();it++)
+    {
+        printf(""%d"",*it);
+        c++;
+        if(c<s.size())
+            printf("" "");
+    }
+    return 0;
+}
+"
+"2104010631","周勃译","计算机21-6 - 周勃译","A","Yes","2021-10-16 13:35:56","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		double k,b;
+		double x1,x2,y;
+		double s;
+		scanf(""%lf%lf"",&k,&b);
+		if(k==1)
+		{
+			y=b/2.0000;
+			x2=b;
+			x1=0;
+			s=(x2-x1)*y/2.0000;
+		 } 
+		 else 
+		 {
+		 	int sum=1.0000+4.0000*b;
+		 	x2=(sqrt(sum)-1.0000)/2.0000;
+		 	y=x2*x2;
+		 	x1=b;
+		 	s=b*b/2.0000-(b*x2-1.0000/3.0000*x2*x2*x2-1.0000/2.0000*x2*x2);
+		 }
+		 printf(""%.4lf\n"",s);
+		 
+	}
+	return 0;
+}"
+"2104010631","周勃译","计算机21-6 - 周勃译","B","Yes","2021-10-16 11:24:36","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,n,m,k;
+	
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		
+		scanf(""%d%d%d"",&n,&m,&k);
+		while(n--)
+		{
+			char a[10000];
+			for(int i=0;i<=m;i++)
+			{
+				scanf(""%c"",&a[i]);
+			}	
+			for(int u=1;u<=k;u++)
+			{
+				for(int i=1;i<=m;i++)
+				{
+				
+					for(int j=1;j<=k;j++)
+					{
+						printf(""%c"",a[i]);
+					}				
+				}
+				printf(""\n"");
+			}
+			
+		}
+	}
+	return 0;
+	
+ } "
+"2104010631","周勃译","计算机21-6 - 周勃译","D","No","2021-10-16 13:43:58","#include<bits/stdc++.h>
+using namespace std;
+struct work
+{
+	char s[21];
+	int p;
+}w[10000]; 
+int  main()
+{
+	int t;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		int flag=0;
+		int n;
+		int point;
+		scanf(""%d"",&n);
+		while(n--)
+		{
+			int a;int max=-10000000;
+			scanf(""%d"",&a);
+			if(a==1)
+			{
+				scanf(""%s"",w[flag].s);
+				scanf(""%d"",&w[flag].p);
+				flag++;
+			}
+			
+			else if(a==2)
+			{
+				for(int i=0;i<flag;i++)
+				{
+					if(w[i].p>max)
+					{
+					max=w[i].p;
+					point = i;
+					}
+				}
+				printf(""%s\n"",w[point].s);
+				w[point].p=-1000000;
+			}
+		}
+		return 0;
+	}
+}"
+"2104010631","周勃译","计算机21-6 - 周勃译","E","No","2021-10-16 12:32:49","#include<bits/stdc++.h>
+using namespace std;
+bool cmp(int x,int y)
+{
+	return x<y;
+}
+int a[1000000];
+int main()
+{
+	int n;
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++)
+	{
+		scanf(""%d"",&a[i]);
+	}
+	sort(a,a+n,cmp);
+	int x=unique (a,a+n)-a;
+	printf(""%d"",a[0]);
+	for(int i=1;i<x;i++)
+	{
+		printf("" %d"",a[i]);
+	}
+	return 0;
+}"
+"2104010702","高天河","计算机21-7 - 高天河","A","Yes","2021-10-16 13:32:49","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double ss;
+    double d;
+    int T;
+    scanf(""%d"",&T);
+    for(int i=1;i<=T;i++)
+    {
+        double a,b;
+        scanf(""%lf%lf"",&a,&b);
+        if(a==1)
+        {
+          d=b/2;
+          ss=d*b*0.5;
+          printf(""%.4lf\n"",ss);
+        }
+        else if(a==2)
+        {
+         d=(sqrt(1+4*b)-1)/2;
+         ss=b*d-d*d/2-d*d*d/3;
+         ss=fabs(ss);
+         double k;
+         k=b*b/2-ss;
+         printf(""%.4lf\n"",k);
+
+        }
+    }
+    return 0;
+}"
+"2104010702","高天河","计算机21-7 - 高天河","B","Yes","2021-10-16 11:45:59","#include<bits/stdc++.h>
+using namespace std;
+char q[105][105];
+int main()
+{
+    int T;
+    scanf(""%d"",&T);
+    for(int w=1;w<=T;w++)
+    {
+    int m,n,k;
+    scanf(""%d%d%d"",&m,&n,&k);
+    for(int a=1;a<=m;a++)
+    {
+        for(int b=1;b<=n;b++)
+        {
+            scanf(""%c"",&q[a][b]);
+            if(q[a][b]=='\n')
+            {
+            scanf(""%c"",&q[a][b]);
+            }
+        }
+    }
+    for(int a=1;a<=m;a++)
+    {
+        for(int s=1;s<=k;s++)
+        {
+        for(int b=1;b<=n;b++)
+        {
+            for(int i=1;i<=k;i++)
+            {
+                printf(""%c"",q[a][b]);
+            }
+        }
+        printf(""\n"");
+        }
+    }
+    }
+    return 0;
+}"
+"2104010702","高天河","计算机21-7 - 高天河","E","No","2021-10-16 13:54:51","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T;
+    scanf(""%d"",&T);
+    set<int>aa;
+    for(int a=1;a<=T;a++)
+    {
+       int m;
+       scanf(""%d"",&m);
+       aa.insert(m);
+    }
+    for(auto it=aa.begin();it!=aa.end();it++)
+    {
+        if(it!=aa.begin())
+        {
+            printf("" "");
+        }
+        printf(""%d"",*it);
+    }
+    printf(""\n"");
+}"
+"2104010706","黎东琰","计算机21-7 - 黎东琰","B","Yes","2021-10-16 12:32:11","#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int T;
+    while((scanf(""%d\n"",&T))!=EOF)
+    {
+        int i,j,n,m,k,l,q;
+        for(i=1;i<=T;i++)
+        {
+            scanf(""%d %d %d\n"",&n,&m,&k);
+            char arr[m+10];
+            for(j=0;j<n;j++)
+            {
+                gets(arr);
+                int num=k;
+                while(num--)
+                {
+                    for(q=0;q<m;q++)
+                    {
+                        for(l=0;l<k;l++)
+                        {
+                            printf(""%c"",arr[q]);
+                        }
+                    }
+                    printf(""\n"");
+                }
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010706","黎东琰","计算机21-7 - 黎东琰","E","No","2021-10-16 13:34:28","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    while((scanf(""%d"",&n))!=EOF)
+    {
+        int i,j,sum;
+        vector<int>arr;
+        for(i=0;i<n;i++)
+        {
+           scanf(""%d"",&sum);
+           arr.push_back(sum);
+        }
+         for(i=0;i<n;i++)
+        {
+            for(j=i+1;j<n;j++)
+            {
+                if(arr[i]==arr[j])
+                {
+                    arr.erase(arr.begin()+j);
+                    j--;
+                    //arr[j]=arr[n-1];
+                    n--;
+                }
+            }
+        }
+        short int num=1;
+        sort(arr.begin(),arr.end());
+        for(i=0;i<n;i++)
+        {
+            if(num==1)
+            {
+                printf(""%d"",arr[i]);
+                num++;
+            }
+            else
+                printf("" %d"",arr[i]);
+        }
+        printf(""\n"");
+    }
+    return 0;
+}
+
+"
+"2104010719","涂远洋","计算机21-7 - 涂远洋","A","No","2021-10-16 12:52:35","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    double k,b,s;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+    scanf(""%lf%lf"",&k,&b);
+    if(k==1)
+    s=b*b*0.25;
+    else
+    s=(-1+sqrt(1+4*b))*(-1+sqrt(1+4*b))*(-1+sqrt(1+4*b))*0.125+(b-(-1+sqrt(1+4*b)*0.5))*0.125*(-1+sqrt(1+4*b))*(-1+sqrt(1+4*b));
+    printf(""%.4f\n"",s);
+
+    }
+
+
+
+
+}
+"
+"2104010801","白金","计算机21-8 - 白金","A","Yes","2021-10-16 13:27:30","#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+
+int main()
+{
+    int t=0;
+    scanf(""%d"",&t);
+    for(;t>=1;t--)
+    {
+        int k=0,b=0;
+        scanf(""%d %d"",&k,&b);
+        double s=0;
+        if(k==1)
+        {
+            s=b*b*0.25;
+            printf(""%.4lf\n"",s);
+        }
+        else
+        {
+            double c=(sqrt(4*b+1)-1)/2;
+            printf(""%.4lf\n"",c*c*c/3+(b-c)*(b-c)/2);
+        }
+    }
+    return 0;
+}
+"
+"2104010801","白金","计算机21-8 - 白金","B","Yes","2021-10-16 12:06:13","#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+int main()
+{
+    int t=0;
+    scanf(""%d"",&t);
+    for(;t>=1;t--)
+    {
+        int n=0,m=0,k=0;
+        scanf(""%d %d %d"",&n,&m,&k);
+        char a[1005][1005];
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=m;j++)
+            {
+                scanf(""\n%c"",&a[i][j]);
+            }
+        }
+        for(int i=1;i<=n;i++)
+        {
+            for(int v=1;v<=k;v++)
+            {
+                for(int j=1;j<=m;j++)
+                {
+                    for(int u=1;u<=k;u++)
+                    {
+                        printf(""%c"",a[i][j]);
+                    }
+                }
+                printf(""\n"");
+            }
+        }
+        /*for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=m;j++)
+            {
+                printf(""%c"",a[i][j]);
+            }
+        }*/
+    }
+    return 0;
+}
+"
+"2104010801","白金","计算机21-8 - 白金","E","No","2021-10-16 13:21:58","#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+
+int main()
+{
+    int t=0;
+    scanf(""%d"",&t);
+    for(;t>=1;t--)
+    {
+        int k=0,b=0;
+        scanf(""%d %d"",&k,&b);
+        double s=0;
+        if(k==1)
+        {
+            s=b*b*0.25;
+            printf(""%.4lf\n"",s);
+        }
+        else
+        {
+            double c=4*b+1;
+            c=sqrt(c)-1;
+            c=c/2;
+            printf(""%.4lf\n"",c*c*c/3+(b-c)*(b-c));
+        }
+    }
+    return 0;
+}
+"
+"2104010802","车国斌","计算机21-8 - 车国斌","B","No","2021-10-16 12:50:50","#include<stdio.h>
+int main(void)
+{
+    int t,n,m,k,a,i,u,p,h;
+    char ch[100][100];
+    for(scanf(""%d"",&t);t>0;--t)
+    {
+        scanf(""%d %d %d\n"",&n,&m,&k);
+        u=m;
+        for(p=0;p<=n;p++)
+        {
+            for(i=0;i<m;i++)
+            {
+                scanf(""%c"",ch[p][i]);
+            }
+            printf(""\n"");
+        }
+        h=n*k;
+        while(h>0)//几排
+        {
+            for(p=0;p<=n;p++)//几组
+            {
+                while(k>0)//每组几排
+                {
+                    while(u>0)//每排几个
+                    {
+                        for(i=0;i<=k;i++)//每个几次
+                        {
+                            printf(""%c"",ch[p][i]);
+                        }
+                        u--;
+                    }
+                    k--;
+                }
+            }
+            h--;
+        }
+        printf(""\n"");
+    }
+    return 0;
+}"
+"2104010803","陈曼青","计算机21-8 - 陈曼青","B","Yes","2021-10-16 12:05:49","#include <stdio.h>
+
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--){
+        int n,m,k;
+        scanf(""%d %d %d"",&n,&m,&k);
+        char o = getchar();
+
+        char a[1000][1000];
+        int i,j,p,k1;
+
+        for(i = 0;i < n;++i){
+            for(j = 0;j < m;j++){
+                scanf(""%c"",&a[i][j]);
+            }
+            o = getchar();
+        }
+               
+        for(i = 0;i < n;++i){
+            for(k1 = 0;k1 < k;++k1){
+                    for(j = 0;j < m;++j){
+                        for(p = 0;p < k;++p){
+                        printf(""%c"",a[i][j]);
+                    }
+                }
+            
+            printf(""\n"");
+        }
+            }
+        }
+    return 0;
+}
+"
+"2104010803","陈曼青","计算机21-8 - 陈曼青","D","No","2021-10-16 13:38:18","#include <stdio.h>
+
+int main()
+{
+    char str[10000][24];
+    int rung[100];
+    int t,n;
+    scanf(""%d"",&t);
+    while(t--){
+        int i = 0;
+        scanf(""%d"",&n);
+        while(n--){
+            int num,j;
+            
+            scanf(""%d"",&num);
+            //char p = getchar();
+            if(num == 1){
+                scanf(""%s %d"",str[i],&rung[i]);
+                //scanf(""%d"",&rung[i]);
+                i++;
+                j = i;
+                //printf(""%s"",str[i]);
+            }
+            //printf(""%s"",str[i]);
+            
+            if(num == 2){
+                int k = 0;
+                int max = rung[0];
+                for(i = 1;i <= j;i++){
+                    if(rung[i] > max){
+                        max = rung[i];
+                        k = i;
+                        
+                    }
+                }
+                //if(rung[k] > rung[p])
+                    printf(""%s\n"",str[k]);
+                //else
+                    //printf(""%s\n"",str[p]);
+                rung[k] = -1;
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010803","陈曼青","计算机21-8 - 陈曼青","E","No","2021-10-16 12:52:03","#include <set>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+    int n, i, m;
+    set <int> nodup;
+
+    scanf(""%d"",&n);
+    for(i = 0;i < n;++i) {
+        scanf(""%d"",&m);
+        nodup.insert(m);
+    }
+  
+    i = 0;
+    for (set<int>::iterator it = nodup.begin(); it != nodup.end(); ++ it) {
+        if (i == 0)
+            printf(""%d"", *it);
+        else
+            printf("" %d"", *it);
+        ++ i;
+    }
+}
+"
+"2104010804","陈芝洋","计算机21-8 - 陈芝洋","B","No","2021-10-16 11:45:00","#include <stdio.h>
+#include<cstdio> 
+int main()
+{
+    int t,i,m,n,k;
+    scanf(""%d"",&t);
+    for(i=1;i<=t;i++)
+    {
+		scanf(""%d %d %d"",&n,&m,&k);
+		scanf(""%d %d %d"",&n,&m,&k);
+		scanf(""%d %d %d"",&n,&m,&k);
+		printf(""ZZZrrr~~~\n"");
+		printf(""ZZZrrr~~~\n"");
+		printf(""ZZZrrr~~~\n"");
+		printf(""xxxjjj!!!\n"");
+		printf(""xxxjjj!!!\n"");
+		printf(""xxxjjj!!!\n"");
+	}
+    return 0;
+}"
+"2104010814","李德瑜","计算机21-8 - 李德瑜","A","No","2021-10-16 12:57:49","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{     
+    double T,S,k,b,i;
+    double y1,y2;
+    double x1,x2;
+    scanf(""%lf%lf"",&k,&b);
+   if(k=1)
+    {S=b*b/4;
+    printf(""%.4lf\n"",S);
+   return 0;
+	}
+   if(k=2)
+   {
+   S=3/4*sqrt(b)-3/2*b-1/8;
+    printf(""%.4lf"",S);
+	} 
+    return 0;
+}"
+"2104010815","李家鑫","计算机21-8 - 李家鑫","A","No","2021-10-16 13:36:43","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	double T,k,b,S;
+	scanf(""%lf\n"",&T);
+	for(int i=0;i<T;i++)
+	{
+		scanf(""%lf%lf"",&k,&b);
+		if(k==1)
+		{
+			S=b*b/4;
+			printf(""%0.4lf\n"",S);
+		}
+		if(k==2)
+		{
+			double X=(-1/2+sqrt(b));
+			S=pow(X,3)/3+(b-X)*(b-X)*1/2;
+			printf(""%0.4lf\n"",S);
+		}
+	}
+}"
+"2104010815","李家鑫","计算机21-8 - 李家鑫","B","Yes","2021-10-16 12:07:14","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T;
+	scanf(""%d"",&T);
+	for(int t=0;t<T;t++)
+	{
+		int n,m,k;
+		scanf(""%d%d%d\n"",&n,&m,&k);
+		char Z[n][m],a;
+		for(int i1=0;i1<n;i1++)
+		{
+			for(int i2=0;i2<m;i2++)
+			{
+				scanf(""%c"",&Z[i1][i2]);	
+			}
+		scanf(""%c"",&a);			
+		}
+		for(int i1=0;i1<n;i1++){
+			for(int i4=0;i4<k;i4++){
+				for(int i2=0;i2<m;i2++){
+					for(int i3=0;i3<k;i3++){
+						printf(""%c"",Z[i1][i2]);	
+					}
+				}
+			printf(""\n"");
+			}
+		}		
+	}
+}"
+"2104010816","李戬","计算机21-8 - 李戬","B","Yes","2021-10-16 12:56:00","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t,n,m,k;
+	char a[1000][1000];
+	while(~scanf(""%d"",&t)){
+		for(int i=1;i<=t;i++){
+			scanf(""%d%d%d"",&n,&m,&k);
+			for(int i=1;i<=n;i++){
+							for(int j=1;j<=m;j++){
+						cin>>a[i][j];
+				 }
+			}
+			for(int i=1;i<=n;i++){
+				for(int h=1;h<=k;h++){
+					for(int j=1;j<=m;j++){
+						for(int g=1;g<=k;g++){
+							cout<<a[i][j];
+						}
+							 }
+			printf(""\n"");
+							 }
+									}
+		
+			 
+		}
+	}
+	return 0;
+}
+"
+"2104010816","李戬","计算机21-8 - 李戬","E","No","2021-10-16 12:57:51","#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     set<int>qh;
+	long m,n,p;
+	scanf(""%d"",&m);
+	for(int i=1;i<=m;i++){
+		scanf(""%d"",&n);
+		qh.insert(n);
+	}
+	p=0;
+   for(auto it=qh.begin();it!=qh.end();it++){
+   	if(p==1) printf("" "");
+   	printf(""%d"",*it);
+   	p=1;
+   }
+   return 0;
+}"
+"2104010817","李进康","计算机21-8 - 李进康","A","No","2021-10-16 11:32:13","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   double y1,y2;
+   double x1,x2;
+   double k,b,h,l,s;
+   int t;
+   scanf(""%d"",&t);
+
+    for(int d=1;d<=t;d++)
+   {
+       scanf(""%lf%lf"",&k,&b);
+       for(x1=0;x1<=b;x1+=0.5)
+        for(x2=0;x2<=b;x2+=0.5)
+       {
+             y1=pow(x1,k);
+             y2=-x2+b;
+           if(y1==y2&&y1!=0&&y2!=1)
+           {
+            h=y1;
+            l=b;
+            s=(l*h)/2;
+            printf(""%.4f\n"",s);
+           }
+       }
+   }
+   return 0;
+}
+"
+"2104010817","李进康","计算机21-8 - 李进康","E","No","2021-10-16 12:36:30","#include <set>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    set<int>w;
+    int n,q;
+    scanf(""%d"",&n);
+    while(n--)
+    {
+        scanf(""%d"",&q);
+        w.insert(q);
+    }
+        for(auto it=w.begin();it!=w.end();it++)
+    {
+        if(it==w.begin())
+            printf(""%d"",*it);
+        else
+            printf("" %d"",*it);
+    }
+    w.clear();
+    return 0;
+}
+"
+"2104010818","林志逸","计算机21-8 - 林志逸","A","Yes","2021-10-16 13:58:56","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T;
+    double k,b,s;
+    cin>>T;
+    for(int i=1;i<=T;i++)
+    {
+        cin>>k>>b;
+        if(k==1)
+        {
+            s=b*b/4;
+        }
+        else
+        {
+            double x,y;
+            x=(sqrt(1+4*b)-1)/2;
+            y=b-x;
+            s=(x*x*x/3)+(y*y)/2;
+        }
+            printf(""%.4f\n"",s);
+    }
+    return 0;
+}"
+"2104010818","林志逸","计算机21-8 - 林志逸","B","Yes","2021-10-16 12:30:02","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,m,k;
+    cin>>t;
+    while(t--)
+    {
+       char a[105][105];
+       cin>>n>>m>>k;
+       for(int i=1;i<=n;i++)
+       {
+           for(int j=1;j<=m;j++)
+           {
+               cin>>a[i][j];
+           }
+       }
+       for(int i=1;i<=n;i++)
+       {
+           for(int q=1;q<=k;q++)
+           {
+               for(int j=1;j<=m;j++)
+               {
+                  for(int p=1;p<=k;p++)
+                  {
+                   cout<<a[i][j];
+                  }
+               }
+               printf(""\n"");
+           }
+       }
+    }
+    return 0;
+}
+"
+"2104010818","林志逸","计算机21-8 - 林志逸","E","No","2021-10-16 12:54:05","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short int n,c=0;
+    cin>>n;
+    set<int> s;
+    for(int i=1;i<=n;i++)
+    {
+        int a;
+        cin>>a;
+        s.insert(a);
+    }
+    for(auto it=s.begin();it!=s.end();it++)
+    {
+         if(c==1)
+        {
+            printf("" "");
+        }
+         printf(""%d"",*it);
+         c=1;
+    }
+    printf(""\n"");
+    return 0;
+}"
+"2104010819","刘鹏飞","计算机21-8 - 刘鹏飞","A","Yes","2021-10-16 13:31:28","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t;
+   scanf(""%d\n"",&t);
+   while(t--)
+   {
+      double k,b;
+      scanf(""%lf %lf"",&k,&b);
+      if(k==1)
+      {
+          double S;
+          S=(b*b)/4;
+          printf(""%.4f\n"",S);
+      }
+      if(k==2)
+      {
+          double S;
+          double x,y;
+          x=(sqrt(1+4*b)-1)/2;
+          y=b-x;
+          S=(x*x*x/3)+(y*y)/2;
+          printf(""%.4f\n"",S);
+      }
+   }
+   return 0;
+}
+"
+"2104010819","刘鹏飞","计算机21-8 - 刘鹏飞","B","Yes","2021-10-16 11:31:11","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,m,k;
+    cin>>t;
+    while(t--)
+    {
+       char a[1000][1000];
+       cin>>n>>m>>k;
+       for(int i=1;i<=n;i++)
+       {
+           for(int j=1;j<=m;j++)
+           {
+               cin>>a[i][j];
+           }
+       }
+       for(int i=1;i<=n;i++)
+       {
+           for(int z=1;z<=k;z++)
+           {
+               for(int j=1;j<=m;j++)
+               {
+                  for(int h=1;h<=k;h++)
+                  {
+                   cout<<a[i][j];
+                  }
+
+               }
+               cout<<endl;
+           }
+       }
+    }
+    return 0;
+}
+"
+"2104010819","刘鹏飞","计算机21-8 - 刘鹏飞","C","No","2021-10-16 13:25:41","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t,n;
+   cin>>t;
+   while(t--)
+   {
+       map<int,string>myj;
+       cin>>n;
+       string s;
+       int you,judge;
+       for(int z=1;z<=n;z++)
+       {
+           cin>>judge;
+           if(judge==1)
+           {
+               cin>>s>>you;
+               myj[you]=s;
+           }
+           else if(judge==2)
+           {
+               map<int,string>::iterator it;
+               it=myj.lower_bound(1000);
+               it--;
+               cout<<it->second<<endl;
+               it=myj.erase(it);
+           }
+       }
+   }
+}
+
+"
+"2104010819","刘鹏飞","计算机21-8 - 刘鹏飞","D","No","2021-10-16 13:31:47","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t,n;
+   cin>>t;
+   while(t--)
+   {
+       map<int,string>myj;
+       cin>>n;
+       string s;
+       int you,judge;
+       for(int z=1;z<=n;z++)
+       {
+           cin>>judge;
+           if(judge==1)
+           {
+               cin>>s>>you;
+               myj[you]=s;
+           }
+           else if(judge==2)
+           {
+               auto it=myj.lower_bound(1000);
+               it--;
+               cout<<it->second<<endl;
+               it=myj.erase(it);
+           }
+       }
+   }
+}
+
+"
+"2104010819","刘鹏飞","计算机21-8 - 刘鹏飞","E","No","2021-10-16 12:20:40","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   short n,a,c,i;
+   set<int>s;
+   while(cin>>n)
+   {
+       c=0;
+       for(i=1;i<=n;i++)
+       {cin>>a;s.insert(a);}
+       for(auto it=s.begin();it!=s.end();it++)
+       {if(c==1)cout<<"" "";cout<<*it;c=1;}
+       cout<<endl;
+   }
+   return 0;
+}
+"
+"2104010821","刘小龙","计算机21-8 - 刘小龙","A","Yes","2021-10-16 13:22:51","#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+	int T; scanf(""%d"",&T);
+	while (T--)
+	{
+		double S;
+		double k, b;
+		scanf(""%lf%lf"", &k, &b);
+		double x, y;
+		if (k == 2)
+		{
+			x = (sqrt( 4*b+1)-1) / 2;
+			y = b - x;
+			S = x * x * x / 3 + y * y / 2;
+		}
+		else {
+			x = b / 2;
+			S = x * b / 2;
+		}
+		printf(""%.4f\n"",S);
+
+	}return 0;
+}"
+"2104010821","刘小龙","计算机21-8 - 刘小龙","B","Yes","2021-10-16 11:27:56","#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+	int T; scanf(""%d"", &T);
+	while (T--)
+	{
+		int n, m, k; scanf(""%d%d%d"", &n, &m, &k);
+		string t[105];
+		for (int i = 1; i <= n; i++)
+			for (int l = 1; l <= m; l++)
+			{
+				char a; cin >> a;
+				for (int o = 1; o <= k; o++)
+					t[i].push_back(a);
+			}  
+		for (int i = 1; i <= n; i++)
+		{
+			int p = k;
+			while (p--)
+				cout << t[i] << endl;
+		}
+	}return 0;
+}"
+"2104010821","刘小龙","计算机21-8 - 刘小龙","D","No","2021-10-16 12:38:20","#include<iostream>
+#include<cstdio>
+#include<string>
+#include<vector>
+#include<algorithm>
+using namespace std;
+struct MM
+{
+	int c;
+	string  a;
+	int b;
+};  
+bool  Mm(MM x,MM y)
+{
+	if (x.b == y.b)
+		return  x.c < y.c;
+	else return x.b > y.b;
+ }
+int main()
+{
+	vector<MM>mm;
+	int T; scanf(""%d"",&T);
+	while (T--)
+	{
+		int ans = 0;
+		mm.clear();
+		int n; scanf(""%d"", &n);
+		for (int i = 1; i <= n; i++)
+		{
+			int t; scanf(""%d"",&t);
+			if(t==1)
+			{
+				MM A; cin >> A.a >> A.b; A.c = i;
+				mm.push_back(A);
+			}
+			else{ sort(mm.begin()+ans,mm.end(),Mm);
+			cout<<mm[ans].a; if (i != n)  puts("""");
+			ans++;
+			}
+		}	
+	}return 0;
+}"
+"2104010821","刘小龙","计算机21-8 - 刘小龙","E","No","2021-10-16 13:06:36","#include<iostream>
+#include<cstdio>
+#include<set>
+using namespace std;
+int main()
+{
+	set<short>t;
+	int n; scanf(""%d"", &n); short i;
+	while(n--)
+	{
+		scanf(""%d"", &i);
+		t.insert(i);
+	}
+	for (auto it = t.begin(); it != t.end(); it++)
+	{
+		cout << "" "";
+		printf(""%d"", *it);
+	}return 0;
+	
+ 
+}"
+"2104010822","刘泽旭","计算机21-8 - 刘泽旭","A","Yes","2021-10-16 13:33:50","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t;
+   scanf(""%d"",&t);
+   while(t--){
+      double k,b;
+      scanf(""%lf%lf"",&k,&b);
+      if(k==1){
+          double S;
+          S=(b*b)/4;
+          printf(""%.4f\n"",S);
+      }
+      else if(k==2){
+          double res;
+          double x,y;
+          x=(sqrt(1+4*b)-1)/2;
+          y=b-x;
+          res=x*x*x/3+y*y/2;
+          printf(""%.4f\n"",res);
+      }
+   }
+   return 0;
+}
+"
+"2104010822","刘泽旭","计算机21-8 - 刘泽旭","B","Yes","2021-10-16 12:38:22","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,m,k;
+    scanf(""%d"",&t);
+    while(t--){
+       char a[1050][1050];
+       scanf(""%d%d%d"",&n,&m,&k);
+       for(int y=1;y<=n;y++){
+           for(int x=1;x<=m;x++){
+               cin>>a[y][x];
+           }
+       }
+       for(int o=1;o<=n;o++){
+           for(int z=1;z<=k;z++){
+               for(int j=1;j<=m;j++){
+                  for(int h=1;h<=k;h++){
+                   printf(""%c"",a[o][j]);
+                  }
+               }
+               printf(""\n"");
+           }
+       }
+    }
+}"
+"2104010822","刘泽旭","计算机21-8 - 刘泽旭","D","No","2021-10-16 13:48:05","#include<bits/stdc++.h>
+using namespace std;
+struct WORK{
+	string name;
+	int yxj;
+};
+bool cmp(WORK j,WORK k){
+	if (j.yxj<k.yxj){
+		return j.yxj>k.yxj;
+	}
+	if(j.yxj==k.yxj){
+		return 0;
+	}
+	return 0;
+}
+int main(){
+	int t;
+	scanf(""%d"",&t);
+	while(t--){
+		vector<WORK>p;
+		int n;
+		scanf(""%d"",&n);
+		while(n--){
+			int x;
+			scanf(""%d"",&x);
+			if(x==1){
+				WORK work;
+				char s[205];
+				int mp;
+				scanf(""%s"",s);
+				scanf(""%d"",&mp);
+				work.name=s;
+				work.yxj=mp;
+				p.push_back(work);
+			}
+			if(x==2){
+				sort(p.begin(),p.end(),cmp);
+				auto it=p.begin();
+				printf(""%s\n"",it->name.c_str());
+				p.erase(p.begin());
+			}
+		}
+	}
+}"
+"2104010822","刘泽旭","计算机21-8 - 刘泽旭","E","No","2021-10-16 13:46:39","#include<set>
+#include<stdio.h>
+using namespace std;
+int main(){
+	set<int>n;
+	int t;
+	bool a=1;
+	scanf(""%d"",&t);
+	while(t--){
+		int x;
+		scanf(""%d"",&x);
+		n.insert(x);}
+		for(auto it=n.begin();it!=n.end();it++){
+		if(a==0){printf("" "");}
+		printf(""%d"",*it);
+		a=0;
+		}}"
+"2104010824","裴玉","计算机21-8 - 裴玉","A","Yes","2021-10-16 13:30:26","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t;
+   scanf(""%d\n"",&t);
+   while(t--)
+   {
+      double k,b;
+      scanf(""%lf %lf"",&k,&b);
+      if(k==1)
+      {
+          double S;
+          S=(b*b)/4;
+          printf(""%.4f\n"",S);
+      }
+      if(k==2)
+      {
+          double S;
+          double x,y;
+          x=(sqrt(1+4*b)-1)/2;
+          y=b-x;
+          S=(x*x*x/3)+(y*y)/2;
+          printf(""%.4f\n"",S);
+      }
+   }
+   return 0;
+}
+"
+"2104010824","裴玉","计算机21-8 - 裴玉","B","Yes","2021-10-16 12:26:29","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int t;
+   scanf(""%d\n"",&t);
+   while(t--)
+   {
+       int n,m,k;
+       char c[1000][1000];
+       scanf(""%d %d %d\n"",&n,&m,&k);
+       for(int i=1;i<=n;i++)
+       {
+            for(int j=1;j<=m;j++)
+            {
+                cin>>c[i][j];
+            }
+       }
+       for(int p=1;p<=n;p++)
+       {
+           for(int o=1;o<=k;o++)
+           {
+               for(int u=1;u<=m;u++)
+               {
+                   for(int y=1;y<=k;y++)
+                   {
+                       cout<<c[p][u];
+                   }
+               }
+               printf(""\n"");
+           }
+       }
+   }
+   return 0;
+}
+"
+"2104010824","裴玉","计算机21-8 - 裴玉","E","No","2021-10-16 13:59:20","#include<iostream>
+#include<set>
+using namespace std;
+int main()
+{
+    short t;
+    int x,c;
+    cin>>t;
+    set<int>a;
+    while(t--)
+    {
+        cin>>x;
+        a.insert(x);
+    }
+    c=0;
+    for(auto it=a.begin();it!=a.end();it++)
+    {
+        if(c==1)
+        cout<<"" "";
+        cout<<*it;
+        c=1;
+    }
+    return 0;
+}
+"
+"2104010826","孙舒阳","计算机21-8 - 孙舒阳","A","Yes","2021-10-16 13:42:11","#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+   int T;
+   scanf(""%d\n"",&T);
+   while(T--)
+   {
+      double k,b;
+      scanf(""%lf %lf"",&k,&b);
+      if(k==1)
+      {
+          double ans;
+          ans=(b*b)/4;
+          printf(""%.4f\n"",ans);
+      }
+      if(k==2)
+      {
+          double ans;
+          double x,y;
+          x=(sqrt(1+4*b)-1)/2;
+          y=b-x;
+          ans=(x*x*x/3)+(y*y)/2;
+          printf(""%.4f\n"",ans);
+      }
+   }
+   return 0;
+}"
+"2104010826","孙舒阳","计算机21-8 - 孙舒阳","B","Yes","2021-10-16 13:33:48","#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    int T,n,m,k;
+    char s[1000][1000],a;
+    scanf(""%d"",&T);
+   while(T--)
+   {
+        scanf(""%d %d %d "",&n,&m,&k);
+        for(int i=1;i<=n;i++)
+        {
+                for(int j=1;j<=m;j++)
+                {
+                    cin>>a;
+                    s[j][i]=a;
+                }
+        }
+        for(int q=1;q<=n;q++)
+        {
+            for(int n=1;n<=k;n++)
+            {
+                for(int i=1;i<=m;i++)
+              {
+                       for(int j=0;j<k;j++)
+                    {
+                        printf(""%c"",s[i][q]);
+                     }
+              }
+                printf(""\n"");
+            }
+
+        }
+   }
+    return 0;
+}
+"
+"2104010826","孙舒阳","计算机21-8 - 孙舒阳","E","No","2021-10-16 13:53:20","#include <iostream>
+#include<set>
+using namespace std;
+int main(void)
+{
+    set<short>s;
+    short n,a;
+    scanf(""%d"",&n);
+    while(n--)
+    {
+        scanf(""%d"",&a);
+        s.insert(a);
+    }
+    for (auto it=s.begin();it!=s.end();it++)
+    {
+        if(it!=s.begin())
+        printf("" "");
+        printf(""%d"",*it);
+    }
+    return 0;
+}
+
+"
+"2104010828","张志娟","计算机21-8 - 张志娟","A","No","2021-10-16 13:59:43","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,z,b;
+    double i,f,k;
+    cin>>t;
+    while(t--)
+   {
+    cin>>z>>b;
+    if(z==1)
+    {
+        f=b*b/4.0;
+        printf(""%.4f\n"",f);
+    }
+    if(z==2)
+    {
+         for(i=0;i<=1000;i++)
+         {
+            if(i*i+i==b)
+            {
+                k=i;
+            break;
+            }}
+            f=k*k*k/3.0+(b-k)*k*k/2.0;
+            printf(""%.4f\n"",f);
+         
+    }
+   }
+    return 0;
+}"
+"2104010828","张志娟","计算机21-8 - 张志娟","B","Yes","2021-10-16 11:37:17","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{vector<char>v;
+    int t,n,m,k,a[110],i,j,h;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m>>k;
+        char a[m];
+        while(n--)
+        {
+            scanf(""%s"",a);
+            for(i=0;i<m;i++)
+            {
+                for(j=0;j<k;j++)
+                {
+                    v.push_back(a[i]);
+                }
+            }h=k;
+           while(h--){for(i=0;i<m*k;i++)
+            {
+                cout<<v[i];
+            }puts("""");}
+            v.clear();
+            memset(a,0,sizeof(a));
+        }
+    }
+    return 0;
+}
+"
+"2104010828","张志娟","计算机21-8 - 张志娟","D","No","2021-10-16 13:16:28","#include<bits/stdc++.h>
+using namespace std;
+const int N=550010;
+int t,n,i,k,j,flag;
+struct fun
+{ 
+    char s[22];
+    int d;
+    int t=flag;
+}gun[N];
+bool cmp(fun a,fun b)
+{
+     if(a.d!=b.d)
+     {
+         return a.d>b.d; 
+     }
+     else if (a.d==a.d)
+     {
+         return a.t<b.t;
+     }
+}
+int main()
+{
+    while(cin>>t)
+    {
+        cin>>n;i=0,j=0,flag=0;
+        while(n--)
+        {
+            cin>>k;
+            if(k==1)
+            {
+                scanf(""%s %d"",gun[flag].s,&gun[flag].d);   
+                flag++;
+            }
+            if(k==2)
+            {
+             sort(gun,gun+flag,cmp);
+                 printf(""%s"",gun[i++].s);
+                 puts("""");
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104010828","张志娟","计算机21-8 - 张志娟","E","No","2021-10-16 13:30:41","#include<bits/stdc++.h>
+int a[1000020];
+using namespace std;
+int main()
+{
+    long long n,i;
+    cin>>n;
+        for(i=0; i<n; i++)
+        {
+            cin>>a[i];
+        }
+        sort(a,a+i);
+        int b=unique(a,a+n)-a;
+        for(i=0; i<b-1; i++)
+        {
+            cout<<a[i]<<"" "";
+        }
+       cout<<a[b-1]<<endl;
+    return 0;
+}"
+"2104010903","陈圻昇","计算机21-9 - 陈圻昇","A","Yes","2021-10-16 13:15:11","#include<bits/stdc++.h>
+using namespace std;
+int k,b;
+int eq(double x){
+    double t=pow(x,k)+x-b;
+    if(t==0){
+        return 0;
+    }
+    if(t>0){
+        return 1;
+    }else{
+        return -1;
+    }
+}
+double f(){
+    double l=0,r=b,mid;
+    int n=30;
+    while(n--){
+        mid=(l+r)/2;
+        int t=eq(mid);
+        if(t==0){
+            return mid;
+        }
+        if(t>0){
+            r=mid;
+        }else{
+            l=mid;
+        }
+    }
+    return (l+r)/2;
+}
+int main(){
+    int t;
+    while(~scanf(""%d"",&t)){
+        while(t--){
+
+            scanf(""%d%d"",&k,&b);
+            double x0=f();
+            //printf(""::%f\n"",x0);
+            printf(""%.4f\n"",pow(x0,k+1)/(k+1)+(b-x0)*(b-x0)/2);
+        }
+    }
+}
+"
+"2104010903","陈圻昇","计算机21-9 - 陈圻昇","B","Yes","2021-10-16 11:16:07","#include<bits/stdc++.h>
+using namespace std;
+char a[110][110];
+int main()
+{
+    int t;
+    while(~scanf(""%d"",&t)){
+        while(t--){
+            int n,m,k;
+            scanf(""%d%d%d"",&n,&m,&k);
+            for(int i=0;i<n;i++){
+                scanf(""%s"",a[i]);
+            }
+            for(int i=0;i<n;i++){//hang
+                for(int j=0;j<k;j++){//hang*3
+                    for(int h=0;h<m;h++){//char
+                        for(int x=0;x<k;x++){
+                            printf(""%c"",a[i][h]);
+                        }
+                    }
+                    printf(""\n"");
+                }
+            }
+        }
+    }
+}
+"
+"2104010903","陈圻昇","计算机21-9 - 陈圻昇","C","No","2021-10-16 13:40:56","#include<bits/stdc++.h>
+using namespace std;
+int n,m,ex,ey;
+char a[510][510];
+int recx[]={0,1,0,-1};
+int recy[]={-1,0,1,0};
+bool dfs(int x,int y){
+    //printf(""%d %d\n"",x,y);
+    if(x<0||y<0||x>=m||y>=n){
+        return 0;
+    }
+    if(a[y][x]=='1'){
+        return 0;
+    }
+
+    if(x==ex&&y==ey){
+        return 1;
+    }
+
+    for(int i=0;i<4;i++){
+        //printf(""%d %d::%d %d\n"",x,y,x+recx[i],y+recy[i]);
+        a[y][x]='1';
+        bool pd=dfs(x+recx[i],y+recy[i]);
+        //a[x][y]='0';
+        if(pd){
+            return 1;
+        }
+    }
+
+    return 0;
+}
+int main()
+{
+    int t;
+    while(~scanf(""%d"",&t)){
+        while(t--){
+            scanf(""%d%d"",&n,&m);
+            for(int i=0;i<n;i++){
+                scanf(""%s"",a[i]);
+            }
+            int sx,sy;
+            scanf(""%d%d%d%d"",&sx,&sy,&ex,&ey);
+            ex--,ey--;
+            printf(""%s\n"",(dfs(sx-1,sy-1))?""YE5"":""N0"");
+        }
+    }
+}
+"
+"2104010903","陈圻昇","计算机21-9 - 陈圻昇","D","Yes","2021-10-16 12:36:45","#include<bits/stdc++.h>
+using namespace std;
+struct Work{
+    char name[21];
+    int y;
+    int time;
+    bool operator<(const Work &that)const{
+        if(y!=that.y){
+            return y<that.y;
+        }
+        return time<that.time;
+    }
+};
+
+int main()
+{
+    int t;
+    while(~scanf(""%d"",&t)){
+        while(t--){
+            priority_queue<Work>works;
+            int n;
+            scanf(""%d"",&n);
+            while(n--){
+                int op;
+                scanf(""%d"",&op);
+                if(op==1){
+                    Work wk;
+                    //scanf(""%s%d"",wk.name,wk.y);
+                    scanf(""%s"",wk.name);
+                    //printf(""::name %s\n"",);
+                    scanf(""%d"",&wk.y);
+        //printf(""::y\n"");
+                    wk.time=n;
+                    works.push(wk);
+                }else{
+                    printf(""%s\n"",works.top().name,works.top().y);
+                    works.pop();
+                }
+            }
+        }
+    }
+}
+"
+"2104010903","陈圻昇","计算机21-9 - 陈圻昇","E","No","2021-10-16 13:27:59","#include<bits/stdc++.h>
+using namespace std;
+map<int,int>mp;
+int main(){
+    int n;
+    while(~scanf(""%d"",&n)){
+        while(n--){
+            int t;
+            scanf(""%d"",&t);
+            mp[t]=1;
+        }
+        bool flag=0;
+        for(auto it=mp.begin();it!=mp.end();it++){
+            if(it->second==1){
+                if(flag){
+                    printf("" "");
+                }
+                flag=1;
+                printf(""%d"",it->first);
+            }
+        }
+    }
+}
+"
+"2104010904","代江锋","计算机21-9 - 代江锋","B","Yes","2021-10-16 12:12:23","#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+char s[105][105];
+int main()
+{
+	int T;
+	scanf(""%d"",&T);
+	for(int a=1;a<=T;a++)
+	{
+		int n,m,k;
+		scanf(""%d%d%d"",&n,&m,&k);
+		for(int b=1;b<=n;b++)
+		{
+			scanf(""%s"",s[b]+1);
+		}
+			for(int d=1;d<=n;d++)
+			{
+				for(int c=1;c<=k;c++)
+				{
+					for(int f=1;f<=m;f++)
+                    {
+                        for(int g=1;g<=k;g++)
+                        {
+
+                            printf(""%c"",s[d][f]);
+                        }
+                    }
+                    printf(""\n"");
+                }
+            }
+	}
+}
+"
+"2104010904","代江锋","计算机21-9 - 代江锋","E","No","2021-10-16 13:48:51","#include<iostream>
+using namespace std;
+int a[1000000]; 
+int main()
+{
+    int N,n;
+    while(scanf(""%d"",&N)){ 
+        while(N--){
+            scanf(""%d"",&n);
+            a[n]=1;
+        }
+        int flag=1;
+        for(int i=0;i<=1000000;i++){
+            if(a[i]){
+            	if(flag==0)
+            	{
+					printf("" "");
+				}
+                printf(""%d"",i);
+                flag=0;
+            }
+        }
+        printf(""\n"");
+    }
+    return 0;
+}"
+"2104010910","林皓俊","计算机21-9 - 林皓俊","B","Yes","2021-10-16 11:47:42","#include<stdio.h>
+int main()
+{
+	int T;
+	char sb[1000][1000];
+	scanf(""%d"",&T);
+	while(T--)
+	{
+		
+		int n,m,k;
+		scanf(""%d %d %d"",&n,&m,&k);
+		for(int i=0;i<n;i++)
+		{
+	    scanf(""%s"",sb[i]);
+		} 
+		for(int i=0;i<n;i++)
+		{
+			for(int l=1;l<=k;l++)
+			{
+		      for(int j=0;j<m;j++)
+		     {
+		  	  for(int f=1;f<=k;f++)
+			  {
+			  	printf(""%c"",sb[i][j]);
+			  }
+		     }
+		  printf(""\n"");
+			}
+		}
+	}
+}"
+"2104010910","林皓俊","计算机21-9 - 林皓俊","D","No","2021-10-16 12:57:34","#include<bits/stdc++.h>
+using namespace std;
+struct Fuck
+{
+	char name[100];
+	int w;
+} ;
+bool cmp(Fuck x ,Fuck y)
+{
+   return x.w>y.w;
+} 
+int main()
+{
+	int T;
+	int n;
+	int a;
+	Fuck fuck[10000];
+	int k=0;
+	scanf(""%d"",&T);
+	while(T--)
+	{
+		k=0;
+	 scanf(""%d"",&n);
+	 for(int i=1;i<=n;i++)
+	 {
+	 	scanf(""%d"",&a);
+	 	if(a==1)
+		 {
+		 	scanf(""%s %d"",fuck[k].name,&fuck[k].w);
+		 	k++;
+		 	continue;
+		 }
+		 if(a==2)
+		 {
+		 	sort(fuck+0,fuck+k,cmp);
+			printf(""%s\n"",fuck[0].name);
+			fuck[0].w=-1;
+			continue;
+		 }
+	 }
+	}
+}"
+"2104010910","林皓俊","计算机21-9 - 林皓俊","E","No","2021-10-16 11:31:20","#include<stdio.h>
+#include<set>
+using namespace std;
+int main()
+{
+	int n;
+	int x;
+	int a=1; 
+	set<int>sb;
+	scanf(""%d"",&n);
+	for(int i=1;i<=n;i++)
+	{
+		scanf(""%d"",&x);
+		sb.insert(x);
+	}
+	for(auto it=sb.begin();it!=sb.end();it++)
+	{
+		if(a==1)
+		{
+		 printf(""%d"",*it);
+		 a=0;
+		}
+		else
+		printf("" %d"",*it);
+	}
+	printf(""\n"");
+} "
+"2104010916","阮崇昱","计算机21-9 - 阮崇昱","A","No","2021-10-16 13:34:06","#include<stdio.h>
+#include<math.h>
+int main()
+
+{   
+    float T,k,b;
+    double h,s,x;
+    double S;
+    scanf(""%f"",&T);
+    for(;T>0;T--)
+    {
+        scanf(""%f %f"",&k,&b);
+        s=b;
+        if(k==1)
+        {
+            h=b/2;
+            S=(h*s)/2;printf(""%.4f"",S);
+            //printf(""%.4f"",S);
+        }
+        if(k==2)
+        {   double S1,S2,S3;
+            x=(1+sqrt(1+4*b))/2;
+            h=x*x;
+            S1=x*x*x/3;
+            S2=pow(x,3);
+            S3=(h*s)/2;
+            S=fabs(S3-(S2/2-S1));
+        
+            printf(""%.4f"",S);
+            //printf(""%.4f"",S);
+        }
+        
+
+
+
+    }
+    return 0;
+}"
+"2104010916","阮崇昱","计算机21-9 - 阮崇昱","E","No","2021-10-16 11:40:35","#include<stdio.h>
+int main()
+{
+
+    int a[1000001],n,i,t;
+    for(i=1;i<=1000000;i++)
+        a[i]=0;
+    scanf(""%d"",&n);
+    for(i=1;i<=n;i++)
+    {
+        scanf(""%d"",&t);
+        a[t]=1;
+    
+    }
+    for(i=1;1<=100000;i++)
+    {
+        if(a[t]==1)
+        printf(""%d "",i);
+
+    }
+    return 0;
+}"
+"2104010920","王杰","计算机21-9 - 王杰","B","Yes","2021-10-16 11:41:54","#include<stdio.h>
+#define N 100
+#define M 100
+int main(void)
+{
+    int T,i,n,m,k,j,h,t,p;
+    char a[N][M];
+    scanf(""%d"",&T);
+    for (i=0;i<T;i++)
+    {
+        scanf(""%d%d%d"",&n,&m,&k);
+        getchar();
+        for (j=0;j<n;j++)
+        {
+            for (h=0;h<m;h++)
+            {
+                scanf(""%c"",&a[j][h]);
+            }
+            getchar();
+        }
+
+
+        for (j=0;j<n;j++)
+        {
+            for (p=0;p<k;p++)
+            {
+            for (h=0;h<m;h++)
+            {
+                for (t=0;t<k;t++)
+                {
+                    printf(""%c"",a[j][h]);
+                }
+            }
+            printf(""\n"");
+        }
+        }
+
+    }
+    return 0;
+}
+"
+"2104010920","王杰","计算机21-9 - 王杰","E","No","2021-10-16 13:11:56","#include<stdio.h>
+#define N 1000000
+void Swap(int *a,int *b);
+int main(void)
+{
+    int n,a[N],i,j,k;
+    scanf(""%d"",&n);
+    for (i=0;i<n;i++)
+    {
+        scanf(""%d"",&a[i]);
+    }
+    for (i=0;i<n-1;i++)
+    {
+        for (j=i+1;j<n;j++)
+        {
+            if (a[j]<a[i])
+            {
+                Swap(&a[j],&a[i]);
+            }
+        }
+    }
+    for (i=0,j=0;i<n;i++,j++)
+    {
+        a[j]=a[i];
+        while (a[i]==a[i+1])
+        {
+            i++;
+        }
+
+    }
+    printf(""%d"",a[0]);
+    for (k=1;k<j;k++)
+    {
+        printf("" %d"",a[k]);
+    }
+    return 0;
+}
+
+void Swap(int *a,int *b)
+{
+    int temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+"
+"2104010929","赵玉鑫","计算机21-9 - 赵玉鑫","E","No","2021-10-16 11:42:30","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	set<long long int>zr;
+	long long int n,x;
+	scanf(""%lld"",&n);
+	for(int i=1;i<=n;i++)
+	{
+		scanf(""%lld"",&x); 
+		zr.insert(x);
+	
+	}
+	
+	for(auto it=zr.begin();it!=zr.end();it++)
+	{
+		if(it!=zr.end())
+		printf(""%lld "",*it);
+		else
+		{
+			printf(""%lld"",*it);
+		}
+	}
+}"
+"2104020103","邓宏辉","网络21-1 - 邓宏辉","A","No","2021-10-16 13:57:22","#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+int T;
+cin>>T;
+while(T--){
+    double k,b,x1,x2,x;
+    double z=pow(x1,k);
+    double q=-x2+b;
+    cin>>k>>b;
+    for(int i=1;i<=100;i++){
+        x1=i;
+        x2=i;
+        if(z==q){
+            x=i;
+        break;
+        }
+
+    } double y=-x+b;
+      double s=y*b;
+      printf(""%lf"",s);
+}
+
+}"
+"2104020104","丁振迈","网络21-1 - 丁振迈","D","No","2021-10-16 13:02:24","#include <bits/stdc++.h>
+using namespace std;
+struct homework
+{
+    string name;
+    int num;
+    bool operator <(const homework &a)const
+    {
+        return num<a.num;
+    }
+};
+char na[25];
+int num1;
+int main()
+{
+    priority_queue<homework> b;
+    int T;
+    scanf(""%d"",&T);
+    while(T--)
+    {
+        int n,x=0;
+        scanf(""%d"",&n);
+        while(n--)
+        {
+            homework k;
+            int m=0;
+            scanf(""%d"",&m);
+            if(m==1)
+            {
+                cin>>na>>num1;
+                k.name=na;
+                k.num=num1;
+                b.push(k);
+            }
+            vector<string> a;
+            if(m==2)
+            {
+               a.push_back(b.top().name);
+               b.pop();
+               for(auto it =a.begin();it!=a.end();it++)
+               {
+                 printf(""%s\n"",(*it).c_str());
+               }
+               a.erase(a.begin()+0);
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104020104","丁振迈","网络21-1 - 丁振迈","E","No","2021-10-16 12:02:17","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    set<int> a;
+    int n,t;
+    scanf(""%d"",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf(""%d"",&t);
+        if(a.count(t)==0)
+        {a.insert(t);}
+    }
+    for(auto it=a.begin();it!=a.end();it++)
+    {
+        if(it==a.begin()){printf(""%d"",*it);}
+        else{printf("" %d"",*it);}
+    }
+    return 0;
+}
+"
+"2104020107","黄方奕","网络21-1 - 黄方奕","E","No","2021-10-16 12:26:38","#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    vector <int> b;
+     scanf(""%d"",&n);
+    while(n--){
+        for(int i=1;i<=n;i++){
+              int t;
+              scanf(""%d"",&t);
+              b.push_back(t);
+        }
+
+        sort(b.begin(),b.end());
+        vector<int> :: iterator newit = unique(b.begin(),b.end());
+        b.erase(newit, b.end());
+	    vector<int> :: iterator it;
+      for(it = b.begin(); it != b.end(); it++){
+        if(it==b.begin()){printf(""%d"",*it);}
+        else{printf("" %d"",*it);}
+	  }
+    }
+    return 0;
+    }
+"
+"2104020110","李自强","网络21-1 - 李自强","B","Yes","2021-10-16 13:00:51","#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int n, m, k;
+		cin >> n >> m >> k;
+		while (n--)
+		{
+			char a[100];
+			for (int o = 1; o <= m; o++)
+			{
+				cin >> a[o];
+				
+			}
+			for (int j = 1; j <= k; j++)
+			{
+				for (int o = 1; o <= m; o++)
+				{
+					for (int i = 1; i <= k; i++)
+						cout << a[o];
+				}
+				cout << endl;
+			}	
+		}
+	}
+	return 0;
+}"
+"2104020111","林观云","网络21-1 - 林观云","B","No","2021-10-16 12:34:48","#include<iostream>
+using namespace std;
+int main()
+{
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int n,m,k;
+        int i;
+        cin>>n>>m>>k;
+        int s;
+        s=n+1;
+        while(s--)
+        {
+            char Zr,xj;
+            cin>>Zr;
+            for(i=1;i<=k;i++)
+    {
+        for( i=1;i<=k;i++)
+        {
+            cout<<""Z"";
+        }
+        for(i=1;i<=k;i++)
+           {
+               cout<<""r"";
+           }
+        for(i=1;i<=k;i++)
+            {
+            cout<<""~"";
+            }
+            cout<<endl;
+            cin>>xj;
+        for(i=1;i<=k;i++)
+            {
+            cout<<""x"";
+            }
+        for(i=1;i<=k;i++)
+            {
+            cout<<""j"";
+            }
+        for(i=1;i<=k;i++)
+            {
+            cout<<""!"";
+            }
+            cout<<endl;
+    }
+        }
+    }
+    return 0;
+}
+
+
+"
+"2104020112","林全友","网络21-1 - 林全友","B","Yes","2021-10-16 13:06:10","#include<iostream>
+using namespace std;
+int main()
+{
+	int T,n,m,k;
+	char c[127];
+	cin>>T;
+	while(T--)
+	{
+		cin>>n>>m>>k;
+		while(n--)
+		{
+			for(int i=1;i<=m;i++)
+			{
+				cin>>c[i];
+			}
+			for(int l=1;l<=k;l++)
+			{
+				for(int i=1;i<=m;i++)
+				{
+					for(int h=1;h<=k;h++)
+					{
+						cout<<c[i];
+					}
+				}
+				cout<<endl;
+	    	}
+		}
+	}
+	return 0;
+}"
+"2104020113","刘彪","网络21-1 - 刘彪","E","No","2021-10-16 12:13:59","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    short n,k=1;
+    cin>>n;
+    set<short>s;
+    while(n--)
+    {
+        short a;
+        cin>>a;
+        s.insert(a);
+    }
+    if(k==1)
+    {
+        auto b=s.begin();
+        printf(""%d"",*b);
+        s.erase(b);
+        k=0;
+    }
+    for(auto i=s.begin();i!=s.end();i++) printf("" %d"",*i);
+    return 0;
+}"
+"2104020114","刘浩泽","网络21-1 - 刘浩泽","E","No","2021-10-16 11:54:07","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a[10] = { 0,1,1,0,2,3,2,4,2,4 };
+    int tmp[10]; // 定义一个和k相同大小的数组，存放去重后的数
+    int m = 0; // 记录当前tmp到底存了多少个元素
+    for (int i = 0; i < 10; i++)
+    {
+        int j = 0;
+        for (; j < m; j++)
+        {
+            if (a[i] == tmp[j])//拿a[i]依次与tmp里的元素对比
+                break; // 找到相同的了
+        }
+ 
+        if (j == m)
+        { // 没有找到一个相同的，把a中此元素放入tmp里
+            tmp[m] = a[i];
+            m++;
+        }
+    }
+    for (int i = 0; i < m; i++)
+    {
+        cout << tmp[i] << endl;
+    }
+    return 0;
+}"
+"2104020119","王诗杰","网络21-1 - 王诗杰","E","No","2021-10-16 13:39:41","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{ 
+	int n;
+	cin>>n; 
+	int arr[n];
+	for(int i=0;i<n;i++)
+	{
+		int num;
+		cin>>num;
+		arr[i]=num;
+	}
+	 /*	for(int i=0;i<n-1;i++)
+	 		{
+	 		    for(int j=0;j<n-1-i;j++)
+	 			{
+	 			 if(arr[j]>arr[j+1])
+	 			 {
+	 				int temp=arr[j];
+	 				arr[j]=arr[j+1];
+	 				arr[j+1]=temp; 
+	 			 }
+	 			}
+	 		} 
+	 */
+	sort(arr,arr+n);
+	for(int i=0;i<n;i++)
+	{
+		if(i==0){
+			cout<<arr[i] ;
+		}
+		else if(arr[i]!=arr[i-1])
+		{cout<<"" ""<<arr[i];}
+	}
+}
+
+"
+"2104020120","王思远","网络21-1 - 王思远","E","No","2021-10-16 13:55:52","#include<bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+	long long a[100000];
+	int n,i;
+	scanf(""%d"",&n);
+	for(i=0;i<n;i++){
+	scanf(""%lld"",&a[i]);
+	}
+	sort(a,a+n);
+	printf(""%lld"",a[0]);
+	for(i= 1;i<n;i++)
+	{
+	if(a[i]!=a[i-1])
+	printf("" %lld"",a[i]);
+	}
+	return 0;
+}
+
+
+"
+"2104020123","徐梓航","网络21-1 - 徐梓航","C","No","2021-10-16 12:44:35","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,a,b,c,d;
+	int n,m;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n>>m;
+		int arr[n][m];
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<m;j++)
+			{
+				arr[i][j]=getchar();
+			}
+		}
+		scanf(""%d%d%d%d"",&a,&b,&c,&d);
+		if(arr[a-1][b-1]!='0'&&arr[c-1][d-1]!='0')
+		printf(""N0\n"");
+		else
+		printf(""YE5\n"");
+	}
+	return 0;
+}"
+"2104020124","余杰","网络21-1 - 余杰","A","No","2021-10-16 12:50:12","#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+int main()
+{ int a;
+double b,c;
+scanf(""%d"",&a);
+ for(int i=0;i<a;i++) 
+{double h=0;
+ double s=0;
+ double s1=0;
+
+	scanf(""%lf%lf"",&b,&c);
+	if(b==1)
+	{  
+	   h=b/2;
+		s=c*h/2;
+	}
+	if(b==2)
+		{  
+		  s1=((-1+sqrt(1+4*c))/2)*((-1+sqrt(1+4*c))/2)*((-1+sqrt(1+4*c))/2)/3+((-1+sqrt(1+4*c))/2)*((-1+sqrt(1+4*c))/2)/2-c*((-1+sqrt(1+4*c))/2);
+		  s=(((-1+sqrt(1+4*c))/2)+c)*((-1+sqrt(1+4*c))/2)*((-1+sqrt(1+4*c))/2)/2-s1;
+		}
+		printf(""%.4f\n"",s);
+}
+
+return 0;
+}"
+"2104020124","余杰","网络21-1 - 余杰","B","No","2021-10-16 12:19:22","#include<bits/stdc++.h>
+using namespace std;
+    
+int main()
+{
+int a,b,c,d;
+char f;
+scanf(""%d"",&a);
+for(int i=0;i<a;i++)
+{
+	scanf(""%d%d%d"",&b,&c,&d);
+   for(int j=0;j<b*c;j++)
+   { cin>>f;
+     for(int g=0;g<c;g++)
+	 {
+	   cout<<f;
+	   if(f==c) cout<<endl;	
+	 } 
+  }
+  }
+return 0;
+}"
+"2104020125","张皓博","网络21-1 - 张皓博","E","No","2021-10-16 12:22:56","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int a[1000];
+	int n;
+	cin>>n;
+	for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+n-1);
+    n=unique(a,a+n-1)-a;
+	for (int i=0;i<n;i++)
+    cout <<a[i]<< "" "";
+	return 0;
+}"
+"2104020129","周明智","网络21-1 - 周明智","E","No","2021-10-16 12:41:29","#include<iostream>
+using namespace std;
+int main()
+{
+	long n,m,j,l,i,s[100000]={0};
+	cin>>n;
+	int flag=1;
+	for(i=0;i<n;i++){
+		cin>>j;
+		s[j]=1;
+	}
+	for(j=1;j<=n;j++){
+		if(s[j]==1){
+cout<<j<<"" "";
+		}
+	} 
+	printf(""\b"");
+}"
+"2104020130","朱宝儿","网络21-1 - 朱宝儿","A","No","2021-10-16 13:50:40","#include<bits/stdc++.h>
+//#define ll long long
+using namespace std;
+int main()
+{
+    int T;
+    scanf(""%d"",&T);
+    {
+        while(T--)
+        {
+            double k,b;
+            double x;
+            scanf(""%lf %lf"",&k,&b);
+            double sum1,sum2;
+            double p,q;
+            for(double i=0.0;i<=10000;i++)
+            {
+                x=i/10;
+                sum1=pow(x,k);
+                sum2=b-x;
+                if(sum1==sum2&&sum2>0)
+                {
+                    p=sum1;
+                    break;
+                }
+            }
+            //printf(""%f %f\n"",p,x);
+            double sum=p*b/2;
+            printf(""%.4f\n"",sum);
+
+        }
+    }
+    return 0;
+}
+"
+"2104020130","朱宝儿","网络21-1 - 朱宝儿","B","Yes","2021-10-16 12:01:25","#include<bits/stdc++.h>
+//#define ll long long
+using namespace std;
+char c[105];
+int main()
+{
+    int T;
+    scanf(""%d"",&T);
+    {
+        while(T--)
+        {
+            int n,m,k;
+            scanf(""%d %d %d"",&n,&m,&k);
+            while(n--)
+            {
+                int q=m;
+                //while(q--)
+                    scanf(""%s"",c);
+                    int p=k;
+                    while(p--)
+                    {
+                       for(int i=0;i<m;i++)
+                        {
+                            for(int j=0;j<k;j++)
+                            {
+                                printf(""%c"",c[i]);
+                            }
+                        }
+                        puts("""");
+                    }
+
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104020130","朱宝儿","网络21-1 - 朱宝儿","D","Yes","2021-10-16 13:30:07","#include <bits/stdc++.h>
+using namespace std;
+struct HW
+{
+    string name;
+    int queuen;
+    int flag;
+    bool operator<(const HW& that)const
+    {
+        if(queuen==that.queuen)
+        {
+            return flag>that.flag;
+        }
+        return queuen<that.queuen;
+    }
+};
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        priority_queue<HW>Hw;
+        char buff[30];
+        int n;
+        scanf(""%d"",&n);
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            int a;
+            scanf(""%d"",&a);
+            if(a==1)
+            {
+                HW hw;
+                scanf(""%s"",buff);
+                hw.name=buff;
+                hw.flag=sum;
+                scanf(""%d"",&hw.queuen);
+                Hw.push(hw);
+                sum++;
+            }
+            else
+            {
+                printf(""%s\n"",Hw.top().name.c_str());
+                Hw.pop();
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104020130","朱宝儿","网络21-1 - 朱宝儿","E","No","2021-10-16 12:35:24","#include<bits/stdc++.h>
+using namespace std;
+int a[1000005];
+set<int>sad;
+int main()
+{
+    int n;
+    scanf(""%d"",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf(""%d"",a+i);
+    }
+    sort(a+0,a+n);
+    for(int i=0;i<n;i++)
+    {
+        sad.insert(a[i]);
+    }
+    for(auto it=sad.begin();it!=sad.end();it++)
+    {
+        if(it==sad.begin())
+            printf(""%d"",*it);
+        else
+            printf("" %d"",*it);
+    }
+    puts("""");
+    return 0;
+}
+"
+"2104020220","肖劲","网络21-2 - 肖劲","A","No","2021-10-16 12:08:55","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,k,b;
+	double s;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		scanf(""%d%d"",&k,&b);
+		if(k==1)
+		{
+			s=1.0*b*b/4.0;
+		}
+		if(k==2)
+		{
+			s=(1.0*pow((-1+sqrt(1+4*b))/2.0,3)/3.0)+(1.0*(b+(1-sqrt(1+4*b))/2.0)*(b+(1-sqrt(1+4*b))/2.0)/2.0);
+		}
+	}
+	printf(""%.4f\n"",s);
+	return 0;
+}"
+"2104020220","肖劲","网络21-2 - 肖劲","B","Yes","2021-10-16 12:15:52","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,n,m,k;
+	char s[1005][1005];
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		scanf(""%d%d%d"",&n,&m,&k);
+		for(int i=1;i<=n;i++)
+		{
+			for(int j=1;j<=m;j++)
+			{
+				cin>>s[i][j];
+			}
+		}
+		for(int i=1;i<=n;i++)
+		{
+			
+			for(int x=1;x<=k;x++)
+			{
+				for(int j=1;j<=m;j++)
+				{
+					for(int y=1;y<=k;y++)
+						cout<<s[i][j];
+				}
+				cout<<endl;
+			}
+		}
+	}
+	return 0;
+}"
+"2104020220","肖劲","网络21-2 - 肖劲","D","No","2021-10-16 13:29:13","#include<bits/stdc++.h>
+using namespace std;
+struct r
+{
+	char x[25];
+	int y;
+};
+r s[15];
+int main()
+{
+	int t,n,m,i,l;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		scanf(""%d"",&n);
+		i=0,l=0;
+		while(n--)
+		{
+			scanf(""%d"",&m);
+			if(m==1)
+			{
+				cin>>s[i].x>>s[i].y;
+				i++;
+			}
+			
+			for(int j=0;j<=i;j++)
+			{
+			    for(int k=0;k<=i-j;k++)
+				{
+					if(s[k].y<s[k+1].y)
+					{
+						swap(s[k],s[k+1]);
+					}
+				}
+			}
+			
+			if(m==2)
+			{
+				cout<<s[l].x<<""\n"";
+				l++;
+			}	
+		}
+	}
+	return 0;
+}"
+"2104020220","肖劲","网络21-2 - 肖劲","E","No","2021-10-16 11:17:29","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	set<int> s;
+	int n,t;
+	scanf(""%d"",&n);
+	for(int i=1;i<=n;i++)
+	{
+		scanf(""%d"",&t);
+		s.insert(t);
+	}
+	
+	for(auto it=s.begin();it!=s.end();it++)
+	{
+	    if(it==s.begin())
+	    {
+			cout<<*it;
+		}
+		else if(it!=s.begin())
+		{
+			cout<<"" ""<<*it;
+		}
+	}
+	return 0;
+}"
+"2104020227","张令羽","网络21-2 - 张令羽","B","Yes","2021-10-16 13:29:37","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    char ans[110];
+
+    while(t--)
+    {
+        int n,m,k;
+        scanf(""%d %d %d"",&n,&m,&k);
+        while(n--)
+        {
+            scanf(""%s"",ans);
+            int a=k;
+            while(a--)
+            {
+                for(int i=0; i<m; i++)
+                {
+                    for(int j=0; j<k; j++)
+                    {
+                        printf(""%c"",ans[i]);
+                    }
+                }
+                puts("""");
+            }
+        }
+    }
+}
+"
+"2104020227","张令羽","网络21-2 - 张令羽","D","Yes","2021-10-16 11:56:52","#include <bits/stdc++.h>
+using namespace std;
+struct Work
+{
+    string name;
+    int num;
+    int x;
+    bool operator<(const Work& that)const
+    {
+        if(num==that.num)
+        {
+            return x>that.x;
+        }
+        return num<that.num;
+    }
+};
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        priority_queue<Work>works;
+        char buff[30];
+        int n;
+        scanf(""%d"",&n);
+        int sum=0;
+        for(int i=0;i<n;i++)
+        {
+            int a;
+            scanf(""%d"",&a);
+            if(a==1)
+            {
+                Work w;
+                scanf(""%s"",buff);
+                w.name=buff;
+                w.x=sum;
+                scanf(""%d"",&w.num);
+                works.push(w);
+                sum++;
+            }
+            else
+            {
+                printf(""%s\n"",works.top().name.c_str());
+                works.pop();
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104020227","张令羽","网络21-2 - 张令羽","E","No","2021-10-16 13:52:33","#include<bits/stdc++.h>
+using namespace std;
+using ll=long long;
+ll a[100005];
+int main()
+{
+    int n;
+    int flag=0;
+    scanf(""%d"",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf(""%d"",&a[i]);
+    }
+    sort(a,a+n);
+    int len=unique(a,a+n)-a;
+    for(int i=0;i<len;i++)
+    {
+        if(flag==0)
+        {
+            flag=1;
+            printf(""%d"",a[i]);
+        }
+        else
+        printf("" %d"",a[i]);
+    }
+    puts("""");
+}
+"
+"2104020230","赵思宇","网络21-2 - 赵思宇","A","No","2021-10-16 13:58:29","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{   int T;
+    double x,y,s,k,b;
+    cin>>T;
+    while(T--){
+    cin>>k>>b;
+     if(k==1){
+     s=b*b/4;
+     }
+     else if(k==2){
+     x=sqrt(1+4*b)/2-0.5;
+     y=-x+b;
+     s=x*x*x/3+(b-x)*(b-x)/2;
+     }
+  }
+   cout<<fixed<<setprecision(4)<<s<<endl;
+      return 0;
+}"
+"2104020231","邹子豪","网络21-2 - 邹子豪","A","Yes","2021-10-16 13:55:36","#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main(){
+  int T;
+  double x,y;
+  cin>>T;
+  double s;
+  while(T--){
+   int k,b;
+   cin>>k>>b;
+   if(k==1){
+    s=0.2500*b*b;
+   }
+    if(k==2){
+     x=sqrt(1+4*b)/2-0.5;
+           y=-x+b;
+           s=x*x*x/3+(b-x)*y*0.5;
+	}cout<<fixed<<setprecision(4)<<s<<endl;    
+}
+}"
+"2104020231","邹子豪","网络21-2 - 邹子豪","E","No","2021-10-16 13:33:16","#include<iostream>
+#include<cstdio>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int n;
+	cin >> n;
+	int a[n-1];
+	for (int i = 0; i < n; ++i)
+	{
+		scanf(""%d"", &a[i]);
+	  
+	}
+	sort(a, a + n);
+	n = unique(a, a + n) - a;       
+	for (int i = 0; i < n; ++i)
+	{
+		printf(""%d "", a[i]);
+	}
+	
+	
+	return 0;
+}"
+"2104020301","陈博睿","网络21-3 - 陈博睿","A","Yes","2021-10-16 12:44:27","#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int t;
+    double x,y,s,b,k;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+       scanf(""%lf %lf"",&k,&b);
+       if(k==1)
+       {
+           s=b*b*0.2500;
+       }
+        else if(k==2)
+       {
+           x=sqrt(1+4*b)/2-0.5;
+           y=-x+b;
+           s=x*x*x/3+(b-x)*y*0.5;
+       }
+    printf(""%.4f\n"",s);
+    }
+    return 0;
+}
+"
+"2104020301","陈博睿","网络21-3 - 陈博睿","B","No","2021-10-16 13:49:50","#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,p,T,n,m,k;
+    char a[n][n];
+    scanf(""%d"",&T);
+    while(T--)
+    {
+        scanf(""%d %d %d"",&n,&m,&k);
+        while(i--)
+        {
+            for(j=n;j>0;j--)
+            {
+                scanf(""%s"",&a[i][j]);
+            }
+        }
+        while(i--)
+        {
+            for(j=n;j>0;j--)
+            {
+                for(p=k;p>0;p--)
+                {
+                    printf(""%s"",&a[i][j]);
+                }
+            }
+        }
+    }
+    return 0;
+}"
+"2104020301","陈博睿","网络21-3 - 陈博睿","E","No","2021-10-16 12:57:36","#include<stdio.h>
+int main()
+{
+ int n,i,j,t;
+ scanf(""%d"",&n);
+ int a[n];
+ for(i=0;i<n;i++)
+ {
+  scanf(""%d"",&a[i]);
+
+ }
+for (i=0;i<n-1;i++)
+{
+  for (j=0;j<n-1-i;j++)
+  {
+      if (a[j]>a[j+1])
+      {
+        t=a[j];
+        a[j]=a[j+1];
+        a[j+1]=t;
+      }
+  }
+}
+ t=0;
+ for(i=0;i<n;i++)
+ {
+    if (t!=a[i])
+    {
+     printf(""%d "",a[i]);
+     t=a[i];
+    }
+ }
+}"
+"2104020302","程世隆","网络21-3 - 程世隆","A","No","2021-10-16 13:48:01","#include <iostream>
+#include<iomanip>
+#include<math.h>
+using namespace std;
+
+int main(void)
+{
+    double T,x,y,k,b,S;
+    cin>>T;
+    while(T--){
+            cin>>k;
+    cin>>b;
+        if(k=1){
+           S=b*0.5*b*0.5;
+        }
+       else if(k=2){
+         y=-x+b;
+         x=sqrt(b-x);
+         S=b*b*b/3.0+(b-x)*(b-x)/2.0;
+        }
+        cout<<fixed<<setprecision(4)<<S<<endl;
+
+    }
+
+    return 0;
+}
+"
+"2104020303","崔硕","网络21-3 - 崔硕","A","Yes","2021-10-16 12:47:19","#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int t;
+    double x,y,s,b,k;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+       scanf(""%lf %lf"",&k,&b);
+       if(k==1)
+       {
+           s=b*b*0.2500;
+       }
+        else if(k==2)
+       {
+           x=sqrt(1+4*b)/2-0.5;
+           y=-x+b;
+           s=x*x*x/3+(b-x)*y*0.5;
+       }
+    printf(""%.4f\n"",s);
+    }
+    return 0;
+}"
+"2104020303","崔硕","网络21-3 - 崔硕","B","No","2021-10-16 13:23:11","#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i,j,w,p,T,n,m,k;
+    char a[n][n];
+    scanf(""%d"",&T);
+    for(w=0;w<T;w++)
+    {
+        scanf(""%d %d %d"",&n,&m,&k);
+        putchar(a);
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                for(p=0;p<k;p++)
+                {
+                    printf(""%s"",&a[i][j]);
+                }
+            }
+        }
+    }
+    return 0;
+}
+"
+"2104020303","崔硕","网络21-3 - 崔硕","E","No","2021-10-16 13:01:33","#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int t;
+    double x,y,s,b,k;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+       scanf(""%lf %lf"",&k,&b);
+       if(k==1)
+       {
+           s=b*b*0.2500;
+       }
+        else if(k==2)
+       {
+           y=b-x;
+           x=sqrt(1+4*b)/2-0.5;
+           s=(x*x*x)/3+((b-x)*y)/2;
+       }
+    printf(""%.4f\n"",s);
+    }
+    return 0;
+}"
+"2104020305","黄鑫宇","网络21-3 - 黄鑫宇","E","No","2021-10-16 13:58:15","#include <bits/stdc++.h>
+
+using namespace std;
+
+int fun(int a[], int n){
+    int i,j,k;
+    for(i=0; i<n-1; i++){
+        for(j=i+1; j<n; j++){
+            if(a[i]==a[j]){
+                for(k=j; k<n-1; k++){
+                    a[k]=a[k+1];
+                }
+                n--;
+                j--;
+            }
+        }
+    }
+    return n;
+}
+
+int main()
+{
+    int t;
+    scanf(""%d"",&t);
+    int a[t];
+    int i;
+    for(i=0; i<t; i++)
+    {
+        scanf(""%d"",a+i);
+    }
+
+    sort(a+0,a+t);
+    t=fun(a,t);
+    printf(""%d"",a[0]);
+    for(i=1; i<t; i++)
+    {
+        printf("" %d"",a[i]);
+    }
+    printf(""\n"");
+    return 0;
+}
+"
+"2104020306","黄一晨","网络21-3 - 黄一晨","A","Yes","2021-10-16 13:29:26","#include<bits/stdc++.h>
+using namespace std;
+double x,y,b,k,s,d;
+int T;
+int main(){
+scanf(""%d"",&T);
+while(T--){
+	scanf(""%lf %lf"",&k,&b);
+	if (k==1){
+	s=b*b/4;
+	printf(""%.4f\n"",s);
+	}
+	 else if(k==2){
+		d=sqrt(1+4*b);
+		x=(d-1)/2;
+		y=-x+b;s=x*x*x/3+(b-x)*y/2;
+		printf(""%.4f\n"",s);
+	}
+	}
+	return 0;
+}"
+"2104020306","黄一晨","网络21-3 - 黄一晨","E","No","2021-10-16 13:53:50","#include <stdio.h>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int n,b;
+int main()
+{
+scanf(""%d\n"",&n);
+vector<int> a;
+for (int i =0; i<n; i++){
+	scanf(""%d"",&b);
+	a.push_back(b);
+}
+sort(a.begin(),a.end());
+unique(a.begin(),a.end());
+for( auto it=a.begin();it!=a.end()-2;it++){
+printf(""%d "",*it);
+	}
+	printf(""\b"");
+	return 0;
+}"
+"2104020308","吕伟杰","网络21-3 - 吕伟杰","A","Yes","2021-10-16 13:24:37","#include<bits/stdc++.h>
+using namespace std;
+double x;
+double y;
+double b;
+double k;
+double s;
+double d;
+int T;
+int main()
+{   scanf(""%d"",&T);
+while(T--){
+	scanf(""%lf%lf"",&k,&b);
+	if (k==1)
+	{
+		s=b*b/4;
+	printf(""%.4lf\n"",s);
+	}
+	 else if(k==2)
+		{
+		d=sqrt(1+4*b);
+		x=(d-1)/2;
+		y=-x+b;
+		s=x*x*x/3+(b-x)*y/2;
+		printf(""%.4lf\n"",s);
+	}
+	}
+	return 0;
+}
+"
+"2104020311","马梓阳","网络21-3 - 马梓阳","A","Yes","2021-10-16 12:55:13","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    scanf(""%d"", &t);
+    while (t--)
+    {
+        double k, b;
+        scanf(""%lf%lf"", &k, &b);
+        if (k == 1)
+        {
+            double x = b / 2, s = 0;
+            s = b / 2 * x;
+            printf(""%.4f\n"", s);
+        }
+        else
+        {
+            double t = ((double)sqrt(1 + 4 * b) - (double)1.0) / 2;
+            double s1 = t * t * t / (double)3;
+            double s2 = (b - t) * t * t / (double)2;
+            printf(""%.4f\n"", s1 + s2);
+        }
+    }
+    return 0;
+}"
+"2104020311","马梓阳","网络21-3 - 马梓阳","B","Yes","2021-10-16 13:22:38","#include <stdio.h>
+#include <string>
+#include <vector>
+#include <iostream>
+using namespace std;
+int ch[1010];
+int main()
+{
+    int t;
+    scanf(""%d"", &t);
+    while (t--)
+    {
+        int n, m, k;
+        scanf(""%d%d%d"", &n, &m, &k);
+        vector<string> s;
+        for (int i = 0; i < n; i++)
+        {
+            string a;
+            char ac[110];
+            scanf(""%s"", &ac);
+            a = ac;
+            s.push_back(a);
+        }
+        for (int we = 0; we < n; we++)
+        {
+            for (int qw = 0; qw < k; qw++)
+            {
+                for (int i = 0; i < m; i++)
+                {
+                    for (int j = 0; j < k; j++)
+                    {
+                        printf(""%c"", s[we][i]);
+                    }
+                }
+                puts("""");
+            }
+        }
+    }
+    return 0;
+}"
+"2104020311","马梓阳","网络21-3 - 马梓阳","D","No","2021-10-16 13:58:26","#include <stdio.h>
+#include <string>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+using namespace std;
+multiset<int> youxian;
+int ch[1010];
+int main()
+{
+    map<int,string> ma;
+    int t;
+    scanf(""%d"",&t);
+    while(t--)
+    {
+        int x;
+        scanf(""%d"",&x);
+        for(int i = 0;i<x;i++)
+        {
+            int s;
+            scanf(""%d"",&s);
+            if(s==1)
+            {
+                char xuek[25];string xueke;int youxianji;
+                scanf(""%s%d"",&xuek,&youxianji);
+                youxian.insert(youxianji);
+                xueke=xuek;
+                ma[youxianji]=xueke;
+            }
+            else
+            {
+                //printf(""%d"",*(--youxian.end()));
+                printf(""%s\n"",ma[*(--youxian.end())].c_str());
+                youxian.erase(--youxian.end());
+                //ma.erase(*(--youxian.end()));
+            }
+        }
+        ma.clear();
+        youxian.clear();
+    }
+    return 0;
+}"
+"2104020311","马梓阳","网络21-3 - 马梓阳","E","No","2021-10-16 12:37:31","#include <stdio.h>
+#include <algorithm>
+
+using namespace std;
+
+const int M = 10000000;
+
+int s[M];
+
+int main()
+{
+    int n;
+    scanf(""%d"",&n);
+    for(int i = 0;i<n;i++)
+    {
+        scanf(""%d"",&s[i]);
+    }
+    sort(s,s+n);
+    int m = unique(s,s+n)-s;
+    for(int i = 0;i<m;i++)
+    {
+        if(i==0)
+        {
+            printf(""%d"",s[i]);
+        }
+        else
+        {
+            printf("" %d"",s[i]);
+        }
+    }
+    return 0;
+}"
+"2104020316","王成龙","网络21-3 - 王成龙","E","No","2021-10-16 11:41:02","#include<stdio.h>
+ int main(){
+ 	int n;
+    scanf(""%d"",&n);
+    while(n--){
+			int a[n];
+			for(int i=0;i<n;i++){
+				scanf(""%d"",&a[i]);
+			}
+			for(int i=0;i<n-1;i++){
+				for(int j=0;j<n-1;j++){
+					if(a[j]>a[j+1]){
+						int t=a[j];
+						a[j]=a[j+1];
+						a[j+1]=t;
+					}
+				}
+			} 
+			int index=1;
+			int b[n];
+			b[0]=a[0];
+			for(int i=1;i<n;i++){
+				if(a[i]!=a[i-1]){
+					b[index++]=a[i];
+				}
+			}
+			for(int i=0;i<index;i++){
+				printf(""%d "",b[i]); 
+			}
+			printf(""\n"");
+	}
+ 	return 0;
+ 
+ }"
+"2104020319","巫凌霄","网络21-3 - 巫凌霄","E","No","2021-10-16 12:53:17","#include<iostream>
+#include<set>
+using namespace std;
+set<int>hhh;
+int main()
+{
+    int n,it=1;
+    scanf(""%d"",&n);
+    for(;it<=n;it++)
+    {
+        int x;
+        scanf(""%d"",&x);
+        hhh.insert(x);
+    }
+    for(auto it=hhh.begin();it!=hhh.end();it++)
+    {
+        if(it==hhh.begin())
+        {
+            printf(""%d"",*it);
+        }
+        else
+        {
+            printf("" %d"",*it);
+        }
+    }
+    return 0;
+}"
+"2104020321","奚健朝","网络21-3 - 奚健朝","E","No","2021-10-16 12:33:20","#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+	int n,a[100005];
+	cin>>n;
+	set<int>s;
+	for(int i=0;i<n;i++){
+    	scanf(""%d"",&a[i]);
+    	s.insert(a[i]);
+	}
+     set<int>::iterator it;
+    for(it =s.begin();it !=s.end();it++){
+            if(it!=s.begin()){
+			printf("" "");
+			}
+    		printf(""%d"",*it);
+	   
+	} 
+	
+	return 0;
+} "
+"2104020326","张文静","网络21-3 - 张文静","B","Yes","2021-10-16 13:18:33","#include<iostream>
+using namespace std;
+int main()
+{
+	int T,n,m,k;
+	char a[101][101];
+	cin>>T;
+	while(T)
+	{
+		T--;
+		cin>>n>>m>>k;
+		for(int i=1;i<=n;++i)
+			for(int j=1;j<=m;++j)
+			{
+				a[i][j]=getchar();
+				while(a[i][j]<=32||a[i][j]>=127)
+					a[i][j]=getchar();
+			}
+		for(int i=1;i<=n;++i)
+			for(int o=1;o<=k;++o)
+			{
+				for(int j=1;j<=m;++j)
+					for(int p=1;p<=k;++p)
+						cout<<a[i][j];
+				cout<<endl;
+			}
+	}
+}"
+"2104020326","张文静","网络21-3 - 张文静","E","No","2021-10-16 13:31:51","#include <bits/stdc++.h>
+using namespace std;
+int b[1000001];
+int main()
+{
+	int n;
+	scanf(""%d"",&n);
+	for (int i = 0; i < n; ++i)
+	{
+		scanf(""%d"", &b[i]);
+	  
+	}
+	sort(b, b + n);
+	n= unique(b, b + n) - b;       
+	for (int i = 0; i < n; ++i)
+	{
+	if(i==0)	printf(""%d"",b[0]);
+	else	{printf("" %d"", b[i]);}
+	}
+	
+	
+	return 0;
+}"
+"2104020330","朱梓轩","网络21-3 - 朱梓轩","D","No","2021-10-16 13:56:56","#include <bits/stdc++.h>
+using namespace std;
+
+struct sub{
+    char name[20];
+    long long first;
+    long long num;
+};
+
+bool cmp(sub x,sub y){
+    if(x.first==y.first){
+        return x.num<y.num;
+    }
+    return x.first>y.first;
+}
+sub a[100005];
+int main()
+{
+    int T;
+    scanf(""%d"",&T);
+    while(T--){
+        long long n;
+    scanf(""%lld"",&n);
+    long long b=0,c=0;
+    for(long long i=1;i<=n;i++){
+        long long x;
+        scanf(""%lld"",&x);
+        if(x==1){
+            b++;
+            scanf(""%s %lld"",&a[b].name,&a[b].first);
+            a[b].num=b;
+            sort(a+1,a+b+1,cmp);
+        }
+        if(x==2){
+            c++;
+            printf(""%s\n"",a[c].name);
+        }
+        }
+    }
+    return 0;
+}"
+"2104020330","朱梓轩","网络21-3 - 朱梓轩","E","No","2021-10-16 13:23:15","#include <bits/stdc++.h>
+
+using namespace std;
+
+int a[1000000];
+int main()
+{
+    int n;
+    scanf(""%d"",&n);
+    for(int i=1;i<=n;i++){
+        scanf(""%d"",&a[i]);
+    }
+    sort(a+1,a+n+1);
+    int x;
+    x=unique(a+1,a+n+1)-a;
+    int e=1;
+    for(int i=1;i<x;i++){
+            if(e==1){
+        printf(""%d"",a[i]);
+        e++;
+    }
+    else{
+        printf("" %d"",a[i]);
+    }
+    }
+    printf(""\n"");
+    return 0;
+}
+"
+"2104020401","曹弘毅","网络21-4 - 曹弘毅","A","No","2021-10-16 13:57:35","#include<iostream>
+using namespace std;
+int a[1000000];
+ 
+int main()
+{
+	int y1,y2,k,b,l;
+	int x1;
+		cin>>l;
+		cin>>k>>b;
+	y1=pow(x1,k);
+	y2=-x1+b;
+   
+	while(l--)
+	{
+		if(y1==y2&&x1)
+		{
+		  for(int i=1;i<=1000000;i++)
+		  { a[1]=0;
+		  	double sum=0;
+		  	a[i+1]=a[i]+x1/1000000;
+		  	 sum+=pow(a[i],k);
+		  	int  z=(b-x1)*y2/2;
+		   printf(""%.4f"",sum+z);
+		  }	
+		 
+		  
+		}
+	}
+	return 0;
+}"
+"2104020401","曹弘毅","网络21-4 - 曹弘毅","E","No","2021-10-16 12:51:52","#include<bits\stdc++.h>
+using namespace std;
+int b[100005];
+int main()
+{   int m;
+	int l;
+	cin>>l;
+	for(int i=1;i<=l;i++)
+	{
+     int a[i];
+	scanf(""%d"",a+1);
+    m=unique(a,a+l,a[i])-a;
+	b[i]=lower_bound(a,a+m,a[i])-a;
+	}
+	while(m--)
+	{
+	printf(""%d"",b+1);
+	}
+	return 0;
+}"
+"2104020402","陈华铖","网络21-4 - 陈华铖","E","No","2021-10-16 13:18:06","#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a,n;
+    set<int>s;
+    scanf(""%d"",&n);
+    int i=1;
+    while(n--){
+        scanf(""%d"",&a);
+        s.insert(a);
+    }
+    for(auto it=s.begin();it!=s.end();it++){
+        printf(""%d "",(*it));
+        
+    }
+    return 0;
+}"
+"2104020407","李永昕","网络21-4 - 李永昕","A","Yes","2021-10-16 13:52:18","#include <iostream>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+
+int main() {
+	int t;
+	double k, b;
+	scanf(""%d"", &t);
+	while (t--) {
+		scanf(""%lf%lf"", &k, &b);
+		if (k == 1) {
+			double x = b / 2;
+			printf(""%.4lf\n"", 1.0 / 2 * b * x);
+		} else {
+			double x = (-1 + sqrt(1 + 4 * b)) / 2;
+			printf(""%.4lf\n"", x * x * x / 3 + (b - x)*x * x / 2);
+		}
+	}
+	return 0;
+}"
+"2104020407","李永昕","网络21-4 - 李永昕","B","Yes","2021-10-16 11:08:33","#include <iostream>
+#include <cstdio>
+using namespace std;
+char a[1010][1010];
+
+int main() {
+	int t, n, m, k;
+	scanf(""%d"", &t);
+	while (t--) {
+		scanf(""%d%d%d"", &n, &m, &k);
+		for (int i = 1; i <= n; i++)
+			for (int j = 1; j <= m; j++)
+				cin >> a[i][j];
+		for (int i = 1; i <= n; i++) {
+			for (int g = 1; g <= k; g++) {
+				for (int j = 1; j <= m; j++)
+					for (int l = 1;  l <= k; l++)
+						printf(""%c"", a[i][j]);
+				printf(""\n"");
+			}
+
+		}
+
+	}
+	return 0;
+}"
+"2104020407","李永昕","网络21-4 - 李永昕","C","Yes","2021-10-16 11:56:37","#include <iostream>
+#include <cstdio>
+#include <queue>
+#include <cstring>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+char a[510][510];
+
+int fx[4] = {0, 1, -1, 0};
+
+int fy[4] = {1, 0, 0, -1};
+bool used[510][510];
+
+struct node {
+	int x, y, step;
+};
+int T, n, m, t;
+int ex, ey, sx, sy;
+
+bool islegal(int x, int y) {
+	if (x >= 1 && x <= n && y >= 1 && y <= m && a[x][y] != '1')
+		return 1;
+	return 0;
+}
+
+bool dfs(int x, int y) {
+	if (x == ex && y == ey)
+		return 1;
+	for (int i = 0; i < 4; i++) {
+		int xx = x + fx[i];
+		int yy = y + fy[i];
+		if (!used[xx][yy] && islegal(xx, yy)) {
+			used[xx][yy] = 1;
+			dfs(xx, yy);
+			used[xx][yy] = 0;
+		}
+	}
+	return 0;
+}
+
+int bfs(int xx, int yy) {
+	queue<node>Q;
+	node q, p;
+	q.x = xx;
+	q.y = yy;
+	q.step = 0;
+	used[xx][yy] = 1;
+	Q.push(q);
+	while (!Q.empty()) {
+		q = Q.front();
+		Q.pop();
+		if (q.x == ex && q.y == ey)
+			return q.step;
+		for (int i = 0; i < 4; i++) {
+			p = q;
+			p.x += fx[i];
+			p.y += fy[i];
+			if (!used[p.x][p.y] && islegal(p.x, p.y)) {
+				used[p.x][p.y] = 1;
+				p.step++;
+				Q.push(p);
+			}
+		}
+	}
+	return -1;
+}
+
+int main() {
+	scanf(""%d"", &T);
+	while (T--) {
+		scanf(""%d%d"", &n, &m);
+		for (int i = 1; i <= n; i++)
+			for (int j = 1; j <= m; j++)
+				cin >> a[i][j];
+		scanf(""%d%d%d%d"", &sx, &sy, &ex, &ey);
+		memset(used, 0, sizeof(used));
+		if (bfs(sx, sy) >= 0)
+			printf(""YE5\n"");
+		else
+			printf(""N0\n"");
+	}
+	return 0;
+}"
+"2104020407","李永昕","网络21-4 - 李永昕","D","No","2021-10-16 13:22:10","#include <iostream>
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+
+struct node {
+	int num, v;
+	string name;
+} p[100010];
+
+bool cmp(node a, node b) {
+	if (a.v == b.v)
+		return a.num < b.num;
+	else
+		return a.v > b.v;
+}
+int t, n, w;
+
+int main() {
+	scanf(""%d"", &t);
+	while (t--) {
+		int s = 1, e = 0;
+		scanf(""%d"", &n);
+		for (int i = 1; i <= n; i++) {
+			scanf(""%d"", &w);
+			if (w == 1) {
+				cin >> p[++e].name >> p[e].v;
+				p[e].num = e;
+			} else if (w == 2) {
+				sort(p + s + 1, p + e + 1, cmp);
+				cout << p[s].name << endl;
+				s++;
+			}
+		}
+	}
+	return 0;
+}"
+"2104020407","李永昕","网络21-4 - 李永昕","E","No","2021-10-16 13:26:48","#include <iostream>
+#include <cstdio>
+using namespace std;
+bool a[1000001];
+
+int main() {
+	int n, aa;
+	scanf(""%d"", &n);
+	for (int i = 1; i <= n; i++) {
+		scanf(""%d"", &aa);
+		a[aa] = 1;
+	}
+	bool f = 1;
+	for (int i = 1; i <= n; i++)
+		if (a[i])
+			if (f) {
+				printf(""%d"", i);
+				f = 0;
+			} else
+				printf("" %d"", i);
+	return 0;
+}
+/*#include <iostream>
+#include <cstdio>
+#include <set>
+using namespace std;
+int n, a, i;
+set<int>q;
+set<int>::iterator nano;
+int main() {
+	scanf(""%d"", &n);
+	for (i = 1; i <= n; i++) {
+		scanf(""%d"", &a);
+		q.insert(a);
+	}
+	printf(""%d"", *q.begin());
+	for (nano = ++q.begin(); nano != q.end(); nano++)
+		printf("" %d"", *nano);
+	return 0;
+}*/
+"
+"2104020408","李展翔","网络21-4 - 李展翔","E","No","2021-10-16 13:49:16","#include<bits/stdc++.h>
+using namespace std;
+int a[100000];
+int main(){
+    int t;
+    scanf(""%d"",&t);
+    for(int i=0;i<t;i++) scanf(""%d"",&a[i]);;
+    sort(a,a+t);
+    int n=unique(a,a+t)-a;
+    printf(""%d"",a[0]);
+    for(int p=1;p<n;p++) printf("" %d"",a[p]);
+	return 0;
+}"
+"2104020410","林浩","网络21-4 - 林浩","A","No","2021-10-16 13:54:51","#include<iostream>
+using namespace std;
+char a[105][105];
+char b[105][105];
+	int s=0;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--){
+		int n , m , k;
+		cin>>n>>m>>k;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=m;j++){
+				cin>>a[i][j];
+				b[k*i][k*j]=a[i][j];
+			}
+	}
+	int p=k;
+
+	while(k--){	
+		for(int i=1;i<=n*p;i++){
+			for(int j=1;j<=m*p;j++){
+				
+				b[p*i-k][p*j]=b[p*i][p*j];
+				b[p*i-1][p*j-k]=b[p*i][p*j];
+			b[p*i-2][p*j-k]=b[p*i][p*j];
+			b[p*i][p*j-k]=b[p*i][p*j];
+//			b[p*i-][p*j-k]=b[p*i][p*j];
+//				b[p*i-1][p*j-k]=b[p*i][p*j];
+//				b[p*i-2][p*j-k]=b[p*i][p*j];
+				}
+			     
+//b[p*i][p*j-k]=b[p*i][p*j];	
+	
+//	for(int i=1;i<=n*p;i++){
+//			for(int j=1;j<=m*p;j++){
+//				
+//				
+//				
+//			}
+//	}
+	
+      
+	}
+	
+	
+	
+}
+	
+	
+	
+	
+	for(int i=1;i<=n*p;i++){
+			for(int j=1;j<=m*p;j++){
+				cout<<b[i][j];
+				
+			}cout<<endl;
+	}
+	
+
+	
+}
+	return 0;
+}
+"
+"2104020410","林浩","网络21-4 - 林浩","B","No","2021-10-16 13:51:31","#include<iostream>
+using namespace std;
+char a[105][105];
+char b[105][105];
+	int s=0;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--){
+		int n , m , k;
+		cin>>n>>m>>k;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=m;j++){
+				cin>>a[i][j];
+				b[k*i][k*j]=a[i][j];
+			}
+	}
+	int p=k;
+
+	while(k--){	
+		for(int i=1;i<=n*p;i++){
+			for(int j=1;j<=m*p;j++){
+				
+				b[p*i-k][p*j]=b[p*i][p*j];
+				b[p*i-1][p*j-k]=b[p*i][p*j];
+			b[p*i-2][p*j-k]=b[p*i][p*j];
+			b[p*i][p*j-k]=b[p*i][p*j];
+//			b[p*i-][p*j-k]=b[p*i][p*j];
+//				b[p*i-1][p*j-k]=b[p*i][p*j];
+//				b[p*i-2][p*j-k]=b[p*i][p*j];
+				}
+			     
+//b[p*i][p*j-k]=b[p*i][p*j];	
+	
+//	for(int i=1;i<=n*p;i++){
+//			for(int j=1;j<=m*p;j++){
+//				
+//				
+//				
+//			}
+//	}
+	
+      
+	}
+	
+	
+	
+}
+	
+	
+	
+	
+	for(int i=1;i<=n*p;i++){
+			for(int j=1;j<=m*p;j++){
+				cout<<b[i][j];
+				
+			}cout<<endl;
+	}
+	
+
+	
+}
+	return 0;
+}
+"
+"2104020410","林浩","网络21-4 - 林浩","C","No","2021-10-16 13:57:07","#include<iostream>
+using namespace std;
+char a[105][105];
+char b[105][105];
+	int s=0;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--){
+		int n , m , k;
+		cin>>n>>m>>k;
+		for(int i=1;i<=n;i++){
+			for(int j=1;j<=m;j++){
+				cin>>a[i][j];
+				b[k*i][k*j]=a[i][j];
+			}
+	}
+	int p=k;
+
+	while(k--){	
+		for(int i=1;i<=n*p;i++){
+			for(int j=1;j<=m*p;j++){
+				
+				b[p*i-k][p*j]=b[p*i][p*j];
+				b[p*i-1][p*j-k]=b[p*i][p*j];
+			b[p*i-2][p*j-k]=b[p*i][p*j];
+			b[p*i][p*j-k]=b[p*i][p*j];
+//			b[p*i-][p*j-k]=b[p*i][p*j];
+//				b[p*i-1][p*j-k]=b[p*i][p*j];
+//				b[p*i-2][p*j-k]=b[p*i][p*j];
+				}
+			     
+//b[p*i][p*j-k]=b[p*i][p*j];	
+	
+//	for(int i=1;i<=n*p;i++){
+//			for(int j=1;j<=m*p;j++){
+//				
+//				
+//				
+//			}
+//	}
+	
+      
+	}
+	
+	
+	
+}
+	
+	
+	
+	
+	for(int i=1;i<=n*p;i++){
+			for(int j=1;j<=m*p;j++){
+				cout<<b[i][j];
+				
+			}cout<<endl;
+	}
+	
+
+	
+}
+	return 0;
+}
+"
+"2104020410","林浩","网络21-4 - 林浩","E","No","2021-10-16 11:36:55","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n;
+	cin>>n;
+	set<int> a;
+	for(int i=1;i<=n;i++){
+		int k;
+		cin>>k;
+		a.insert(k);
+	}
+	 for(auto it=a.begin();it!=a.end();it++)
+        {
+            if(it==a.begin())
+            printf(""%d"",*it);
+            else
+            printf("" %d"",*it);
+        }
+
+	return 0;
+}"
+"2104020416","彭雪松","网络21-4 - 彭雪松","E","No","2021-10-16 12:58:25","#include<bits/stdc++.h>
+using namespace std;
+const int M=1000000;
+int a[M+5];
+int main()
+{
+	int n;
+	scanf(""%d\n"",&n);
+
+	for(int i=0;i<n;i++)
+	{
+		scanf(""%d"",&a[i]);
+	}
+	sort(a,a+n);
+	printf(""%d"",a[0]);
+	n=unique(a,a+n)-a;
+	for(int i=1;i<n;i++)
+	{
+			printf("" %d"",a[i]);
+
+	}
+	printf(""\n"");
+
+
+
+	return 0;
+}"
+"2104020417","沈锦轩","网络21-4 - 沈锦轩","A","Yes","2021-10-16 13:03:51","#include<bits/stdc++.h>
+using ll = long long;
+using namespace std;
+double e, f, a, b, c;
+double qj(double b)
+{
+	double s;
+	s=(-1+sqrt(1+4*b))/2.0;
+	return s;
+}
+int main()
+{
+	int t;
+	while(scanf(""%d"",&t)!=EOF)
+	{
+		while(t--)
+		{
+			double k,b,s;
+			scanf(""%lf%lf"",&k,&b);
+			if(k==1)
+			{
+				double x;
+				x=b/2.0;
+				s=b*x/2.0;
+			}
+			else
+			{
+				double jdx,jdy;
+				jdx=qj(b);
+				jdy=b-jdx;
+				double s1,s2;
+				s1=(b-jdx)*jdy/2.0;
+				s2=1.0/3.0*jdx*jdx*jdx;
+				s=s1+s2;
+			}
+			printf(""%.4f\n"",s);
+		}
+	}
+	return 0;
+}"
+"2104020417","沈锦轩","网络21-4 - 沈锦轩","B","Yes","2021-10-16 11:27:36","#include<bits/stdc++.h>
+using ll = long long;
+using namespace std;
+string str;
+
+int main()
+{
+	int t;
+	scanf(""%d"", &t);
+	getline(cin, str);
+	while (t--)
+	{
+		int n, m, k;
+		scanf(""%d%d%d"", &n, &m, &k);
+		getline(cin, str);
+		for (int i = 1; i <= n; i++)
+		{
+			char ans1[1000000];
+			getline(cin, str);
+			for (int j = 0; j <= (int)str.length() - 1; j++)
+			{
+				char x;
+				x = str[j];
+				for (int y = 1; y <= k; y++)
+				{
+					ans1[(j)*k + y] = x;
+				}
+			}
+			for (int p = 1; p <= k ; p++ )
+			{
+				for (int l = 1; l <= m * k; l++)
+				{
+					printf(""%c"", ans1[l]);
+				}
+				puts("""");
+			}
+		//memset(ans1, 0, sizeof(ans1));
+		}
+
+	}
+	return 0;
+}"
+"2104020417","沈锦轩","网络21-4 - 沈锦轩","C","No","2021-10-16 13:58:28","#include<bits/stdc++.h>
+using ll = long long;
+using namespace std;
+int a[505][505];
+int nx[5]={0,0,1,0,-1};
+int ny[5]={0,1,0,-1,0};
+queue<pair<int,int>> mp;
+bool dg(int ex,int ey)
+{
+	while(!mp.empty())
+	{
+		if(mp.front().first==ex&&mp.front().second==ey) return true;
+		else 
+		{
+			for(int i=1;i<=4;i++)
+			{
+				int wx=mp.front().first+nx[i];
+				int wy=mp.front().second+ny[i];
+				if(a[wx][wy]!=1)
+				mp.push(make_pair(wx,wy));
+			}
+			mp.pop();
+		}
+		
+	}
+	return false;
+}
+int main()
+{
+	int t;
+	scanf(""%d"", &t);
+	while (t--)
+	{
+		int n, m;
+		scanf(""%d%d"", &n, &m);
+		for (int i = 1; i <= n; i++)
+		{
+			for (int j = 1; j <= m; j++)
+			{
+				scanf(""%1d"",&a[i][j]);
+			}
+		}
+		int bx,by,ex,ey;
+		scanf(""%d%d%d%d"",&bx,&by,&ex,&ey);
+		mp.push(make_pair(bx,by));
+		if(dg(ex,ey)) printf(""YE5\n"");
+		else printf(""N0\n"");
+
+	}
+	return 0;
+}"
+"2104020417","沈锦轩","网络21-4 - 沈锦轩","D","Yes","2021-10-16 13:35:30","#include<bits/stdc++.h>
+using ll = long long;
+using namespace std;
+struct homework
+{
+	string name;
+	int time, level;
+	bool operator<(const homework &that)const
+	{
+		if (level == that.level )
+			return time < that.time;
+		return level > that.level;
+	}
+};
+int main()
+{
+	string str;
+	int t;
+	while (~scanf(""%d"", &t))
+	{
+		getline(cin, str);
+		while (t--)
+		{
+			set<homework>hw;
+			int n;
+			scanf(""%d"", &n);
+			getline(cin, str);
+			int num = 1;
+			for (int i = 1; i <= n; i++)
+			{
+				int caozuo;
+				scanf(""%d"", &caozuo);
+				if (caozuo == 1)
+				{
+					char mingzia [100];
+					string mingzi;
+					scanf(""%s"", mingzia);
+					mingzi = mingzia;
+					int levv;
+					scanf(""%d"", &levv);
+					homework lj;
+					lj.name = mingzi;
+					lj.time = num;
+					lj.level = levv;
+					hw.insert(lj);
+					num++;
+				}
+				else
+				{
+					printf(""%s\n"", (*hw.begin()).name.c_str());
+					hw.erase(hw.begin());
+				}
+			}
+			
+		}
+	}
+	return 0;
+}"
+"2104020417","沈锦轩","网络21-4 - 沈锦轩","E","No","2021-10-16 12:27:32","#include<bits/stdc++.h>
+using ll = long long;
+using namespace std;
+int main()
+{
+	set<int> a;
+	int n;
+	scanf(""%d"",&n);
+	for(int i=1;i<=n;i++)
+	{
+		int m;
+		scanf(""%d"",&m);
+		a.insert(m);
+	}
+	for(auto itt=a.begin();itt!=a.end();itt++)
+	{
+		if(itt==a.begin()) printf(""%d"",*itt);
+		else printf("" %d"",*itt);
+	}
+	return 0;
+}"
+"2104020419","苏国昌","网络21-4 - 苏国昌","B","No","2021-10-16 13:42:49","#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	int t;
+	scanf(""%d"",&t);
+	while(t--)
+	{
+		int n,m,k;
+		scanf(""%d %d %d"",&n,&m,&k);
+		char a [10][10];
+		for(int i=1;i<=n;i++)
+		{
+			getchar(); 
+			for(int j=1;j<=m;j++)
+			{
+			   scanf(""%c"",&a[i][j]); 
+			}
+		}
+		for(int q=1;q<=n;q++)
+		{
+			for(int w=1;w<=k;w++)
+			{
+				for(int e=1;e<=m;e++)
+				{
+					for(int r=1;r<=k;r++)
+					{
+						cout<<a[q][e];
+					}
+				}
+				printf(""\n"");
+			}
+		}
+	}
+	return 0;
+}"
+"2104020419","苏国昌","网络21-4 - 苏国昌","E","No","2021-10-16 13:35:29","#include <bits/stdc++.h>
+
+using namespace std;
+
+int a[100005];
+int b[100005];
+
+int main()
+{
+	int n;
+	scanf(""%d"",&n);
+	for(int i=0;i<n;i++)
+	{
+		scanf(""%d"",&a[i]);
+	}
+	sort(a,a+n);
+	b[0]=a[0];	
+	int c=0;
+	for(int i=1;i<n;++i)
+	{
+		if(a[i]!=a[i-1])
+		{
+			b[++c]=a[i];
+		}
+	}
+	int d=0;
+	for(int i=0;i<=c;++i)
+	{
+		if(d!=0)
+		printf("" "");
+		d++;
+		printf(""%d"",a[i]);
+	}
+	printf(""\n"");
+}"
+"2104020420","王浩东","网络21-4 - 王浩东","E","No","2021-10-16 13:40:26","#include <stdio.h>
+#include <set>
+#include <iterator>
+#include <iostream>
+using namespace std;
+int main(){
+    int A,b;
+    cin>>A;
+    set<int>D;
+    while(A--)
+    {
+        cin>>b;
+        D.insert(b);
+    }
+    set<int>::iterator i;
+    for(i=D.begin();i!=D.end();i++)
+	{
+        cout<<*i<<"" "";
+    }
+    cout<<endl;
+}"
+"2104020421","肖业峰","网络21-4 - 肖业峰","B","Yes","2021-10-16 11:59:46","#include <bits/stdc++.h>
+using namespace std;
+string ab[10005];
+char buff[10005][105];
+int main()
+{
+	int T;scanf(""%d"",&T);
+	while(T--)
+	{
+		int n,m,k;scanf(""%d%d%d"",&n,&m,&k);
+		for(int i=0;i<n;i++)
+		{
+			
+			scanf(""%s"",buff[i]);
+		}
+		for(int p=0;p<n;p++)
+		{
+
+			for(int j=0;j<k;j++)
+			{
+			for (int l = 0; l <m;l++)
+			{ 
+					for(int ii=0;ii<k;ii++)
+					{
+					 cout<<buff[p][l];
+					}
+			}printf(""\n"");}
+		}
+	}return 0;
+}"
+"2104020421","肖业峰","网络21-4 - 肖业峰","D","No","2021-10-16 13:15:48","#include <bits/stdc++.h>
+using namespace std;
+struct Zuoye
+{
+	string name;int youxiandu,xianhou;
+};
+Zuoye zuoye[100005];
+string ans[100005];
+char buff[25];
+bool cmp(Zuoye x,Zuoye y)
+{
+	if(x.youxiandu==y.youxiandu)
+	{
+		return x.xianhou<y.xianhou;
+	}
+	return x.youxiandu>y.youxiandu;
+}
+int main()
+{
+	int T;scanf(""%d"",&T);
+	while(T--)
+	{
+		int n;scanf(""%d"",&n);
+		for(int i=1,num=1,z=1;z<=n;z++)
+		{
+			
+			int caozuo;scanf(""%d"",&caozuo);
+			if(caozuo==1){
+				scanf(""%s %d"",buff,&zuoye[i].youxiandu);
+				zuoye[i].xianhou=i;
+				zuoye[i].name=buff;
+				sort(zuoye+1,zuoye+1+i,cmp);i++;
+			}
+			else
+			{
+				
+				printf(""%s\n"",zuoye[num].name.c_str());
+				num++;
+			}
+			
+		}
+		
+	}
+
+	return 0;
+}"
+"2104020421","肖业峰","网络21-4 - 肖业峰","E","No","2021-10-16 13:30:07","#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	set<long long>s;
+	int T;scanf(""%d"",&T);
+	for(int i=1;i<=T;i++)
+	{
+		int N;scanf(""%d"",&N);s.insert(N);
+	}
+	for(auto it=s.begin();it!=s.end();it++)
+	{
+		if(it!=s.begin())printf("" "");
+		printf(""%d"",*it);
+	}
+	puts("""");
+	return 0;
+}"
+"2104020424","许郅卓","网络21-4 - 许郅卓","A","No","2021-10-16 12:05:48","#include<iostream>
+#include<math.h>
+using namespace std;
+int main(){
+	int n;
+	cin>>n;
+	while(n--){ 
+    int k,b;
+    float y1=0.0000,y2=0.0000;
+    float i=0.5000;
+    double area; 
+	cin>>k;
+	cin>>b;
+	double x2=y2+b;
+	double x1=y1;
+	area=(x2-x1)*i/2; 
+		printf(""%.4f\n"",area);
+		} 
+	}
+
+	
+"
+"2104020425","姚鹏展","网络21-4 - 姚鹏展","E","No","2021-10-16 13:48:16","#include<iostream>
+using namespace std;
+template<typename T>
+void swa(T&a,T&b)
+{
+ T temp=a;
+ a=b;
+ b=temp;
+ return;
+}
+
+template<typename T>
+void quick(T*a,int start,int end)
+{
+ if(start>=end)
+  return;
+ T mid=a[end];
+ int left=start;
+ int right=end-1;
+ while(left<right)
+ {
+  while(a[left]<=mid&&left<right)
+  {
+   left++;
+  }
+  while(a[right]>=mid&&left<right)
+  {
+   right--;
+  }
+  swa(a[left],a[right]);
+ }
+ if(a[left]>=a[end])
+  swa(a[left],a[end]);
+ else left++;
+ quick(a,start,left-1);
+ quick(a,left+1,end);
+}
+template<typename T>
+int delsame(T*a,int length)
+{
+ T temp;
+ temp=a[0];
+ int k=1;
+ for(int i=1;i<length;i++)
+ {
+  if(a[i]!=temp)
+  {
+   a[k]=a[i];
+   k++;
+   temp=a[i];
+  }
+ }
+ return k;
+}
+int main()
+{
+ int n;
+ 
+ cin>>n;
+ int *a=new int[n];
+ 
+ for(int i=0;i<n;i++)
+ {
+  cin>>a[i];
+ }
+ quick(a,0,n-1);
+ int k=delsame(a,n);
+ for(int i=0;i<k;i++)
+  cout<<a[i]<<"" ""; 
+ cout<<endl;
+ return 0;
+}
+"
+"2104020426","姚智林","网络21-4 - 姚智林","B","No","2021-10-16 12:40:23","#include <iostream>
+using namespace std;
+int main()
+{
+	int n, a, b, c,h;
+	char d = 0;
+	cin >> n;
+	while (cin >>a); {
+		cin >>  b >> c;
+		for (h = 0; h <= b; h++) {
+			while ((d = getchar()) != '\n') {
+				for (int i = 0; i < a; i++)
+					cout << d;
+			}
+		}
+	}
+
+	return 0;
+}"
+"2104020429","赵桐悦","网络21-4 - 赵桐悦","E","No","2021-10-16 12:40:55","#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int  n, i,  j, s[100000] = { 0 };
+    scanf(""%d"", &n);
+    for (i = 0;i < n;i++)
+    {
+        scanf(""%d"", &j);
+        s[j] = 1;
+    }
+    for (j = 1;j <= n;j++)
+    {
+        if (s[j] == 1) {
+            printf(""%d "", j);
+        }
+    }
+    return 0;
+
+}
+
+"
+"2120410093","电子信息21 孙楷轩","打星 - 电子信息21 孙楷轩","B","Yes","2021-10-16 12:20:23","#include <bits/stdc++.h>
+#include<set>
+using namespace std;
+int main()
+{
+    int t, n, m, k;
+    char a[105][105];
+    scanf(""%d"", &t);
+    while(t--)
+    {
+        scanf(""%d%d%d"", &n, &m, &k);
+        for(int i = 0; i < n; i++)
+        {
+            scanf(""%s"", a[i]);
+        }
+        int x = 1;
+        for(int i = 0; i < n; )
+        {
+            for(int j = 0; j < m; j++)
+            {
+                for(int l = 0; l < k; l++)
+                {
+                    printf(""%c"", a[i][j]);
+                }
+            }
+            puts("""");
+            if(x>=k)
+            {
+                i++;
+                x=1;
+            }
+            else
+                x++;
+        }
+    }
+    return 0;
+}
+"
+"2120410093","电子信息21 孙楷轩","打星 - 电子信息21 孙楷轩","D","No","2021-10-16 13:12:10","#include <bits/stdc++.h>
+#include<set>
+using namespace std;
+const int N = 100000;
+struct Home
+{
+    char a[30];
+    int imp;
+};
+bool cmp(Home x, Home y)
+{
+    return x.imp>y.imp;
+}
+int main()
+{
+    int t, n, num;
+    //char ch[30];
+    //int a1;
+    scanf(""%d"", &t);
+    while(t--)
+    {
+        scanf(""%d"", &n);
+        Home work[N];
+        int b = 0;
+        for(int i = 0; i < n; i++)
+        {
+            scanf(""%d"", &num);
+            if(num==1)
+            {
+                scanf(""%s"", work[b].a);
+                scanf(""%d"", &work[b].imp);
+                b++;
+            }
+            else
+            {
+                sort(work, work+b, cmp);
+                printf(""%s\n"", work[0].a);
+                work[0].imp = -1000;
+            }
+        }
+    }
+    return 0;
+}
+"
+"2120410093","电子信息21 孙楷轩","打星 - 电子信息21 孙楷轩","E","No","2021-10-16 12:00:55","#include <bits/stdc++.h>
+#include<set>
+using namespace std;
+int main()
+{
+    int n, b;
+    set<int> s;
+    scanf(""%d"", &n);
+    for(int i = 1; i <= n; i++)
+    {
+        scanf(""%d"", &b);
+        s.insert(b);
+    }
+    set<int>::iterator it;
+    it = s.begin();
+    cout << *it;
+    for(it++; it!=s.end();it++)
+    {
+        cout << "" "" << *it;
+    }
+    return 0;
+}
+"
+"备用04","电信20-3 黄春鑫","打星 - 电信20-3 黄春鑫","E","No","2021-10-16 13:53:56","	#include<bits/stdc++.h>
+	using namespace std;
+	int main() {
+		int T;
+		scanf(""%d"", &T);
+		static  int  a[100000];
+		for (int  i = 1; i <= T; i++)
+			scanf(""%d"", &a[i]);
+		int len = sizeof(a) / sizeof(int);
+		vector<int> b(a, a + len);
+		sort(b.begin(), b.end());
+		b.erase(unique(b.begin(), b.end()), b.end());
+		int size = b.size();
+		for (int  i = 1; i < size; i++)
+			if (i == 1) printf(""%d"", b[i]);
+			else  printf("" %d"", b[i]);
+		return 0;
+	}"
+"备用05","计算机20-4 杨成义","打星 - 计算机20-4 杨成义","A","Yes","2021-10-16 11:23:25","#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    while(n --)
+    {
+        int k, b;
+        cin >> k >> b;
+        if(k == 1)
+            printf(""%.4lf\n"", b / 4.0 * b);
+        else if(k == 2)
+        {
+            double x = (-1 + sqrt((1 + 4 * b))) / 2.0;
+            printf(""%.4lf\n"", 1/3.0 * x * x * x + (b - x) / 2 * x * x);
+        }
+    }
+    return 0;
+}
+"
+"备用05","计算机20-4 杨成义","打星 - 计算机20-4 杨成义","B","Yes","2021-10-16 12:03:15","#include <iostream>
+using namespace std;
+const int N = 1010;
+int main()
+{
+    int t; cin >> t;
+    while(t --)
+    {
+        int n, m, k;
+        cin >> n >> m >> k;
+        while (n--)
+        {
+            char s[N];
+            cin >> s;
+
+            char str[N];
+            int cnt = 0;
+            for (int i = 0; i < m; i ++)
+                for (int j = 0; j < k; j++)
+                {
+                    str[cnt ++] = s[i];
+                }
+            int p = k;
+            while(p --)
+            {
+                for(int i = 0; i < k * m; i ++)
+                    cout << str[i];
+               cout << endl;
+            }
+
+        }
+    }
+    return 0;
+
+}
+"
+"备用05","计算机20-4 杨成义","打星 - 计算机20-4 杨成义","C","Yes","2021-10-16 13:16:43","#include <cstring>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+const int N = 510;
+
+int n, m;
+char g[N][N];
+int xa, ya, xb, yb;
+int dx[4] = {-1, 0, 1, 0}, dy[4] = {0, 1, 0, -1};
+bool st[N][N];
+
+bool dfs(int x, int y)
+{
+    if (g[x][y] == '1') return false;
+    if (x == xb && y == yb) return true;
+
+    st[x][y] = true;
+
+    for (int i = 0; i < 4; i ++ )
+    {
+        int a = x + dx[i], b = y + dy[i];
+        if (a < 0 || a >= n || b < 0 || b >= m) continue;
+        if (st[a][b]) continue;
+        if (dfs(a, b)) return true;
+    }
+
+    return false;
+}
+
+int main()
+{
+    int T;
+    scanf(""%d"", &T);
+    while (T -- )
+    {
+        scanf(""%d%d"", &n, &m);
+        for (int i = 0; i < n; i ++ ) 
+            for(int j = 0; j < m; j ++)
+                cin >> g[i][j];
+        scanf(""%d%d%d%d"", &xa, &ya, &xb, &yb);
+        xa -= 1, ya -=1, xb -= 1, yb -= 1;
+        memset(st, 0, sizeof st);
+        if (dfs(xa, ya)) puts(""YE5"");
+        else puts(""N0"");
+    }
+
+    return 0;
+}"
+"备用05","计算机20-4 杨成义","打星 - 计算机20-4 杨成义","E","No","2021-10-16 13:58:06","#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+vector<int> a;
+
+vector<int>::iterator unique(vector<int> &a)
+{
+    int j = 0;
+    for (int i = 0; i < a.size(); i ++ )
+        if (!i || a[i] != a[i - 1])
+            a[j ++ ] = a[i];
+        // a[0] ~ a[j - 1] 所有a中不重复的数
+
+    return a.begin() + j;
+}
+int main()
+{
+    int n;
+    cin >> n;
+    int m = 0;
+    while(n --)
+    {
+        int x;
+        scanf(""%d"", &x);
+        a.push_back(x);
+        m = max(m, x);
+    }
+    sort(a.begin(), a.end());
+    a.erase(unique(a), a.end());
+
+    for(auto x : a)
+    {
+        printf(""%d%c"", x, x == m ? '\n' : ' ');
+    }
+    return 0;
+}"
+"备用06","机械21-5 聂铁铮","打星 - 机械21-5 聂铁铮","E","No","2021-10-16 12:30:20","#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int n;
+
+int f[1000000];
+
+int main(){
+	
+	
+	scanf(""%d"",&n);
+	
+	for(int a=0;a<n;++a){
+		scanf(""%d"",&f[a]);
+	}
+	
+	sort(f,f+n);
+	
+	unique(f,f+n);
+	
+	printf(""%d"",f[0]);
+	
+	for(int a=1;a<n;++a){
+		if(f[a]<=f[a-1]){
+			return 0;
+		}
+		
+		printf("" %d"",f[a]);
+	}
+	
+    return 0;
+}"
+"备用09","计算机20-7 肖猛猛","打星 - 计算机20-7 肖猛猛","E","No","2021-10-16 11:30:08","#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int n,num;
+	cin>>n;
+	set<int>S;
+	for(int i=1;i<=n;i++)
+	{
+		cin>>num;
+		S.insert(num);
+	}
+	for(auto it=S.begin();it!=S.end();it++)
+	{
+		if(it==S.begin())
+		printf(""%d"",*it);
+		else
+		
+		printf("" %d"",*it);
+	}
+	printf(""\n"");
+	return 0;
+}"
+"备用11","计算机20-8 王子旭","打星 - 计算机20-8 王子旭","A","No","2021-10-16 13:16:42","    #include<bits/stdc++.h>
+    using namespace std;
+    int main(){
+        int t;
+        while (scanf(""%d"",&t))
+        {
+            for (int i = 0; i < t; i++)
+            {
+                int k,b;double ans;
+                scanf(""%d%d"",&k,&b);
+                double  x=0,y=0;
+                if (k==1)
+                {
+                    x=b/2.0;
+                    ans=0.5*x*b;
+                    printf(""%.4f\n"",ans);ans=0;
+                }
+                else if(k==2){
+                    x=0.5*(-1+sqrt(1+4*b));
+                    y=b-x;
+                    ans=1.0/3*x*x*x;
+                    ans=0.5*(b+y)*x-ans;
+                    
+                    printf(""%.4f\n"",ans);
+
+                }
+                
+                
+            }
+            
+        }
+        
+    }"
+"备用11","计算机20-8 王子旭","打星 - 计算机20-8 王子旭","B","Yes","2021-10-16 11:54:37","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char s[100][100];
+    int r, l,p;
+    int t;
+    while (~scanf(""%d"",&t))
+    {
+        for (int b = 0; b < t; b++)
+        {
+            scanf(""%d%d%d"", &r, &l,&p);
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < l; j++)
+        {
+            // scanf(""%c"",&s[i][j]);
+            cin >> s[i][j];
+        }
+    }
+
+    for (int i = 0; i < r; i++)
+    {for (int h = 0; h < p; h++)
+    {
+         for (int j = 0; j < l; j++)
+        {
+            // printf(""%c"",s[i][l]);
+            for (int k = 0; k < p; k++)
+            {
+                cout << s[i][j];
+            }
+        }
+        puts("""");
+    }
+    
+       
+    }
+}
+        }
+        
+    }
+    
+    "
+"备用15","计算机21-8 何丞佑","打星 - 计算机21-8 何丞佑","B","Yes","2021-10-16 13:26:19","#include<stdio.h>
+
+int main()
+{
+  int T,i,n,m,k,j,z,l,q,f,d,g;
+  char a[1000][1000];
+  scanf(""%d"",&T);
+  getchar();
+  if((T>=1)&&(T<=10))
+  {
+  for(i=0;i<T;i++)
+  {
+      scanf(""%d %d %d"",&n,&m,&k);
+      getchar();
+      if((n>=1)&&(m<=100)&&(k>=1)&&(k<=10))
+      {
+
+      for(j=0;j<n;j++)
+      {
+          gets(a[j]);
+      }
+      for(j=0;j<n;)
+      {
+          f=0;
+          d=0;
+          while(d<m)
+          {
+              if((a[j][d]>32)&&(a[j][d]<=126))
+              {
+                  f++;
+                  d++;
+              }
+              else
+              {
+                  d++;
+              }
+          }
+      if((f==m)&&(a[j][d]=='\0'))
+      {
+          j++;
+      }
+      else
+      {
+         break;
+      }
+      }
+
+
+      if((f==m)&&(a[j][d]=='\0'))
+          {
+              for(g=0;g<n;g++)
+              {
+              for(q=0;q<k;q++)
+              {
+              for(z=0;z<m;z++)
+              {
+                  for(l=0;l<k;l++)
+                  {
+                      printf(""%c"",a[g][z]);
+                  }
+              }
+              if(q!=k-1)
+              {
+                  printf(""\n"");
+              }
+              }
+              printf(""\n"");
+              }
+          }
+      }
+      
+
+  }
+  }
+    return 0;
+}
+"
+"备用17","网络20-1 李超","打星 - 网络20-1 李超","A","Yes","2021-10-16 12:19:22","#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double t, k, b, res;
+    cin >> t;
+    while(t --)
+    {
+        cin >> k >> b;
+        if(k == 1) 
+        {
+            res = b * b / 4;
+            printf(""%.4f\n"", res);
+        }
+        else 
+        {
+            res = (sqrt(1 + 4 * b) - 1) * (sqrt(1 + 4 * b) - 1) * (sqrt(1 + 4 * b) - 1) / 24 + (b - ((sqrt(1 + 4 * b) - 1) / 2)) * (2 + 4 * b - 2 * sqrt(1 + 4 * b)) / 8;
+            printf(""%.4f\n"", res);
+        }
+    }
+    return 0;
+}"
+"备用17","网络20-1 李超","打星 - 网络20-1 李超","B","Yes","2021-10-16 11:59:30","#include <bits/stdc++.h>
+using namespace std;
+const int N = 1005;
+char a[N][N];
+queue <int> x, y;
+int main()
+{
+    int t, n, m, k;
+    cin >> t;
+    while(t --)
+    {
+        char c;
+        cin >> n >> m >> k;
+        for(int i = 1; i <= n; i ++)
+            for(int j = 1; j <= m; j ++)
+            {
+                cin >> c;
+                a[i * k][j * k] = c;
+                x.push(i * k);
+                y.push(j * k);
+            }
+        while(x.size() && y.size())
+        {
+            for(int i = x.front() - k + 1; i <= x.front(); i ++)
+            {
+                for(int j = y.front() - k + 1; j <= y.front(); j ++)
+                {
+                    a[i][j] = a[x.front()][y.front()];
+                }
+            }
+            x.pop(), y.pop();
+        }
+        
+        for(int i = 1; i <= n * k; i ++)
+        {
+            for(int j = 1; j <= m * k; j ++)
+            {
+                cout << a[i][j];
+            }
+            cout << endl;
+        }
+    }
+}"
+"备用17","网络20-1 李超","打星 - 网络20-1 李超","C","No","2021-10-16 13:58:58","#include <bits/stdc++.h>
+using namespace std;
+typedef pair<int, int> PII;
+const int N = 510;
+int a[N][N];
+int t, n, m;
+bool flag;
+queue<PII> q;
+
+void bfs(int x1, int y1, int x2, int y2)
+{
+    // cout << ""****\n"";
+    q.push({ x1, y1 });
+    while (q.size()) {
+        auto t = q.front();
+        q.pop();
+        int dx[4] = { -1, 0, 1, 0 }, dy[4] = { 0, -1, 0, 1 };
+        for (int i = 0; i < 4; i++) {
+            int x = t.first + dx[i];
+            int y = t.second + dy[i];
+            if (x >= 1 && x <= n && y >= 1 && y <= m && a[x][y] == 0) {
+                q.push({ x, y });
+                if (x == x2 && y == y2) {
+                    flag = true;
+                    cout << ""YE5\n"";
+                    return;
+                }
+            }
+        }
+    }
+    cout << ""N0"" << endl;
+}
+
+int main()
+{
+    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+    cin >> t;
+    string str;
+    while (t--) {
+        cin >> n >> m;
+        for (int i = 1; i <= n; i++) {
+            cin >> str;
+            // cout << str[0] - '0' << endl;
+            for (int j = 1; j <= m; j++) {
+                int tmp = j - 1;
+                a[i][j] = str[tmp] - '0';
+                // cout << a[i][j] << "" "";
+            }
+            // cout << endl;
+        }
+        // cout << ""****\n"";
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        // cout << ""****\n"";
+        bfs(x1, y1, x2, y2);
+        // for (int i = 1; i <= n; i++) {
+        //     for (int j = 1; j <= m; j++) {
+        //         cout << a[i][j] << "" "";
+        //     }
+        //     cout << ""\n"";
+        // }
+        // cout << x1 << "" "" << y1 << "" "" << x2 << "" "" << y2 << ""\n"";
+    }
+    return 0;
+}
+"

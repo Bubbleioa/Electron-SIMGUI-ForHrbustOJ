@@ -72,6 +72,16 @@ var chooseSourceFileData = {
   isShow: true,
 };
 
+function readText(pathname) {
+    var bin = fs.readFileSync(pathname);
+  
+    if (bin[0] === 0xEF && bin[1] === 0xBB && bin[2] === 0xBF) {
+      bin = bin.slice(3);
+    }
+  
+    return bin.toString('utf-8');
+  }
+
 var chooseSourceFileVue = new Vue({
   el: "#chooseSourceFile",
   data: chooseSourceFileData,
@@ -101,14 +111,17 @@ var chooseSourceFileVue = new Vue({
                 console.error(err);
                 return;
               }
-              let res = await neatCsv(data);
+              let res = await neatCsv(data,{bom:true});
               res.forEach(item=>{
                 console.log(item);
                 let path=Path.dirname(result.filePaths[0])+"/codes/";
                 if (!fs.existsSync(path)) {
                     fs.mkdirSync(path);
                 }
-                fs.writeFile(`${path}${item["学号"]}_${item["题目ID"]}(${item["姓名"]}).txt`,"//"+item["提交时间"]+'\n'+item["代码"],err=>{
+                let ID;
+                if(item["﻿\"学号\""])ID=item["﻿\"学号\""];
+                else ID=item["学号"];
+                fs.writeFile(`${path}${ID}_${item["题目ID"]}(${item["姓名"]}).txt`,"//"+item["提交时间"]+'\n'+item["代码"],err=>{
                     if(err){
                         console.error(err);
                         return;
