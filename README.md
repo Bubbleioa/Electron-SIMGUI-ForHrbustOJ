@@ -1,4 +1,12 @@
 # 基于Electron和element UI的代码查重软件
+
+## 零、分支简介
+本项目是基于 [Electron-SIMGUI](https://github.com/ZxfBugProgrammer/Electron-SIMGUI) 的一款支持 HrbustOJ 代码查重的软件，简单来说就是将 OJ 比赛导出的单个 csv 文件自动转换成多个代码。
+
+使用方法，在“选择源文件”窗口下选择从 OJ 上下载的 csv 文件（export code），该操作会在 csv 文件目录下创建一个 `codes` 文件夹，第二步选择该文件夹，第三步选择语言以及阈值即可查重。
+
+可运行在 Windows,MacOS,Linux 上。
+
 ## 一、项目简介
 
 本项目是基于Electron和element UI开发的一款代码查重软件，其内核使用了开源软件[SIM](https://dickgrune.com/Programs/similarity_tester/)（SIM是大佬[Dick Grune](https://dickgrune.com/)开发的一款代码查重软件）
@@ -12,7 +20,7 @@
 # electron版本 v10.1.4
 
 # Clone this repository
-git clone https://github.com/ZxfBugProgrammer/Electron-SIMGUI.git
+git clone https://github.com/Bubbleioa/Electron-SIMGUI-ForHrbustOJ.git
 # Go into the repository
 cd Electron-SIMGUI
 # Install dependencies
@@ -41,21 +49,3 @@ npm install electron-packager -g
 # 运行打包命令 应用生成在./out 中
 npm run build-electron
 ```
-
-可在release页面下载打包好的win32平台应用：[下载链接](https://github.com/ZxfBugProgrammer/Electron-SIMGUI/releases)
-
-## 四、软件预览图
-
-![预览图1](./Preview-Image/1.png)
-
-![预览图2](./Preview-Image/2.png)
-
-![预览图3](./Preview-Image/3.png)
-
-![预览图4](./Preview-Image/4.png)
-
-![预览图5](./Preview-Image/5.png)
-
-## 五、联系方式
-
-如有问题可联系邮箱  1150123839@qq.com

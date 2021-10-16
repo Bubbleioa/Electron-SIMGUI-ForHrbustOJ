@@ -14,8 +14,8 @@ function createWindow() {
     //   preload: path.join(__dirname, 'preload.js')
     // }
     webPreferences: { nodeIntegration: true, enableRemoteModule: true },
-    title: "代码查重 V1.1.0 by ZXF",
-    icon: './src/icon.ico',
+    title: "代码查重 by ZXF HrbustSupport by Bubbleioa",
+    icon: './src/favicon.ico',
     show: false,
   })
 
