@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build-electron": "electron-packager . --out ./out --platform=win32 --arch=ia32  --icon=./src/icon.ico  --overwrite  --ignore=src/SIM --extra-resource=src/SIM --asar"
+    "build-electron": "electron-packager . --out ./out --platform=win32 --arch=ia32  --icon=./src/favicon.ico  --overwrite  --ignore=src/SIM --extra-resource=src/SIM --asar"
   },
   "author": "",
   "license": "ISC",

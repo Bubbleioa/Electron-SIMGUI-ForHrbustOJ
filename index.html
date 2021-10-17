@@ -61,16 +61,17 @@
         <el-card style='width: 80%; margin-right:auto; margin-left: auto; font-size: 18px; padding-left: 0.5em;'
           shadow="hover">
           本软件为SIM的GUI程序。<br>
-          SIM是Dick Grune开发的一款代码查重软件 <br>
+          SIM是Dick Grune开发的一款代码查重命令行软件 <br>
           软件使用说明如下：<br>
-          1. 把需要查重的代码放到同一个文件夹目录下。(只包含需要查重的代码文件，文件夹目录不包含中文)<br>
+          1. 用管理员账号登录需要查重的 contest ，选择 export code ，下载得到 csv 文件。在软件第一步中选择该文件，提示成功后点击下一步。<br>
+          2. 上一步会在 csv 文件目录下创建一个名为 codes 的目录，选择它。(只包含需要查重的代码文件，文件夹目录不包含中文)<br>
           注：SIM只支持单语言，单文件查重。<br>
-          2. 选择文件夹路径。<br>
           3. 选择待查重代码的语言及查重相似度阈值。 <br>
           4. 点击进行查重。 <br>
           5. 查看结果，人工复核。<br>
           <br>
-          Made by ZXF <br>
+          Github: https://github.com/Bubbleioa/Electron-SIMGUI-ForHrbustOJ<br>
+          Modified by Hzy <br>
         </el-card>
       </div>
 
